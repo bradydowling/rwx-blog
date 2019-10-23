@@ -28,9 +28,10 @@ module.exports = {
     ],
     author: {
       name: 'Brady Dowling',
-      email: '#',
+      email: 'readwriteexercise@gmail.com',
       twitter: 'bradypdowling',
       github: 'bradydowling',
+      youtube: 'UCPGv2tVqEt6iBFnnMTjnRBA',
     },
   },
   plugins: [
