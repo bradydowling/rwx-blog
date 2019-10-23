@@ -7,9 +7,9 @@ module.exports = {
   siteMetadata: {
     url,
     siteUrl: url,
-    title: 'Blog by John Doe',
+    title: 'Read, Write, Exercise',
     subtitle:
-      'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+      'Learnings, tutorials, and advice about career, technology, and software development',
     copyright: '© All rights reserved.',
     disqusShortname: '',
     menu: [
@@ -27,13 +27,10 @@ module.exports = {
       },
     ],
     author: {
-      name: 'John Doe',
+      name: 'Brady Dowling',
       email: '#',
-      telegram: '#',
-      twitter: '#',
-      github: '#',
-      rss: '#',
-      vk: '#',
+      twitter: 'bradypdowling',
+      github: 'bradydowling',
     },
   },
   plugins: [

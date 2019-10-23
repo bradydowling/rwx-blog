@@ -17,52 +17,64 @@ class Links extends React.Component {
     return (
       <div className="links">
         <ul className="links__list">
-          <li className="links__list-item">
-            <a
-              href={`https://www.twitter.com/${links.twitter}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="icon-twitter" />
-            </a>
-          </li>
-          <li className="links__list-item">
-            <a
-              href={`https://www.github.com/${links.github}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="icon-github" />
-            </a>
-          </li>
-          <li className="links__list-item">
-            <a
-              href={`https://www.vk.com/${links.vk}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="icon-vkontakte" />
-            </a>
-          </li>
+          {links.twitter &&
+            <li className="links__list-item">
+              <a
+                href={`https://www.twitter.com/${links.twitter}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="icon-twitter" />
+              </a>
+            </li>
+          }
+          {links.github &&
+            <li className="links__list-item">
+              <a
+                href={`https://www.github.com/${links.github}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="icon-github" />
+              </a>
+            </li>
+          }
+          {links.vk &&
+            <li className="links__list-item">
+              <a
+                href={`https://www.vk.com/${links.vk}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="icon-vkontakte" />
+              </a>
+            </li>
+          }
         </ul>
         <ul className="links__list">
-          <li className="links__list-item">
-            <a href={`mailto:${links.email}`}>
-              <i className="icon-mail" />
-            </a>
-          </li>
-          <li className="links__list-item">
-            <a href={`telegram:${links.telegram}`}>
-              <i className="icon-paper-plane" />
-            </a>
-          </li>
+          {links.email &&
+            <li className="links__list-item">
+              <a href={`mailto:${links.email}`}>
+                <i className="icon-mail" />
+              </a>
+            </li>
+          }
+          {links.telegram &&
+            <li className="links__list-item">
+              <a href={`telegram:${links.telegram}`}>
+                <i className="icon-paper-plane" />
+              </a>
+            </li>
+          }
         </ul>
         <ul className="links__list">
-          <li className="links__list-item">
-            <a href={links.rss}>
-              <i className="icon-rss" />
-            </a>
-          </li>
+          {links.rss &&
+            <li className="links__list-item">
+              <a href={links.rss}>
+                <i className="icon-rss" />
+              </a>
+            </li>
+          }
         </ul>
       </div>
     )
