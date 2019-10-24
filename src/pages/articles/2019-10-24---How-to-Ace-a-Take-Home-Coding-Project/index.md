@@ -19,10 +19,12 @@ With a recent project I was given, the task seemed relatively simple: fix some e
 Though it was too late for this project, I realized that I have to block off time to work on a take home project. Here and there won't work, just like it doesn't work in my normal day job. If I don't block off time I'll end up spending a lot of time doing a poor job.
 
 ## Scaffolding
+I once had a project where I spent a couple hours setting up Webpack, Babel, Eslint, and Prettier. A couple hours is a big deal. And since I'd spent so much time scaffolding this stuff, I felt it wasn't worth it for me to add a fronted framework, like React. When I got feedback on my project, one of their main bits of feedback was that I should have used a framework. Of course, I didn't have to set all this stuff up myself, I could have used some boilerplate from GitHub or something like create-react-app to get going quickly. Most interviews won't be about how well you can scaffold an app so you shouldn't work on that part. Use frameworks you're familiar with liberally to automate away the mundane and let you showcase the skills you need to.
 
 ### Take aways
 - Know your frameworks and libraries beforehand
-- Use any frameworks or libraries (within reason) that will speed up your development process
+- Use any frameworks or libraries that will speed up your development process
+- Let your project showcase skills that the company cares about
 
 ## Requirements
 A take home project has limited time but that's not an excuse to skimp on requirements. Unless otherwise stated, you should assume that not meeting requirements means you fail this part of the interview. Before working on the project, make sure you know the requirements well. Read them through a couple times and poke holes in them. Emailing questions to someone might seem like you're bothering them during their day job but you have to put that mentality aside.
@@ -31,13 +33,14 @@ A take home project has limited time but that's not an excuse to skimp on requir
 - Read the requirements
 - Resolve ambiguities
 - Read them over again
+- Meet all requirements
 
 ## Clean It Up
 
-Depending on your coding approach, you may have some code that just works but could be cleaned up. It meets requirements but it's just a take home project that won't be worked on again or maintained so who cares? Well, someone definitely cares and it's the person grading this project. The easier your code is to understand, the more pleasant the grading process is for your potential employer.
+Depending on your coding approach, you may have some code that just works but could be cleaned up. It meets requirements but it's just a take home project that won't be worked on again or maintained so who cares? Well, someone definitely cares and it's the person grading this project. You won't have any chances to pay off tech debt that you put into this project so it has to be cleaned up now. The easier your code is to understand, the more pleasant the grading process is for your potential employer.
 
 ### Take aways
-- Make sure you adhere to best practices for naming, spacing, etc. If you don't know these, now is a great time to learn them.
+- Write clean code, don't repeat yourself
+- Adhere to best practices for naming, spacing, etc. If you don't know these, now is a great time to learn them.
 - Leave comments, more than you would in your normal code.
 - Use a linter or code formatter (preferably the same rules as the company)
-
