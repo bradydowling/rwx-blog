@@ -1,8 +1,8 @@
 ---
 title: How to Ace a Take Home Coding Project
-date: "2019-10-24T16:51:00.000Z"
+date: "2019-10-31T16:51:00.000Z"
 layout: post
-draft: true
+draft: false
 path: "/posts/how-to-ace-a-take-home-coding-project/"
 category: "Interviewing"
 tags:

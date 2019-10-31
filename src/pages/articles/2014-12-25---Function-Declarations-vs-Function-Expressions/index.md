@@ -6,8 +6,8 @@ draft: false
 path: "/posts/javascript-function-declarations-vs-function-expressions"
 category: "JavaScript"
 tags:
-  - "Tutorial"
   - "JavaScript"
+  - "Tutorial"
 description: "A brief explanation of the difference between a function declaration and a function expression in JavaScript."
 ---
 

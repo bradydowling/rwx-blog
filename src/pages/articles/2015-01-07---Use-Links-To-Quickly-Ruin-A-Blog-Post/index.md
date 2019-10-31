@@ -4,11 +4,11 @@ date: "2015-01-07T22:40:32.169Z"
 layout: post
 draft: false
 path: "/posts/links-hurt-blog-posts/"
-category: "Opinion"
+category: "UX"
 tags:
-  - "Opinion"
+  - "UX"
   - "Books"
-  - "Psychology"
+  - "Opinion"
 description: "Links can be helpful in a blog post but they do come at a cost and they may not always be the right tool."
 ---
 

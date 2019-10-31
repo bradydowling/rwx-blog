@@ -4,7 +4,7 @@ date: "2015-01-01T23:46:37.121Z"
 layout: post
 draft: false
 path: "/posts/low-level-should-be-low-priority/"
-category: "Opinion"
+category: "Education"
 tags:
   - "Education"
   - "Opinion"
