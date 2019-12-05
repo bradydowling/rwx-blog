@@ -14,14 +14,11 @@ _Note: This section contains affiliate links. I appreciate if you use them but i
 
 ## At Home
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=readwriteexer-20&language=en_US&marketplace=amazon&region=US&placement=B005L38VRU&asins=B005L38VRU&linkId=c72ed1ceb315e610f1afda8d5893d7c4&show_border=true&link_opens_in_new_window=true"></iframe>
-
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=readwriteexer-20&language=en_US&marketplace=amazon&region=US&placement=B00BGSRK1M&asins=B00BGSRK1M&linkId=bb8c4dba18ac28de208188f41b4f40e9&show_border=true&link_opens_in_new_window=true"></iframe>
-
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=readwriteexer-20&language=en_US&marketplace=amazon&region=US&placement=B00HXE4BYW&asins=B00HXE4BYW&linkId=e57db2f2dd0dfc64853f35e229d3718c&show_border=true&link_opens_in_new_window=true"></iframe>
+- Keyboard (_never_ have to charge it): [Logitech K750 Wireless Solar Keyboard for Mac](https://amzn.to/2RyymwH)
+- Mouse (connects to the same receiver as the keyboard): [Logitech M325 Wireless Mouse](https://amzn.to/2YqqqyL)
+- Microphone (for recording videos): [Samson C01U Pro USB Studio Condenser Microphone](https://amzn.to/2Yqqej1)
 
 ## At Work
 
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=readwriteexer-20&language=en_US&marketplace=amazon&region=US&placement=B071ZZTNBM&asins=B071ZZTNBM&linkId=3ee1ad8987b36434a710005ebf928e75&show_border=true&link_opens_in_new_window=true"></iframe>
-
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=readwriteexer-20&language=en_US&marketplace=amazon&region=US&placement=B013WC0P2A&asins=B013WC0P2A&linkId=889d0d44fcce170031c4ad7650612002&show_border=true&link_opens_in_new_window=true"></iframe>
+- Keyboard: [Apple Magic Keyboard with Numeric Keypad (Wireless, Rechargable)](https://amzn.to/34TRWqU)
+- Mouse: [VicTsing Wireless USB Mouse](https://amzn.to/33PBTZW)
