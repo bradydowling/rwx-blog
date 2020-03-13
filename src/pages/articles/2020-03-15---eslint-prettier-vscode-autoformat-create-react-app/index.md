@@ -16,6 +16,85 @@ Set up autoformatting with VS Code and stuff.
 - Make sure local npm packages are installed
  - Delete your `node_modules` directory and your `package-lock.json` file if those already exist
  - Run `npm install`
+
+
+## Repository configuration
+
+### Install necessary dependencies
+
+Install the packages we need:
+
+```
+$ npm install eslint-config-prettier eslint-loader eslint-plugin-prettier eslint-plugin-react prettier
+```
+
+TODO: Mention the difference between a loader, a config, and a plugin.
+
+Now your `package.json` file will contain `scripts` and `devDependencies` sections that look something like this:
+
+```
+  "scripts": {
+    "lint": "eslint './src/**/*.{js,jsx}'",
+    "lint:fix": "eslint './src/**/*.{js,jsx}' --fix",
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "prettier": "1.19.1"
+  },
+```
+
+Add the following lines to your package.json file under the `scripts` key:
+```
+    "lint": "eslint './src/**/*.{js,jsx}'",
+    "lint:fix": "eslint './src/**/*.{js,jsx}' --fix",
+```
+
+### Configure eslint and prettier
+
+`.eslintrc.js`
+
+```
+module.exports = {
+    root: true,
+    env: {
+      browser: true,
+      node: true
+    },
+    parserOptions: {
+      parser: 'babel-eslint',
+      ecmaVersion: 2018,
+      sourceType: 'module'
+    },
+    extends: [
+      'prettier',
+      'plugin:prettier/recommended',
+      'plugin:react/recommended'
+    ],
+    plugins: [
+        'react',
+        'prettier'
+    ],
+    // add your custom rules here
+    rules: {
+        "react/prop-types": 1
+    }
+  }
+```
+
+`.prettierrc`
+```
+{
+    "singleQuote": true
+}
+```
+
+## VS Code configuration
+
 - Install the `prettier` and `eslint` VS Code extensions using the extensions panel (`Command` + `Shift` + `X`)
 - Make sure `eslint` is installed globally (normally you can use the dev dependency in the repo but because CRA hides it up, VS Code can't find the local binary)
 - Press `Command` + `Shift` + `P` then search for Open Settings (JSON) (if you can't find it, try [things mentioned here](https://stackoverflow.com/questions/54785520/vs-code-how-to-open-json-settings-with-defaults))
@@ -48,63 +127,29 @@ Set up autoformatting with VS Code and stuff.
 }
 ```
 
-## Files
-`.eslintrc.js`
+## Changes to Git
 
-```
-module.exports = {
-    root: true,
-    env: {
-      browser: true,
-      node: true
-    },
-    parserOptions: {
-      parser: 'babel-eslint',
-      ecmaVersion: 2018,
-      sourceType: 'module'
-    },
-    extends: [
-      'prettier',
-      'plugin:prettier/recommended',
-      'plugin:react/recommended'
-    ],
-    plugins: [
-        'react',
-        'prettier'
-    ],
-    // add your custom rules here
-    rules: {
-        "react/prop-types": 1
-    }
-  }
-```
-`.gitignore`
+First let's make sure we don't commit our `.eslintcache` file that will show up sometimes by adding the following line to your `.gitignore` file:
 ```
 .eslintcache
 ```
 
-`.prettierrc`
+Now we will install packages for linting staged files as part of a pre-commit git hook. This will prevent files from making it into the repository unless they are properly linted as we configured above.
+
+### Automatic (recommended) method
+Use the command from the `lint-staged` repo to set it up:
 ```
-{
-    "singleQuote": true
-}
+$ npx mrm lint-staged
+```
+This essentially performs everything in that's done in the manual method, but this does it automatically 😁
+
+### Manual method
+```
+npm install husky lint-staged
 ```
 
-`package.json`
+Now your `package.json` file will contain `husky` and `lint-staged` sections that look something like this:
 ```
-  "scripts": {
-    "lint": "eslint './src/**/*.{js,jsx}'",
-    "lint:fix": "eslint './src/**/*.{js,jsx}' --fix",
-  },
-  "devDependencies": {
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-loader": "^3.0.3",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.3",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.8",
-    "prettier": "1.19.1"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -114,3 +159,5 @@ module.exports = {
     "*.js": "eslint --cache --fix"
   }
 ```
+
+TODO: Include the final output of important files so people can copy/paste stuff.
