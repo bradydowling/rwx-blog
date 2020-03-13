@@ -2,7 +2,7 @@
 title:  "Working with a Recruiting Agency: The Good, the Bad, and the Ugly"
 date: "2020-02-05T16:51:00.000Z"
 layout: post
-draft: false
+draft: true
 path: "/posts/recruiting-agency-good-bad-ugly/"
 category: "Interviewing"
 tags:
