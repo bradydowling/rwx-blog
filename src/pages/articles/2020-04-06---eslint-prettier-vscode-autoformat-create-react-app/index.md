@@ -63,6 +63,8 @@ Now your `package.json` file will contain `scripts` and `devDependencies` sectio
 
 ### Configure eslint and prettier
 
+As we add the recommended prettier configuration here, the [Prettier docs](https://prettier.io/docs/en/integrating-with-linters.html#eslint) specify that it needs to be last so Prettier can overwrite any other extensions in the `extends` object.
+
 `.eslintrc.js`
 
 ```
@@ -78,8 +80,8 @@ module.exports = {
       sourceType: 'module'
     },
     extends: [
-      'plugin:prettier/recommended',
-      'plugin:react/recommended'
+      'plugin:react/recommended',
+      'plugin:prettier/recommended'
     ],
     plugins: [],
     // add your custom rules here
