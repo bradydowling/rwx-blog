@@ -78,14 +78,10 @@ module.exports = {
       sourceType: 'module'
     },
     extends: [
-      'prettier',
       'plugin:prettier/recommended',
       'plugin:react/recommended'
     ],
-    plugins: [
-        'react',
-        'prettier'
-    ],
+    plugins: [],
     // add your custom rules here
     rules: {
         "react/prop-types": 1
