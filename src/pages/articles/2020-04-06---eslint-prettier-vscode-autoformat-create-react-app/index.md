@@ -30,7 +30,7 @@ $ cd clean-code-app
 
 Now that we have our application and we've changed directory into it, we'll want to install the packages and dependencies we need. Notably missing from the dependencies list that follows is `eslint`. `create-react-app` gives you an application with `eslint` preinstalled so we don't need to install that.
 
-> You can use `npm` or `yarn` to install packages. If you don't know the difference right now then don't worry, they'll both work well for you so just use `npm`.
+_**Note:** You can use `npm` or `yarn` to install packages. If you don't know the difference right now then don't worry, they'll both work well for you so just use `npm`._
 
 #### npm
 ```
@@ -64,13 +64,13 @@ Now your `package.json` file will contain `scripts` and `devDependencies` sectio
   },
 ```
 
-**Note:** Don't worry about the package versions listed here. You will likely be installing later versions of each of these packages. As long as you run the `npm install` or `yarn add` command I included above, you're on your way.
+_**Note:** Don't worry about the package versions listed here. You will likely be installing later versions of each of these packages. As long as you run the `npm install` or `yarn add` command I included above, you're on your way._
 
 ### Configure eslint and prettier
 
 Now we'll configure ESLint by adding a `.eslintrc.js` file. This will include entries in the `extends` section that will automatically apply rules to integrate Prettier and React formatting and linting. We're also setting values for `env`, `parserOptions`, and `rules` that will get you up and running. Once you finish this tutorial, it would be helpful to look at the full documentation for ESLint to see if you want to customize those items for your project.
 
-> As we add the recommended prettier configuration here, the [Prettier docs](https://prettier.io/docs/en/integrating-with-linters.html#eslint) specify that it needs to be last so Prettier can overwrite any other extensions in the `extends` object.
+_**Note:** As we add the recommended prettier configuration here, the [Prettier docs](https://prettier.io/docs/en/integrating-with-linters.html#eslint) specify that it needs to be last so Prettier can overwrite any other extensions in the `extends` object._
 
 `.eslintrc.js`
 
@@ -113,7 +113,7 @@ Prettier doesn't really need any configuration but let's give it at least one ru
 - Press `Command` + `Shift` + `P` then search for Open Settings (JSON) (if you can't find it, try [things mentioned here](https://stackoverflow.com/questions/54785520/vs-code-how-to-open-json-settings-with-defaults))
 - Make sure `eslint` is installed globally using `npm install -g eslint` or `yarn global add eslint`
 
-> Normally you don't need to do a global install and you can use the ESLint dev dependency in your repository but because CRA hides it up, VS Code can't find the local binary
+_**Note:** Normally you don't need to do a global install and you can use the ESLint dev dependency in your repository but because CRA hides it up, VS Code can't find the local binary_
 
 Now we'll get ESLint and Prettier to perform their magic everytime you save a file. Add the following to your `settings.json`:
 
@@ -157,7 +157,7 @@ This next step is optional but many people prefer to lint files before they're c
 
 We'll install packages for linting staged files as part of a pre-commit git hook. This will prevent files from making it into the repository unless they are properly linted as we have configured.
 
-> The `lint-staged` docs recommend using `npx mrm lint-staged` to install it but when I tried this I got an error that said `Cannot add lint-staged: only eslint, stylelint, prettier or custom rules are supported.` so I did the manual method. If you know the issue here then let me know via [email](mailto:readwriteexercise@gmail.com) or [Twitter](https://twitter.com/readwriteexrcis).
+_**Note: The `lint-staged` docs recommend using `npx mrm lint-staged` to install it but when I tried this I got an error that said `Cannot add lint-staged: only eslint, stylelint, prettier or custom rules are supported.` so I did the manual method. If you know the issue here then let me know via [email](mailto:readwriteexercise@gmail.com) or [Twitter](https://twitter.com/readwriteexrcis)._
 
 #### npm
 ```
