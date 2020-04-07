@@ -153,21 +153,23 @@ First let's make sure we don't commit our `.eslintcache` file that will show up 
 
 This next step is optional but many people prefer to lint files before they're committed. This ensures that files follow a certain format when they get are committed in Git so you won't have commits that are messing with your code formatting.
 
-We'll install packages for linting staged files as part of a pre-commit git hook. This will prevent files from making it into the repository unless they are properly linted as we configured above.
+### Installing lint-staged
 
-### Automatic (recommended) method
-Use the command from the `lint-staged` repo to set it up:
-```
-$ npx mrm lint-staged
-```
-This essentially performs everything in that's done in the manual method, but this does it automatically 😁
+We'll install packages for linting staged files as part of a pre-commit git hook. This will prevent files from making it into the repository unless they are properly linted as we have configured.
 
-### Manual method
+> The `lint-staged` docs recommend using `npx mrm lint-staged` to install it but when I tried this I got an error that said `Cannot add lint-staged: only eslint, stylelint, prettier or custom rules are supported.` so I did the manual method. If you know the issue here then let me know via [email](mailto:readwriteexercise@gmail.com) or [Twitter](https://twitter.com/readwriteexrcis).
+
+#### npm
 ```
-npm install husky lint-staged
+npm install --save-dev husky lint-staged
 ```
 
-Now your `package.json` file will contain `husky` and `lint-staged` sections that look something like this:
+#### yarn
+```
+yarn add --dev husky lint-staged
+```
+
+Now add the following `husky` and `lint-staged` sections to your `package.json` file so it looks something like this:
 ```
   "husky": {
     "hooks": {
@@ -179,4 +181,4 @@ Now your `package.json` file will contain `husky` and `lint-staged` sections tha
   }
 ```
 
-And that's it. You should still have all the benefits of Create React App while having automatic code lint and formatting on save in VS Code. [Here's a repository](https://github.com/bradydowling/eslint-prettier-create-react-app) where you can look at or clone the finished product.
+And that's it. You should still have all the benefits of Create React App while having automatic code linting and formatting on save in VS Code. To test this, try removing a semicolon from one of your files, like `src/App.js`. [Here's a repository](https://github.com/bradydowling/eslint-prettier-create-react-app) where you can look at or clone the finished product.
