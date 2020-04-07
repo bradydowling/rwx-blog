@@ -13,7 +13,7 @@ description: "A brief guide to configuring VS Code to automatically format code 
 
 In this post we'll walk through how to setup a new or existing React project to automatically lint and format code. We'll be using VS Code as our editor, Create React App (CRA) to create our React application, and ESLint and Prettier to do the actual code formatting and linting.
 
-One of the major benefits of Create React App is that it handles configuration of Webpack and several other dependencies for you, while you just get to consume this one dependency. Some guides for setting up automatic code formatting in VS Code with CRA (create-react-app) will ask you to "eject" from Create React App by running `npm run eject`. This takes away a lot of the benefits of Create React App and is irreversible so with this guide we'll avoid that. This will gives us all the configuration benefits of CRA while also giving us the automatic code formatting we want from our other tools.
+One of the major benefits of Create React App is that it handles configuration of Webpack and several other dependencies for you, while you just get to consume this one dependency. Some guides for setting up automatic code formatting in VS Code with CRA (create-react-app) will ask you to "eject" from Create React App by running `npm run eject`. This takes away a lot of the benefits of Create React App and is irreversible so with this guide we'll avoid that. This will give us all the configuration benefits of CRA while also giving us the automatic code formatting we want from our other tools.
 
 ## Create our app
 
@@ -30,11 +30,16 @@ $ cd clean-code-app
 
 Now that we have our application and we've changed directory into it, we'll want to install the packages and dependencies we need. Notably missing from the dependencies list that follows is `eslint`. `create-react-app` gives you an application with `eslint` preinstalled so we don't need to install that.
 
+> You can use `npm` or `yarn` to install packages. If you don't know the difference right now then don't worry, they'll both work well for you so just use `npm`.
+
+#### npm
 ```
 $ npm install --save-dev prettier eslint-loader eslint-config-prettier eslint-plugin-prettier eslint-plugin-react
 ```
-
-> TODO: Mention the difference between a loader, a config, and a plugin.
+#### yarn
+```
+$ yarn add --dev prettier eslint-loader eslint-config-prettier eslint-plugin-prettier eslint-plugin-react
+```
 
 Then to allow you (and VS Code) to easily lint and fix files in your repository, go ahead and add the following lines to your `package.json` file under the `scripts` key:
 
@@ -59,11 +64,13 @@ Now your `package.json` file will contain `scripts` and `devDependencies` sectio
   },
 ```
 
-**Note:** Don't worry about the package versions listed here. You will likely be installing later versions of each of these packages. As long as you run the `npm install` command I included above, you're on your way.
+**Note:** Don't worry about the package versions listed here. You will likely be installing later versions of each of these packages. As long as you run the `npm install` or `yarn add` command I included above, you're on your way.
 
 ### Configure eslint and prettier
 
-As we add the recommended prettier configuration here, the [Prettier docs](https://prettier.io/docs/en/integrating-with-linters.html#eslint) specify that it needs to be last so Prettier can overwrite any other extensions in the `extends` object.
+Now we'll configure ESLint by adding a `.eslintrc.js` file. This will include entries in the `extends` section that will automatically apply rules to integrate Prettier and React formatting and linting. We're also setting values for `env`, `parserOptions`, and `rules` that will get you up and running. Once you finish this tutorial, it would be helpful to look at the full documentation for ESLint to see if you want to customize those items for your project.
+
+> As we add the recommended prettier configuration here, the [Prettier docs](https://prettier.io/docs/en/integrating-with-linters.html#eslint) specify that it needs to be last so Prettier can overwrite any other extensions in the `extends` object.
 
 `.eslintrc.js`
 
@@ -103,8 +110,10 @@ Prettier doesn't really need any configuration but let's give it at least one ru
 ## VS Code configuration
 
 - Install the `prettier` and `eslint` VS Code extensions using the extensions panel (`Command` + `Shift` + `X`)
-- Make sure `eslint` is installed globally (normally you can use the dev dependency in the repo but because CRA hides it up, VS Code can't find the local binary)
 - Press `Command` + `Shift` + `P` then search for Open Settings (JSON) (if you can't find it, try [things mentioned here](https://stackoverflow.com/questions/54785520/vs-code-how-to-open-json-settings-with-defaults))
+- Make sure `eslint` is installed globally using `npm install -g eslint` or `yarn global add eslint`
+
+> Normally you don't need to do a global install and you can use the ESLint dev dependency in your repository but because CRA hides it up, VS Code can't find the local binary
 
 Now we'll get ESLint and Prettier to perform their magic everytime you save a file. Add the following to your `settings.json`:
 
@@ -142,7 +151,9 @@ First let's make sure we don't commit our `.eslintcache` file that will show up 
 .eslintcache
 ```
 
-Now we will install packages for linting staged files as part of a pre-commit git hook. This will prevent files from making it into the repository unless they are properly linted as we configured above.
+This next step is optional but many people prefer to lint files before they're committed. This ensures that files follow a certain format when they get are committed in Git so you won't have commits that are messing with your code formatting.
+
+We'll install packages for linting staged files as part of a pre-commit git hook. This will prevent files from making it into the repository unless they are properly linted as we configured above.
 
 ### Automatic (recommended) method
 Use the command from the `lint-staged` repo to set it up:
@@ -168,4 +179,4 @@ Now your `package.json` file will contain `husky` and `lint-staged` sections tha
   }
 ```
 
-> TODO: Include the final output of important files and a Github repo link so people can copy/paste stuff.
+And that's it. You should still have all the benefits of Create React App while having automatic code lint and formatting on save in VS Code. [Here's a repository](https://github.com/bradydowling/eslint-prettier-create-react-app) where you can look at or clone the finished product.
