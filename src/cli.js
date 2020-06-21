@@ -30,24 +30,21 @@ This is where the content of the post should go
   return postTemplate
 }
 
+const getDefaultPath = title => title.toLowerCase().replace(/\s/g, '-')
+const getDefaultDirName = title => `${(new Date()).toISOString().split('T')[0]}---${title.replace(/\s/g, '-')}`
+
 async function createPost(options) {
   const postTemplate = getPostTemplate(options)
 
-  const currentFileUrl = import.meta.url
-  const postDir = path.resolve(
-    path.dirname(currentFileUrl),
-    'pages/articles',
-    options.path.toLowerCase()
-  )
+  const postDirName = getDefaultDirName(options.title)
+  const postDir = path.join('src/pages/articles', postDirName)
 
   await fs.mkdir(postDir)
   await fs.writeFile(path.join(postDir, 'index.md'), postTemplate)
 
-  console.log('%s Post ready', chalk.green.bold('DONE'))
+  console.log(`${chalk.green.bold('POST CREATED')} ${postDir}`)
   return true
 }
-
-const getDefaultPath = title => title.toLowerCase().replace(/\s/g, '-')
 
 function parseArgumentsIntoOptions(rawArgs) {
   const args = arg(
@@ -68,13 +65,12 @@ function parseArgumentsIntoOptions(rawArgs) {
     }
   )
 
-  const title = args['--title'] || DEFAULTS.TITLE
   return {
     skipPrompts: args['--yes'] || false,
-    title,
-    description: args['--description'] || DEFAULTS.DESCRIPTION,
-    category: args['--category'] || DEFAULTS.CATEGORY,
-    path: args['--path'] || getDefaultPath(title),
+    title: args['--title'],
+    description: args['--description'],
+    category: args['--category'],
+    path: args['--path'],
   }
 }
 
@@ -82,6 +78,7 @@ async function promptForMissingOptions(options) {
   if (options.skipPrompts) {
     return {
       ...options,
+      ...DEFAULTS,
     }
   }
 
@@ -116,10 +113,10 @@ async function promptForMissingOptions(options) {
 
   if (!options.path) {
     questions.push({
-      type: 'list',
+      type: 'input',
       name: 'path',
-      choices: CATEGORIES,
-      message: 'Enter the URL path for this post',
+      validate: input => !/\s/.test(input) || 'URL paths cannot contain spaces',
+      message: answers => `Enter the URL path for this post (e.g. myblog.com/posts/${getDefaultPath(answers.title || DEFAULTS.TITLE)})`,
       default: answers => getDefaultPath(answers.title || DEFAULTS.TITLE),
     })
   }
