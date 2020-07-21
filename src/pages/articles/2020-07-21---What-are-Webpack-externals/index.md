@@ -31,6 +31,8 @@ So in order to consume Vue via a CDN from my Webpack bundle I would do the follo
 <script src="<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>">
 ```
 
+This will load Vue onto the `window` object as `window.Vue`, or just a global variable `Vue`.
+
 ### Configure externals
 
 ```js
@@ -41,9 +43,11 @@ module.exports = {
 };
 ```
 
+This performs a mapping, getting the global variable with the name on the right side (`Vue`) and making it available as the key on the left (`vue`).
+
 ### Import the dependency
 
-Since I loaded Vue into my HTML using a script tag, Vue is stored on window.Vue. So now when my code says:
+So now when my code says:
 
 ```js
 import Vue from 'vue';
@@ -52,5 +56,7 @@ import Vue from 'vue';
 Webpack externals does a mapping here that basically takes that code and changes the `from` piece of it to match the key that I already configured. So Webpack is essentially changing this behind the scenes to:
 
 ```js
-import Vue from 'myVueKey';
+import Vue from window.Vue;
 ```
+
+And that's it. Webpack externals can be helpful if your Webpack bundle is running somewhere that already has certain dependencies loaded externally, like in a micro frontend situation. If used properly, this can help decrease your page load times and make things nicer for you as a developer and for your users.
