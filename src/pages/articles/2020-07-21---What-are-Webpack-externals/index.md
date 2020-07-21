@@ -1,17 +1,19 @@
 ---
 title:  "What is Webpack Externals?"
-date: "2020-05-06T16:51:00.000Z"
+date: "2020-07-21T16:51:00.000Z"
 layout: post
-draft: true
+draft: false
 path: "/posts/what-is-webpack-externals/"
 category: "Tutorials"
 tags:
   - "JavaScript"
   - "Tutorial"
+  - "Micro-frontends"
+  - "Webpack"
 description: "Webpack externals is a way of loading in dependencies that are not installed in the node_modules folder. There are a few key points to grasp about this concept to use it properly."
 ---
 
-Webpack has a naming problem, just like the rest of the software world. One tricky name in the Webpack world is "Webpack externals". Webpack externals are simply variables that are declared outside of Webpack (e.g. imported in a script tag in an HTML document) and then made available for use within a Webpack bundle.
+Webpack has a naming problem, just like the rest of the (software) world. One tricky name in the Webpack world is "Webpack externals". Webpack externals are simply variables that are declared outside of Webpack (e.g. imported in a script tag in an HTML document) and then made available for use within a Webpack bundle.
 
 In practice, this means a Webpack application can use a dependency without actually having it included in the Webpack bundle. Instead it would be imported some other way (e.g. a script tag referencing a CDN) and Webpack will assume that dependency will be accessible as a global variable. Webpack externals basically performs a mapping from that global variable to some key you specify in config.
 
