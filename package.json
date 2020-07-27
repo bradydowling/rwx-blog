@@ -5,7 +5,7 @@
   "main": "n/a",
   "scripts": {
     "develop": "gatsby develop",
-    "build": "node -p 'process.env' && gatsby build",
+    "build": "YOUTUBE_KEY=$YOUTUBE_KEY && gatsby build",
     "include-env": "node -p 'process.env'",
     "clean:public": "rm -rf public",
     "clean": "npm run clean:public",
