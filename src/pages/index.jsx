@@ -13,6 +13,8 @@ class IndexRoute extends React.Component {
     posts.forEach(post => {
       items.push(<Post data={post} key={post.node.fields.slug} />)
     })
+    const vids = this.props.data.allYoutubeVideo.edges
+    console.log(vids)
 
     return (
       <Layout>
@@ -70,6 +72,19 @@ export const pageQuery = graphql`
             category
             description
           }
+        }
+      }
+    }
+    allYoutubeVideo {
+      edges {
+        node {
+          id
+          title
+          description
+          videoId
+          publishedAt
+          privacyStatus
+          channelTitle
         }
       }
     }
