@@ -5,7 +5,7 @@
   "main": "n/a",
   "scripts": {
     "develop": "gatsby develop",
-    "build": "YOUTUBE_API=$YOUTUBE_API gatsby build",
+    "build": "YOUTUBE_API=$YOUTUBE_API node -p 'process.env' && gatsby build",
     "clean:public": "rm -rf public",
     "clean": "npm run clean:public",
     "lint": "./node_modules/.bin/eslint --cache --ext .js,.jsx --ignore-pattern public .",
