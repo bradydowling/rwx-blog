@@ -36,14 +36,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-source-youtube-v2',
-      options: {
-        channelId: ['UCPGv2tVqEt6iBFnnMTjnRBA'],
-        apiKey: process.env.YOUTUBE_KEY,
-        maxVideos: 100,
-      },
-    },
-    {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/pages`,
