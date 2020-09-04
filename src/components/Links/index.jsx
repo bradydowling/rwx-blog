@@ -41,7 +41,7 @@ class Links extends React.Component {
           {links.youtube &&
             <li className="links__list-item">
               <a
-                href={`https://www.youtube.com/channel/${links.youtube}`}
+                href={`https://www.youtube.com/c/${links.youtube}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
