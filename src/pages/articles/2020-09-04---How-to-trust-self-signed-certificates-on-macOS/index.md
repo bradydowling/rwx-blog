@@ -27,6 +27,8 @@ To make sure your system and browsers will accept your certificate as valid, you
 
 Here's a video that might also be helpful:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TGrX8XgSuZ4" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/TGrX8XgSuZ4" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
 
 Now if you're running anything on localhost that's using your self-signed certificate, you can open that in any browser and you should see in the address bar that this is now a trusted site!
