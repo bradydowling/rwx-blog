@@ -3,10 +3,12 @@ title:  "How to trust self-signed certificates on macOS"
 date: "2020-09-04T11:51:01.267Z"
 layout: post
 draft: false
-path: "/posts/how-to-trust-self-signed-certificates-on-macos/"
+path: "/posts/trust-self-signed-certificates-macos/"
 category: "Tutorial"
 tags:
 - "Tutorial"
+- "SSL"
+- "HTTPS"
 description: "A quick walkthrough on getting macOS to trust certificates that you or someone else you trust has created"
 ---
 
