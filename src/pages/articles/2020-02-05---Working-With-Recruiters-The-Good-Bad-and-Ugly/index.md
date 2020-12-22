@@ -33,7 +33,7 @@ Recruiters are infamous for being pesky, annoying, salesy, etc. Well for me, thi
 
 I've seen blog posts about working with several different recruiting agencies and somehow using that to your advantage but I couldn't imagine the coordination headache that would be. One agency was more than enough for me in this regard.
 
-The agency recruiter would also ask about other companies I was interviewing outside of their agency. This was often and annoying. It seems they're fealful of not placing you at a job so they're always checking in on other opportunities you have and if you have final round interviews with other companies.
+The agency recruiter would also ask about other companies I was interviewing outside of their agency. This was often and annoying. It seems they're fearful of not placing you at a job so they're always checking in on other opportunities you have and if you have final round interviews with other companies.
 
 # Recommendations
 
