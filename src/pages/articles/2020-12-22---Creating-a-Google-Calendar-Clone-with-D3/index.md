@@ -126,7 +126,7 @@ svg
 
 Again, we've placed our axis within a `g` element and appended that to our `svg` element. Checkout our browser devtools now to see the DOM structure.
 
-Now that we have our axis and gridlines showing up we can use the data object we created to add in some calendar events. As part of this, we use the [`join`](https://observablehq.com/@thetylerwolf/day-18-join-enter-update-exit) method to add `g` elements to our `svg` element. This means we'll select all existing `g` elements (none exist yet) and join a new `g` element for each `data` item that exists. So this is the code we add to make that happen:
+Now that we have our axis and gridlines showing up we can use the data object we created to add in some calendar events. As part of this, we use the [`join`](https://observablehq.com/@d3/selection-join) method to add `g` elements to our `svg` element. This means we'll select all existing `g` elements (none exist yet) and join a new `g` element for each `data` item that exists. So this is the code we add to make that happen:
 
 ```
   const barGroups = svg
