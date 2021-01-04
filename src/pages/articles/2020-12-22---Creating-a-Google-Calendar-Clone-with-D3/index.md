@@ -17,15 +17,45 @@ For simplicity, we'll create a directory then scaffold our app using Snowpack. F
 ```
 mkdir calendar-clone
 cd calendar-clone
+npm init -y
 npm install --save-dev snowpack
-npx snowpack
 ```
 
-One of the most common pieces of using D3 is pulling in and parsing data. For this tutorial, we can just make our own JSON object, which means we bypass the data manipulation that would take place in most data visualization projects. So let's start by creating an `index.js` file (where we'll be doing the rest of our work), importing D3, and declaring some calendar events.
+Before we get anything running let's create an HTML file with the following contents.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Starter Snowpack App" />
+    <title>D3 Calendar App</title>
+  </head>
+  <body>
+    <h1>D3 Calendar</h1>
+    <script type="module" src="/index.js"></script>
+  </body>
+</html>
+```
+
+And create an `index.js` file, where we'll be doing the rest of our work. Add a console log statement just to make sure it's running well.
+
+```js
+console.log("Let's build a calendar app!");
+```
+
+And now we can start up our dev server. Run the following command from your terminal:
 
 ```
-// index.js
+npx snowpack dev
+```
 
+This will start your dev server and open a browser window where it's running. Open the console in your browser devtools, looking for that log we added above. Now let's start building our app!
+
+One of the most common pieces of using D3 is pulling in and parsing data. For this tutorial, we can just make our own JSON object, which means we bypass the data manipulation that would take place in most data visualization projects. So let's clear out the previous test code we added to our `index.js` file and start fresh (from here on our all code will be added to this file). Now, we'll import D3 and declare some calendar events:
+
+```js
 import * as d3 from 'd3';
 
 const calendarEvents = [
@@ -57,7 +87,7 @@ const dates = [
 
 We can declare a few variables that are typically part of D3 projects:
 
-```
+```js
 const margin = { top: 30, right: 30, bottom: 30, left: 50 }; // Gives space for axes and other margins
 const height = 1500;
 const width = 900;
@@ -67,7 +97,7 @@ const nowColor = '#EA4335';
 
 Now let's get something to display on the page so we can see that stuff is working.
 
-```
+```js
 const svg = d3
     .create('svg')
     .attr('width', width)
@@ -80,7 +110,7 @@ Now let's add in our scale functions, which are often called `x` or `xScale` and
 
 A lot of times you'd put time on the x-scale, but for our calendar application time is plotted vertically so we'll make it on the y-scale. And for simplicity, we'll just build a single-day calendar so we don't actually need an x-scale.
 
-```
+```js
 const yScale = d3
   .scaleTime()
   .domain([d3.min(dates), d3.max(dates)])
@@ -91,7 +121,7 @@ Notice that we pass in our _data_ range to `domain` and our _pixel_ range to `ra
 
 We'll use the scale mapping we just created later on but first, let's draw the actual y-axis itself:
 
-```
+```js
 const yAxis = d3
   .axisLeft()
   .ticks(24)
@@ -109,7 +139,7 @@ We created an axis, specified that it will be on the left side of our chart, spe
 
 And since it's a calendar, let's add some grid lines. For our `yAxis`, we set the ticks to be `24`, one for each hour of the day. We'll do the same with our grid lines, which will now use `axisRight` so the "ticks" show on the right side:
 
-```
+```js
 const gridLines = d3
   .axisRight()
   .ticks(24)
@@ -128,7 +158,7 @@ Again, we've placed our axis within a `g` element and appended that to our `svg`
 
 Now that we have our axis and gridlines showing up we can use the data object we created to add in some calendar events. As part of this, we use the [`join`](https://observablehq.com/@d3/selection-join) method to add `g` elements to our `svg` element. This means we'll select all existing `g` elements (none exist yet) and join a new `g` element for each `data` item that exists. So this is the code we add to make that happen:
 
-```
+```js
   const barGroups = svg
     .selectAll('g')
     .data(data)
@@ -139,7 +169,7 @@ Looking at the browser devtools you can now see that we've got 3 (the length of 
 
 Now that we have those `g` items and they each have a calendar event bound to them, we can append other elements to them. Let's do the `rect` elements now to show as colored rectangles for our calendar events:
 
-```
+```js
   barGroups
     .append('rect')
     .attr('fill', d => d.background)
@@ -161,7 +191,7 @@ We do some math and calculations to figure out where the rectangle should start 
 
 Using a similar approach, let's add in a line for tracking the current time, so users can see where "now" is on the calendar.
 
-```
+```js
   barGroups
     .append('rect')
     .attr('fill', nowColor)
@@ -175,7 +205,7 @@ Note that we've again used the `margin` variable we declared at the start to mak
 
 Then let's add some labels for the events we have on our calendar. We'll again use the `append` method, but this time we'll add a `text` element to our `barGroups` variable:
 
-```
+```js
   barGroups
     .append('text')
     .attr('font-family', 'Roboto')
@@ -191,7 +221,7 @@ Then let's add some labels for the events we have on our calendar. We'll again u
 
 And lastly, we can style the first and last ticks to just show as midnight, with the intention of displaying the actual date somewhere else in the app later.
 
-```
+```js
   svg
     .selectAll('g.tick')
     .filter((d, i, ticks) => i === 0 || i === ticks.length - 1)
