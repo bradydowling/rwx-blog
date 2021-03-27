@@ -10,8 +10,6 @@ I started this blog and [my YouTube channel](https://www.youtube.com/channel/UCP
 
 # My Equipment
 
-_Note: This section contains affiliate links. I appreciate if you use them but if you'd prefer not to then just copy/paste the item title into Amazon or Google._
-
 ## At Home
 
 - Keyboard (_never_ have to charge it): [Logitech K750 Wireless Solar Keyboard for Mac](https://amzn.to/2RyymwH)
