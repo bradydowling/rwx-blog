@@ -22,6 +22,10 @@ module.exports = {
         path: '/about/',
       },
       {
+        label: 'Browser Devtools Workshop',
+        path: '/browser-devtools-workshop/',
+      },
+      {
         label: 'Contact me',
         path: '/contact/',
       },
