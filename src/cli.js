@@ -16,9 +16,9 @@ const getPostTemplate = options => {
 `---
 title:  "${options.title}"
 date: "${(new Date()).toISOString()}"
-layout: post
+template: "post"
 draft: true
-path: "/posts/${options.path}/"
+slug: "/posts/${options.path}/"
 category: "${options.category}"
 tags:
 - "Tutorial"
