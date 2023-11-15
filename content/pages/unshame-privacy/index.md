@@ -4,8 +4,6 @@ template: "page"
 
 ---
 
-# Unshame App Privacy Policy
-
 *Effective Date: November 15, 2023*
 
 **1. Introduction**
