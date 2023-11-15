@@ -1,6 +1,4 @@
-[![GitHub release](https://img.shields.io/github/release/GatsbyCentral/gatsby-v2-starter-lumen.svg)](https://github.com/GatsbyCentral/gatsby-v2-starter-lumen) [![Code Climate](https://img.shields.io/codeclimate/maintainability/GatsbyCentral/gatsby-v2-starter-lumen.svg)](https://codeclimate.com/github/GatsbyCentral/gatsby-v2-starter-lumen) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/GatsbyCentral/gatsby-v2-starter-lumen/master/LICENSE) [![Twitter](https://img.shields.io/twitter/url/https/github.com/GatsbyCentral/gatsby-v2-starter-lumen.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https://github.com/GatsbyCentral/gatsby-v2-starter-lumen)
-
-# Lumen
+# Lumen (blog theme)
 
 Lumen is a minimal, lightweight and mobile-first starter for creating blogs uses
 [Gatsby](https://github.com/gatsbyjs/gatsby).
@@ -78,32 +76,3 @@ Netlify CMS can run in any frontend web environment, but the quickest way to try
 <a href="https://app.netlify.com/start/deploy?repository=https://github.com/GatsbyCentral/gatsby-v2-starter-lumen" target="_blank"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
 
 After clicking that button, you’ll authenticate with GitHub and choose a repository name. Netlify will then automatically create a repository in your GitHub account with a copy of the files from the template. Next, it will build and deploy the new site on Netlify, bringing you to the site dashboard when the build is complete. Next, you’ll need to set up Netlify’s Identity service to authorize users to log in to the CMS.
-
-## Screenshot
-
-![](http://i.imgur.com/422y5GV.png)
-
-## Ports
-[Statinamic port](https://github.com/thangngoc89/statinamic-theme-lumen) by [Khoa Nguyen](https://github.com/thangngoc89)
-
-## Contributors
-* https://github.com/alxshelepenok
-* https://github.com/abisz
-* https://github.com/mariolopjr
-* https://github.com/ihororlovskyi
-* https://github.com/marcelabomfim
-* https://github.com/vinnymac
-* https://github.com/axelclark
-* https://github.com/ybbarng
-* https://github.com/marktani
-* https://github.com/concreted
-* https://github.com/charandas
-* https://github.com/zollillo
-* https://github.com/codejet
-* https://github.com/reed-jones
-* https://github.com/swapnilmishra
-* https://github.com/vvasiloud
-* https://github.com/wichopy
-* https://github.com/chmac
-* https://github.com/YoruNoHikage
-* https://github.com/MartinRosenberg
