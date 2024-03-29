@@ -2,7 +2,7 @@
 title:  "Creating a Google Calendar Clone with D3"
 date: "2020-12-22T20:03:48.744Z"
 template: "post"
-draft: true
+draft: false
 slug: "/posts/google-calendar-clone-d3/"
 category: "Tutorial"
 tags:

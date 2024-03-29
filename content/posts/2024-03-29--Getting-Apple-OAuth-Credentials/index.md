@@ -2,7 +2,7 @@
 title:  "How to Get Apple OAuth Credentials for Sign in with Apple"
 date: "2020-12-22T20:03:48.744Z"
 template: "post"
-draft: true
+draft: false
 slug: "/posts/getting-apple-oauth-credentials/"
 category: "Tutorial"
 tags:
