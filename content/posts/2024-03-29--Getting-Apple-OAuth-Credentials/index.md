@@ -1,6 +1,6 @@
 ---
 title:  "How to Get Apple OAuth Credentials for Sign in with Apple"
-date: "2020-12-22T20:03:48.744Z"
+date: "2024-03-29T20:03:48.744Z"
 template: "post"
 draft: false
 slug: "/posts/getting-apple-oauth-credentials/"
