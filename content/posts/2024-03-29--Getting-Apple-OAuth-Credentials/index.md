@@ -10,7 +10,7 @@ tags:
 description: "A guide to getting Apple OAuth credentials for Sign in with Apple, helpful for React Native, Expo, and Supabase."
 ---
 
-This guide is to help you get the necessary credentials to use Apple's Sign in with Apple feature in your app. This is useful for React Native, Expo, and Supabase users. This will walk you through how to fill out the form on Supabase at https://supabase.com/dashboard/project/<yourprojectid>/auth/providers under Apple.
+This guide is to help you get the necessary credentials to use Apple's Sign in with Apple feature in your app. This is useful for React Native, Expo, and Supabase users. This will walk you through how to fill out the form on Supabase at https://supabase.com/dashboard/project/yourprojectid/auth/providers under Apple.
 
 If you have any issues with this, you'll also want to consult [this Supabase help page](https://supabase.com/docs/guides/auth/social-login/auth-apple#generate-a-client_secret).
 
