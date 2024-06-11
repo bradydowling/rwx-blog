@@ -4,8 +4,6 @@ template: "page"
 socialImage: "./notebook.jpg"
 ---
 
-# My Projects
-
 ## Neurture
 
 Neurture provides research-based content to users to help them quit unwanted habits or addictive behaviors. It uses AI chat to provide support to users and to route them to certain resources like meditations, courses, affirmations, and journal prompts.
