@@ -17,7 +17,11 @@
       "path": "/pages/about"
     },
     {
-      "label": "Neurture: Learn your brain, change unwanted behaviors and addictive habits",
+      "label": "My Projects",
+      "path": "/pages/work"
+    },
+    {
+      "label": "Neurture homepage",
       "path": "https://neurtureapp.com"
     },
     {
@@ -42,9 +46,7 @@
       "twitter": "rwxdev",
       "github": "bradydowling",
       "youtube": "readwriteexercise",
-      "linkedin": "bradydowling",
-      "ios": "https://apps.apple.com/app/id6467687675",
-      "android": "https://play.google.com/store/apps/details?id=com.bradydowling.unshame"
+      "linkedin": "bradydowling"
     }
   }
 }
