@@ -4,10 +4,6 @@ template: "page"
 socialImage: "./notebook.jpg"
 ---
 
-I am a professional software engineer with a focus on UI, frontend, and JavaScript. I love family, basketball, meeting new people, and learning new things.
-
-I started this blog and [my YouTube channel](https://www.youtube.com/channel/UCPGv2tVqEt6iBFnnMTjnRBA) as a way of improving how I learn and sharing my learnings with others.
-
 # My Projects
 
 ## Neurture
