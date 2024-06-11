@@ -17,11 +17,19 @@
       "path": "/pages/about"
     },
     {
-      "label": "Browser Devtools Workshop",
-      "path": "/pages/browser-devtools-workshop"
+      "label": "Neurture: Learn your brain, change unwanted behaviors and addictive habits",
+      "path": "https://neurtureapp.com"
     },
     {
-      "label": "Contact me",
+      "label": "Neurture for iPhone",
+      "path": "https://apps.apple.com/app/id6467687675"
+    },
+    {
+      "label": "Neurture for Android",
+      "path": "https://play.google.com/store/apps/details?id=com.bradydowling.unshame"
+    },
+    {
+      "label": "Contact",
       "path": "/pages/contact"
     }
   ],
@@ -33,7 +41,10 @@
       "email": "readwriteexercise@gmail.com",
       "twitter": "rwxdev",
       "github": "bradydowling",
-      "youtube": "readwriteexercise"
+      "youtube": "readwriteexercise",
+      "linkedin": "bradydowling",
+      "ios": "https://apps.apple.com/app/id6467687675",
+      "android": "https://play.google.com/store/apps/details?id=com.bradydowling.unshame"
     }
   }
 }
