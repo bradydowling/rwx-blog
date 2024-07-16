@@ -3,11 +3,19 @@ title: "Consulting"
 template: "page"
 ---
 
-I try to avoid social media but you can probably still find accounts that exist for me if that's what you're into. If you want me to see your attempts at getting a hold of me, your best bet is emailing my first name and last name at gmail dot com. You can also email readwriteexercise@gmail.com.
+## Consulting Services
+
+- Mobile app development
+- Web app development
+- API development
+- Data visualization
+- Tutorials and demo videos
+- Product videos
+- AI integrations (chatbots, image recognition, etc.)
+
+Book a time to chat with me here: [Brady's Calender](https://calendar.app.google/Zt5hQKmmDD4u113r5)
 
 ## What People Say
-
-![](jess-mcintire.jpg)
 
 ### Jesse McIntire
 
@@ -17,7 +25,7 @@ _Senior Software Engineer_
 
 ![](https://avatars.githubusercontent.com/u/573531)
 
-### Mutahhir Ali Hayat
+### Mutahhir Hayat
 
 _Staff Software Engineer_
 

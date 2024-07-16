@@ -21,16 +21,12 @@
       "path": "/pages/work"
     },
     {
+      "label": "Consulting",
+      "path": "/pages/consulting"
+    },
+    {
       "label": "Neurture homepage",
       "path": "https://neurtureapp.com"
-    },
-    {
-      "label": "Neurture for iPhone",
-      "path": "https://apps.apple.com/app/id6467687675"
-    },
-    {
-      "label": "Neurture for Android",
-      "path": "https://play.google.com/store/apps/details?id=com.bradydowling.unshame"
     },
     {
       "label": "Contact",
