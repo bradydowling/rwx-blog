@@ -197,8 +197,22 @@ Ensure to replace `<WEB_CLIENT_ID_FROM_GOOGLE_CONSOLE>` with the correct value f
 
 2. **Test Google Sign-In using your development build.**
 
-### Conclusion
+   - Run your app on an Android emulator or physical device.
+   - Click the Google Sign-In button and verify that you can sign in successfully.
 
-Once confirmed to be working, you can compile your steps and findings into a detailed blog post to guide others.
+### Common Issues and Troubleshooting
 
-Feel free to test these steps and let me know if you encounter any issues. I'll be here to help you troubleshoot.
+1. **Error: DEVELOPER_ERROR**
+
+   This error often indicates a problem with the SHA-1 certificate fingerprint or the OAuth client configuration.
+
+   - Ensure that you are using the correct SHA-1 fingerprint. If you are using Expo managed credentials, you can retrieve the correct SHA-1 by running:
+     ```sh
+     eas credentials
+     ```
+   - Make sure to add both the debug and release SHA-1 fingerprints to the Google Cloud Console.
+   - Use the Web client ID, not the Android client ID, in your `GoogleSignin.configure` call.
+
+2. **Error: Must specify an idToken or an accessToken**
+
+   - This usually means that the wrong client ID is being used. Ensure that you are using the Web client ID from the Google Cloud Console.
