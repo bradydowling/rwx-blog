@@ -43,17 +43,29 @@ Some guides above work for Firebase but I'm using Supabase 😬 Hopefully this h
    - Add scopes if necessary, which by default include "email" and "profile".
    - Save and continue.
 
-3. **Add Android OAuth Client ID:**
+3. **Add OAuth Client ID:**
+
+   - Navigate to `APIs & Services > Credentials`.
+   - Click `Create Credentials`, then choose `OAuth client ID`.
+   - Select `Application type` as `Web application`.
+   - Enter your application name.
+   - Under "Authorized redirect URIs," add:
+     ```
+     https://{YOUR_PROJECT_REFERENCE_ID}.supabase.co/auth/v1/callback
+     ```
+   - Click `Create`.
+
+4. **Add Android OAuth Client ID:**
 
    - Navigate to `APIs & Services > Credentials`.
    - Click `Create Credentials`, then choose `OAuth client ID`.
    - Select `Application type` as `Android`.
 
-4. **Get the Package Name:**
+5. **Get the Package Name:**
 
    - Use the package name from your `app.json`/`app.config.js`/`app.config.ts` file (e.g., `com.myorg.myapp`).
 
-5. **Get the SHA-1 Certificate Fingerprint:**
+6. **Get the SHA-1 Certificate Fingerprint:**
 
    - Get the SHA-1 certificate fingerprint by running `eas credentials` from the project root. Select Android as the platform, then select your build profile.
    - Run this command to get the fingerprint using Expo's command-line interface:
@@ -67,7 +79,8 @@ Some guides above work for Firebase but I'm using Supabase 😬 Hopefully this h
    - Give your keystore a name (e.g., `preview` or `production`) or use the randomly generated one
    - Copy your SHA-1 fingerprint
 
-6. **Enter the SHA-1 and Package Name:**
+7. **Enter the SHA-1 and Package Name:**
+
    - Paste the SHA-1 fingerprint and package name into the appropriate fields in the Google Cloud Console.
    - Click `Create`.
 
