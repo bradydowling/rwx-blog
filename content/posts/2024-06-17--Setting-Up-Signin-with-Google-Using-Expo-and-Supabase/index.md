@@ -31,33 +31,40 @@ Some guides above work for Firebase but I'm using Supabase 😬 Hopefully this h
    - Go to the [Google Cloud Console](https://console.cloud.google.com/).
    - Create a new project or select an existing one.
 
-2. **Add Android OAuth Client ID:**
+2. **Configure the OAuth Consent Screen:**
+
+   - In the Google Cloud Console, navigate to `APIs & Services > OAuth consent screen`.
+   - Select your user type and click `Create`.
+   - Fill out the necessary information, such as App name, User support email, and Developer contact information.
+   - Add scopes if necessary, which by default include "email" and "profile".
+   - Save and continue.
+
+3. **Add Android OAuth Client ID:**
 
    - Navigate to `APIs & Services > Credentials`.
    - Click `Create Credentials`, then choose `OAuth client ID`.
    - Select `Application type` as `Android`.
 
-3. **Get the Package Name:**
+4. **Get the Package Name:**
 
    - Use the package name from your `app.json`/`app.config.js`/`app.config.ts` file (e.g., `com.myorg.myapp`).
 
-4. **Get the SHA-1 Certificate Fingerprint:**
+5. **Get the SHA-1 Certificate Fingerprint:**
 
+   - Get the SHA-1 certificate fingerprint by running `eas credentials` from the project root. Select Android as the platform, then select your build profile.
    - Run this command to get the fingerprint using Expo's command-line interface:
-
      ```sh
-     npx eas-cli credentials
+     eas credentials
      ```
-
    - Choose Android
    - Choose the profile to configure (for me this was `preview`)
    - Choose **Keystore: Manage everything needed to build your project**
    - Choose **Set up a new keystore**
-   - Give your keystore a name (e.g. `preview`) or use the randomly generated one
+   - Give your keystore a name (e.g., `preview` or `production`) or use the randomly generated one
    - Copy your SHA-1 fingerprint
 
-5. **Enter the SHA-1 and Package Name:**
-   - Paste the SHA-1 fingerprint and package name into the appropriate fields.
+6. **Enter the SHA-1 and Package Name:**
+   - Paste the SHA-1 fingerprint and package name into the appropriate fields in the Google Cloud Console.
    - Click `Create`.
 
 Here’s how to fill out the form:
@@ -76,83 +83,63 @@ Here’s how to fill out the form:
 ### Step 3: Update Your Expo App
 
 1. **Install Expo Google Sign-In:**
-
-   Add necessary dependencies:
-
-   ```sh
-   expo install expo-auth-session expo-google-auth-session
-   ```
-
-2. **Modify the `app.json`:**
-
-   - Ensure you’ve specified the correct `googleServicesFile`.
-
-     ```json
-     {
-       "expo": {
-         "android": {
-           "googleServicesFile": "./path-to-your/google-services.json"
-         }
-       }
-     }
+   - Add necessary dependencies:
+     ```sh
+     expo install expo-auth-session expo-google-auth-session
      ```
 
-3. **Update Code To Use Google Sign-In:**
+**Note:** Since we're using Supabase and Expo, you don't need to modify the `app.json` or use a `google-services.json` file. This is a step you'll find in other guides that use Firebase but you can skip that.
 
-   Use the following in your React Native component:
+2. **Update Code To Use Google Sign-In:**
 
-   ```js
-   import * as Google from "expo-auth-session/providers/google";
-   import { useAuthRequest } from "expo-auth-session";
-   import { supabase } from "../yourSupabaseClient";
+   - Use the following in your React Native component:
 
-   const SignIn = () => {
-     const [request, response, promptAsync] = Google.useAuthRequest({
-       expoClientId: "<YOUR-EXPO-CLIENT-ID>",
-       androidClientId: "<YOUR-ANDROID-CLIENT-ID>",
-       iosClientId: "<YOUR-IOS-CLIENT-ID>",
-     });
+     ```js
+     import * as Google from "expo-auth-session/providers/google";
+     import { useAuthRequest } from "expo-auth-session";
+     import { supabase } from "../yourSupabaseClient";
 
-     React.useEffect(() => {
-       if (response?.type === "success") {
-         const { authentication } = response;
-         // Use Supabase Auth with Google Token
-         supabase.auth
-           .signIn({
-             provider: "google",
-             token: authentication.accessToken,
-           })
-           .then(() => {
-             // Handle success
-           })
-           .catch((error) => {
-             // Handle error
-           });
-       }
-     }, [response]);
+     const SignIn = () => {
+       const [request, response, promptAsync] = Google.useAuthRequest({
+         expoClientId: "<YOUR-EXPO-CLIENT-ID>",
+         androidClientId: "<YOUR-ANDROID-CLIENT-ID>",
+         iosClientId: "<YOUR-IOS-CLIENT-ID>",
+       });
 
-     return (
-       <Button
-         title="Sign In with Google"
-         onPress={() => {
-           promptAsync();
-         }}
-       />
-     );
-   };
+       React.useEffect(() => {
+         if (response?.type === "success") {
+           const { authentication } = response;
+           // Use Supabase Auth with Google Token
+           supabase.auth
+             .signIn({
+               provider: "google",
+               token: authentication.accessToken,
+             })
+             .then(() => {
+               // Handle success
+             })
+             .catch((error) => {
+               // Handle error
+             });
+         }
+       }, [response]);
 
-   export default SignIn;
-   ```
+       return (
+         <Button
+           title="Sign In with Google"
+           onPress={() => {
+             promptAsync();
+           }}
+         />
+       );
+     };
+
+     export default SignIn;
+     ```
 
 Ensure to replace `"<YOUR-EXPO-CLIENT-ID>"`, `"<YOUR-ANDROID-CLIENT-ID>"`, and `"<YOUR-IOS-CLIENT-ID>"` with the correct values from your Google Cloud console.
 
-### Step 4: Create a Separate Google Services JSON for Staging
-
-1. **Create a new project in Google Cloud for staging.**
-2. **Repeat step 1 to create another `google-services.json` file for your staging app using the staging package name.**
-3. **Add the staging `google-services.json` file similarly in your `app.json`.**
-
-### Step 5: Build and Test
+### Step 4: Build and Test
 
 1. **Build your app:**
 
