@@ -10,7 +10,7 @@ tags:
 description: "A guide to getting Google OAuth credentials for Sign in with Google, helpful for React Native, Expo, and Supabase."
 ---
 
-After _almost_ getting Google Signin working a few months ago, I went back at it now to give Android users a smoother onboarding experience in [Neurture](https://neurtureapp.com). As soon as I thought I got it working, I hit [this error](https://github.com/expo/expo-cli/issues/1450) and realized I needed a separate `google-services.json` file for my preview build.
+After _almost_ getting Google Signin working a few months ago, I went back at it to give Android users a smoother onboarding experience in [Neurture](https://neurtureapp.com). As soon as I thought I got it working, I hit [this error](https://github.com/expo/expo-cli/issues/1450) and _thought_ I needed a separate `google-services.json` file for my preview build (I didn't 😅).
 
 This guide is a result of me not finding a single point of reference for setting up Google Sign-In with Expo and Supabase. This will walk you through how to set up Google Sign-In with Expo and Supabase. It takes some inspiration from the following resources, which are each helpful but not comprehensive on their own:
 
@@ -23,6 +23,10 @@ This guide is a result of me not finding a single point of reference for setting
 - [Google Signin Using Supabase and React Native Expo](https://dev.to/fedorish/google-sign-in-using-supabase-and-react-native-expo-14jf)
 
 Some guides above work for Firebase but I'm using Supabase 😬 Hopefully this helps you!
+
+**Note:** Supabase doesn't currently support signing in with Google on iOS so this guide is for Android only. There's a YouTube comment from Supabase that you can see below that references [a Github issue](https://github.com/openid/AppAuth-iOS/pull/788) which has since been fixed. Perhaps Supabase will implement a fix for this in the future.
+
+![](Screenshot%202024-07-17%20at%209.31.47%20AM.png)
 
 ### Step 1: Set Up Your Google Cloud Project
 
@@ -85,59 +89,90 @@ Here’s how to fill out the form:
 1. **Install Expo Google Sign-In:**
    - Add necessary dependencies:
      ```sh
-     expo install expo-auth-session expo-google-auth-session
+     npx expo install @react-native-google-signin/google-signin
      ```
 
 **Note:** Since we're using Supabase and Expo, you don't need to modify the `app.json` or use a `google-services.json` file. This is a step you'll find in other guides that use Firebase but you can skip that.
 
 2. **Update Code To Use Google Sign-In:**
 
-   - Use the following in your React Native component:
+   - Use the following in your React Native component (for me this is an `Auth` screen):
 
-     ```js
-     import * as Google from "expo-auth-session/providers/google";
-     import { useAuthRequest } from "expo-auth-session";
-     import { supabase } from "../yourSupabaseClient";
+```js
+import {
+  GoogleSignin,
+  GoogleSigninButton,
+  statusCodes,
+} from "@react-native-google-signin/google-signin";
 
-     const SignIn = () => {
-       const [request, response, promptAsync] = Google.useAuthRequest({
-         expoClientId: "<YOUR-EXPO-CLIENT-ID>",
-         androidClientId: "<YOUR-ANDROID-CLIENT-ID>",
-         iosClientId: "<YOUR-IOS-CLIENT-ID>",
-       });
+import { supabase } from "../yourSupabaseClient";
 
-       React.useEffect(() => {
-         if (response?.type === "success") {
-           const { authentication } = response;
-           // Use Supabase Auth with Google Token
-           supabase.auth
-             .signIn({
-               provider: "google",
-               token: authentication.accessToken,
-             })
-             .then(() => {
-               // Handle success
-             })
-             .catch((error) => {
-               // Handle error
-             });
-         }
-       }, [response]);
+GoogleSignin.configure({
+  webClientId:
+      <WEB_CLIENT_ID_FROM_GOOGLE_CONSOLE>,
+});
 
-       return (
-         <Button
-           title="Sign In with Google"
-           onPress={() => {
-             promptAsync();
-           }}
-         />
-       );
-     };
+const LoginComponent = () => {
+  const onGoogleLogin = async () => {
+    setLoading(true);
 
-     export default SignIn;
-     ```
+    try {
+        await GoogleSignin.hasPlayServices();
+        const userInfo = await GoogleSignin.signIn();
 
-Ensure to replace `"<YOUR-EXPO-CLIENT-ID>"`, `"<YOUR-ANDROID-CLIENT-ID>"`, and `"<YOUR-IOS-CLIENT-ID>"` with the correct values from your Google Cloud console.
+        const { error, data } = await supabase.auth.signInWithIdToken({
+            provider: "google",
+            token: userInfo.idToken,
+        });
+
+        if (!data.user) {
+            Alert.alert("Error signing in with Google");
+            return;
+        }
+
+        if (error) {
+            throw error;
+        }
+
+        console.log("Signed in!"); // This is where the user is signed in so do whatever you would like here
+    } catch (error) {
+        if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+            // user cancelled the login flow
+        } else if (error.code === statusCodes.IN_PROGRESS) {
+            // operation (e.g. sign in) is in progress already
+        } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+            // play services not available or outdated
+        } else {
+            // some other error happened
+        }
+    } finally {
+        setLoading(false);
+    }
+};
+
+  return (
+    <View>
+    {Platform.OS === "android" ? (
+        <>
+            <GoogleSigninButton
+                onPress={onGoogleLogin}
+                size={GoogleSigninButton.Size.Wide}
+                color={
+                    GoogleSigninButton.Color.Dark
+                }
+                disabled={loading}
+                style={[styles.button]}
+            />
+        </>
+    ) : null}
+    </View>
+  );
+};
+
+export default SignIn;
+```
+
+Ensure to replace `<WEB_CLIENT_ID_FROM_GOOGLE_CONSOLE>` with the correct value from your Google Cloud console.
 
 ### Step 4: Build and Test
 
