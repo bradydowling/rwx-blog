@@ -21,6 +21,7 @@ This guide is a result of me not finding a single point of reference for setting
 - [react-native-google-signin official docs](https://react-native-google-signin.github.io/docs/setting-up/get-config-file)
 - [Stack Overflow question about getting the Expo keystore for Android](https://stackoverflow.com/questions/61119983/how-do-i-get-sha-1-certificate-in-expo)
 - [Google Signin Using Supabase and React Native Expo](https://dev.to/fedorish/google-sign-in-using-supabase-and-react-native-expo-14jf)
+- [DEVELOPER_ERROR with Google Sign-In](https://github.com/react-native-google-signin/google-signin/issues/1192)
 
 Some guides above work for Firebase but I'm using Supabase 😬 Hopefully this helps you!
 
