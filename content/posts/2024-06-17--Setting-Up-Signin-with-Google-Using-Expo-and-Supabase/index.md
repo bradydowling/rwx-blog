@@ -34,63 +34,64 @@ Some guides above work for Firebase but I'm using Supabase 😬 Hopefully this h
 1. **Create a Google Cloud Project:**
 
    - Go to the [Google Cloud Console](https://console.cloud.google.com/).
-   - Create a new project or select an existing one.
+   - Click on the Select a project dropdown at the top of the page.
+   - Click on New Project.
+   - Enter the project name (e.g., `tutorialGoogle`) and click Create.
+   - Once created, select your newly created project from the project dropdown.
 
-2. **Configure the OAuth Consent Screen:**
+2. **Enable Required APIs:**
 
-   - In the Google Cloud Console, navigate to `APIs & Services > OAuth consent screen`.
-   - Select your user type and click `Create`.
+   - In the left-hand menu, navigate to `APIs & Services > Library`.
+   - Search for `Google Identity Toolkit API`.
+   - Click on it and then click Enable.
+   - Repeat the steps to enable `OAuth 2.0` (if not already enabled).
+
+3. **Configure the OAuth Consent Screen:**
+
+   - In the left-hand menu, navigate to `APIs & Services > OAuth consent screen`.
+   - Choose `External` for the user type and click Create.
    - Fill out the necessary information, such as App name, User support email, and Developer contact information.
    - Add scopes if necessary, which by default include "email" and "profile".
-   - Save and continue.
+   - Add Test users if required (under the Test users tab).
+   - Save and continue through the rest of the setup steps.
 
-3. **Add OAuth Client ID:**
+4. **Create OAuth 2.0 Client IDs:**
 
-   - Navigate to `APIs & Services > Credentials`.
-   - Click `Create Credentials`, then choose `OAuth client ID`.
-   - Select `Application type` as `Web application`.
-   - Enter your application name.
+   **For Web:**
+
+   - In the left-hand menu, navigate to `APIs & Services > Credentials`.
+   - Click on Create Credentials and choose `OAuth Client ID`.
+   - Select `Web application` as the application type.
    - Under "Authorized redirect URIs," add:
      ```
      https://{YOUR_PROJECT_REFERENCE_ID}.supabase.co/auth/v1/callback
      ```
-   - Click `Create`.
+   - Click Create and copy the generated Client ID.
 
-4. **Add Android OAuth Client ID:**
+   **For iOS:**
 
-   - Navigate to `APIs & Services > Credentials`.
-   - Click `Create Credentials`, then choose `OAuth client ID`.
-   - Select `Application type` as `Android`.
+   - _Note:_ Supabase doesn't currently support signing in with Google on iOS so this step is purely for reference. Refer to the [GitHub issue](https://github.com/openid/AppAuth-iOS/pull/788) which has since been fixed.
+   - Click on Create Credentials and choose `OAuth Client ID`.
+   - Select `iOS` as the application type.
+   - Enter your Bundle ID.
 
-5. **Get the Package Name:**
+   **For Android:**
 
-   - Use the package name from your `app.json`/`app.config.js`/`app.config.ts` file (e.g., `com.myorg.myapp`).
-
-6. **Get the SHA-1 Certificate Fingerprint:**
-
-   - Get the SHA-1 certificate fingerprint by running `eas credentials` from the project root. Select Android as the platform, then select your build profile.
-   - Run this command to get the fingerprint using Expo's command-line interface:
+   - Click on Create Credentials and choose `OAuth Client ID`.
+   - Select `Android` as the application type.
+   - Enter your Package Name from your `app.json`/`app.config.js`/`app.config.ts` file (e.g., `com.myorg.myapp`).
+   - Get the SHA-1 certificate fingerprint by running `eas credentials` from the project root and selecting Android as the platform. Run this command to get the fingerprint using Expo's command-line interface:
      ```sh
      eas credentials
      ```
-   - Choose Android
-   - Choose the profile to configure (for me this was `preview`)
-   - Choose **Keystore: Manage everything needed to build your project**
-   - Choose **Set up a new keystore**
-   - Give your keystore a name (e.g., `preview` or `production`) or use the randomly generated one
-   - Copy your SHA-1 fingerprint
-
-7. **Enter the SHA-1 and Package Name:**
-
-   - Paste the SHA-1 fingerprint and package name into the appropriate fields in the Google Cloud Console.
-   - Click `Create`.
-
-Here’s how to fill out the form:
-
-- **Application type:** Android
-- **Name:** (e.g., Your App Name)
-- **Package name:** com.myorg.myapp
-- **SHA-1 certificate fingerprint:** (The one you got from the previous step)
+     - Choose Android
+     - Choose the profile to configure (for me this was `preview`)
+     - Choose **Keystore: Manage everything needed to build your project**
+     - Choose **Set up a new keystore**
+     - Give your keystore a name (e.g., `preview` or `production`) or use the randomly generated one
+     - Copy your SHA-1 fingerprint
+   - Paste the SHA-1 fingerprint into the appropriate field in the Google Cloud Console.
+   - Click Create and copy the generated Client ID.
 
 ### Step 2: Configure Supabase
 
@@ -101,92 +102,92 @@ Here’s how to fill out the form:
 ### Step 3: Update Your Expo App
 
 1. **Install Expo Google Sign-In:**
+
    - Add necessary dependencies:
      ```sh
      npx expo install @react-native-google-signin/google-signin
      ```
 
-**Note:** Since we're using Supabase and Expo, you don't need to modify the `app.json` or use a `google-services.json` file. This is a step you'll find in other guides that use Firebase but you can skip that.
+   **Note:** Since we're using Supabase and Expo, you don't need to modify the `app.json` or use a `google-services.json` file. This is a step you'll find in other guides that use Firebase but you can skip that.
 
 2. **Update Code To Use Google Sign-In:**
 
    - Use the following in your React Native component (for me this is an `Auth` screen):
 
-```js
-import {
-  GoogleSignin,
-  GoogleSigninButton,
-  statusCodes,
-} from "@react-native-google-signin/google-signin";
+   ```js
+   import {
+     GoogleSignin,
+     GoogleSigninButton,
+     statusCodes,
+   } from "@react-native-google-signin/google-signin";
 
-import { supabase } from "../yourSupabaseClient";
+   import { supabase } from "../yourSupabaseClient";
 
-GoogleSignin.configure({
-  webClientId:
-      <WEB_CLIENT_ID_FROM_GOOGLE_CONSOLE>,
-});
+   GoogleSignin.configure({
+     webClientId: <WEB_CLIENT_ID_FROM_GOOGLE_CONSOLE>,
+   });
 
-const LoginComponent = () => {
-  const onGoogleLogin = async () => {
-    setLoading(true);
+   const LoginComponent = () => {
+     const onGoogleLogin = async () => {
+       setLoading(true);
 
-    try {
-        await GoogleSignin.hasPlayServices();
-        const userInfo = await GoogleSignin.signIn();
+       try {
+         await GoogleSignin.hasPlayServices();
+         const userInfo = await GoogleSignin.signIn();
 
-        const { error, data } = await supabase.auth.signInWithIdToken({
-            provider: "google",
-            token: userInfo.idToken,
-        });
+         const { error, data } = await supabase.auth.signInWithIdToken({
+           provider: "google",
+           token: userInfo.idToken,
+         });
 
-        if (!data.user) {
-            Alert.alert("Error signing in with Google");
-            return;
-        }
+         if (!data.user) {
+           Alert.alert("Error signing in with Google");
+           return;
+         }
 
-        if (error) {
-            throw error;
-        }
+         if (error) {
+           throw error;
+         }
 
-        console.log("Signed in!"); // This is where the user is signed in so do whatever you would like here
-    } catch (error) {
-        if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-            // user cancelled the login flow
-        } else if (error.code === statusCodes.IN_PROGRESS) {
-            // operation (e.g. sign in) is in progress already
-        } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-            // play services not available or outdated
-        } else {
-            // some other error happened
-        }
-    } finally {
-        setLoading(false);
-    }
-};
+         console.log("Signed in!"); // This is where the user is signed in so do whatever you would like here
+       } catch (error) {
+         if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+           // user cancelled the login flow
+         } else if (error.code === statusCodes.IN_PROGRESS) {
+           // operation (e.g. sign in) is in progress already
+         } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+           // play services not available or outdated
+         } else {
+           // some other error happened
+         }
+       } finally {
+         setLoading(false);
+       }
+     };
 
-  return (
-    <View>
-    {Platform.OS === "android" ? (
-        <>
-            <GoogleSigninButton
-                onPress={onGoogleLogin}
-                size={GoogleSigninButton.Size.Wide}
-                color={
-                    GoogleSigninButton.Color.Dark
-                }
-                disabled={loading}
-                style={[styles.button]}
-            />
-        </>
-    ) : null}
-    </View>
-  );
-};
+     return (
+       <View>
+         {Platform.OS === "android" ? (
+           <>
+             <GoogleSigninButton
+               onPress={onGoogleLogin}
+               size={GoogleSigninButton.Size.Wide}
+               color={
+                 GoogleSigninButton.Color.Dark
+               }
+               disabled={loading}
+               style={[styles.button]}
+             />
+           </>
+         ) : null}
+       </View>
+     );
+   };
 
-export default SignIn;
-```
+   export default SignIn;
+   ```
 
-Ensure to replace `<WEB_CLIENT_ID_FROM_GOOGLE_CONSOLE>` with the correct value from your Google Cloud console.
+   **Be sure to replace `<WEB_CLIENT_ID_FROM_GOOGLE_CONSOLE>` with the ID from your web client (_not_ your Android client) from your Google Cloud console. This part trips a lot of people up!**
 
 ### Step 4: Build and Test
 
