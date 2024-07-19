@@ -80,7 +80,8 @@ Some guides above work for Firebase but I'm using Supabase 😬 Hopefully this h
    - Click on Create Credentials and choose `OAuth Client ID`.
    - Select `Android` as the application type.
    - Enter your Package Name from your `app.json`/`app.config.js`/`app.config.ts` file (e.g., `com.myorg.myapp`).
-   - Get the SHA-1 certificate fingerprint by running `eas credentials` from the project root and selecting Android as the platform. Run this command to get the fingerprint using Expo's command-line interface:
+   - Get the SHA-1 certificate fingerprint. Where you get the fingerprint will depend on whether your app is in the Play Store or not:
+     - To get it for a beta version of your app, do so by running `eas credentials` from the project root and selecting Android as the platform. Run this command to get the fingerprint using Expo's command-line interface:
      ```sh
      eas credentials
      ```
@@ -90,6 +91,9 @@ Some guides above work for Firebase but I'm using Supabase 😬 Hopefully this h
      - Choose **Set up a new keystore**
      - Give your keystore a name (e.g., `preview` or `production`) or use the randomly generated one
      - Copy your SHA-1 fingerprint
+     - To get the SHA-1 fingerprint for an app that's in the Play Store, there are two values that you can provide from:
+       1. Fingerprint of the .apk you built (on your machine or using EAS Build): You can find the SHA-1 certificate fingerprint in the Google Play Console under Release > Setup > App Integrity > Upload key certificate.
+       2. Fingerprint of a production app downloaded from the Play Store: You can find the SHA-1 certificate fingerprint in the Google Play Console under Release > Setup > App Integrity > App signing key certificate.
    - Paste the SHA-1 fingerprint into the appropriate field in the Google Cloud Console.
    - Click Create and copy the generated Client ID.
 
