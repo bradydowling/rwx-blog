@@ -27,7 +27,7 @@ Some guides above work for Firebase but I'm using Supabase 😬 Hopefully this h
 
 **Note:** Supabase doesn't currently support signing in with Google on iOS so this guide is for Android only. There's a YouTube comment from Supabase that you can see below that references [a Github issue](https://github.com/openid/AppAuth-iOS/pull/788) which has since been fixed. Perhaps Supabase will implement a fix for this in the future.
 
-![](Screenshot%202024-07-17%20at%209.31.47%20AM.png)
+![](./Screenshot%202024-07-17%20at%209.31.47%20AM.png)
 
 ### Step 1: Set Up Your Google Cloud Project
 
