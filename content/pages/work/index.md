@@ -6,9 +6,11 @@ socialImage: "./notebook.jpg"
 
 ## Neurture
 
-Neurture provides research-based content to users to help them quit unwanted habits or addictive behaviors. It uses AI chat to provide support to users and to route them to certain resources like meditations, courses, affirmations, and journal prompts.
+Neurture: Quit Habits is a private, self-guided app for people working with cravings, urges, addiction-related habit loops, and repetitive behaviors around alcohol, nicotine, food, porn, gambling, screen time, shopping, substances, and other patterns.
 
-Content in Neurture has been reviewed and verified by clinical psychologists so you can trust that you're getting valid and effective info to help you reach your goals.
+It offers no-shame tools grounded in ACT, CBT, mindfulness, relapse-prevention skills, and self-compassion, including guided check-ins, meditations, journaling prompts, coping skills, and habit-change plans.
+
+Neurture is not therapy, detox, diagnosis, crisis support, or a replacement for addiction treatment, but it can complement personal goals, peer support, therapy, or treatment-center work by helping people practice skills between sessions and in high-risk moments.
 
 - Homepage: [neurtureapp.com](https://neurtureapp.com)
 - iOS: [App Store](https://apps.apple.com/app/id6467687675)
