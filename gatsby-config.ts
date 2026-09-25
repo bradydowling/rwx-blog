@@ -195,7 +195,10 @@ export default {
       },
     },
     'gatsby-plugin-image',
-    'gatsby-plugin-catch-links',
+    {
+      resolve: 'gatsby-plugin-catch-links',
+      options: { excludePattern: /^\/projects\/slimeba-jam\// },
+    },
     'gatsby-plugin-optimize-svgs',
     'gatsby-plugin-sass',
   ],

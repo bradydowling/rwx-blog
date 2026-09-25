@@ -15,3 +15,9 @@ Neurture is not therapy, detox, diagnosis, crisis support, or a replacement for 
 - Homepage: [neurtureapp.com](https://neurtureapp.com)
 - iOS: [App Store](https://apps.apple.com/app/id6467687675)
 - Android: [Play Store](https://play.google.com/store/apps/details?id=com.bradydowling.unshame)
+
+## SlimeBA Jam
+
+A goofy, two-player basketball game for one keyboard. Pick a court and ball, then race to five points. This is a playable prototype, best on a desktop or laptop.
+
+- [Play SlimeBA Jam](/projects/slimeba-jam/)
