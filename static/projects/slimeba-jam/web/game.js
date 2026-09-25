@@ -117,6 +117,8 @@
     { name: "Medicine Ball", mass: 1.8, bounce: 0.32, gravity: 1.1, drag: 0.12, floorGrip: 0.89 },
   ];
   const teamChoices = [0, 1];
+  const cpuChoices = [false, false]; // At most one CPU; either side can be automated.
+  const cpuTimers = [0, 0];
   let arenaChoice = 0;
   let ballChoice = 0, selectedOption = 0;
   const usedKeys = new Set(["KeyA", "KeyD", "KeyW", "KeyS", "Space", "KeyF", "ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Period", "KeyR", "Enter"]);
@@ -278,6 +280,11 @@
     else if (selectedOption === 2) cycleArena(direction);
     else cycleBall(direction);
   }
+  function toggleCpu(index) {
+    if (index > 1) return;
+    cpuChoices[index] = !cpuChoices[index];
+    if (cpuChoices[index]) cpuChoices[1 - index] = false;
+  }
 
   function startMatch() {
     score[0] = 0;
@@ -317,6 +324,7 @@
         if (event.code === "KeyS" || event.code === "ArrowDown") selectedOption = (selectedOption + 1) % 4;
         if (event.code === "KeyA" || event.code === "ArrowLeft") changeSelectedOption(-1);
         if (event.code === "KeyD" || event.code === "ArrowRight") changeSelectedOption(1);
+        if (event.code === "KeyF" || event.code === "Period" || event.code === "Space") toggleCpu(selectedOption);
         if (event.code === "Enter") { startMatch(); return; }
       }
       down.add(event.code);
@@ -325,6 +333,20 @@
     if (!down.has(event.code)) pressed.add(event.code);
     down.add(event.code);
     if (event.code === "KeyR" && winner) restart();
+  });
+  canvas.addEventListener("pointerdown", event => {
+    if (screen !== "select") return;
+    const rect = canvas.getBoundingClientRect();
+    const x = (event.clientX - rect.left) * W / rect.width;
+    const y = (event.clientY - rect.top) * H / rect.height;
+    for (let i = 0; i < 2; i++) {
+      const rowY = 219 + i * 66;
+      if (x >= 450 && x <= 570 && y >= rowY && y <= rowY + 54) {
+        selectedOption = i;
+        toggleCpu(i);
+        return;
+      }
+    }
   });
   window.addEventListener("keyup", event => {
     if (!usedKeys.has(event.code)) return;
@@ -457,12 +479,45 @@
     if (bonked) p.vy = TUNE.backboardRecoil;
   }
 
-  function updatePlayer(p, index, dt) {
+  function cpuInput(index, dt) {
+    const p = players[index], opponent = players[1 - index];
+    const direction = index === 0 ? 1 : -1;
+    const command = { axis: 0, jump: false, shove: false, ballPress: false, ballRelease: false };
+    cpuTimers[index] = Math.max(0, cpuTimers[index] - dt);
+    if (scorePhase !== "live" || p.reactionTime > 0) return command;
+    let targetX;
+    if (carrier === index) targetX = hoops[index === 0 ? 1 : 0].x - direction * 280;
+    else if (carrier === 1 - index) targetX = opponent.x;
+    else targetX = clamp(ball.x + ball.vx * 0.18, LEFT + 30, RIGHT - 30);
+    if (Math.abs(targetX - p.x) > 17) command.axis = Math.sign(targetX - p.x);
+    if (carrier === index) {
+      // Face the basket while holding, then charge only as much as the arc needs.
+      if (Math.abs(targetX - p.x) < 40 || carryTime > 1.6) {
+        command.axis = 0;
+        p.facing = direction;
+        if (charging === index) command.ballRelease = chargeTime >= Math.max(0.04, shotChargeNeeded(index) * TUNE.shotChargeSeconds);
+        else command.ballPress = true;
+      }
+    } else if (carrier === -1 && pickupLockout <= 0 && travelPickupLockout[index] <= 0 &&
+      Math.hypot(ball.x - p.x, ball.y - p.y) < TUNE.pickupRange * 0.85) {
+      command.ballPress = true;
+    }
+    if (carrier !== index && p.grounded && cpuTimers[index] <= 0 &&
+      Math.abs(ball.x - p.x) < 95 && ball.y < p.y - 58 && ball.y > p.y - 250) {
+      command.jump = true;
+      cpuTimers[index] = 0.42;
+    }
+    if (carrier === 1 - index && p.cooldown <= 0 && Math.abs(opponent.x - p.x) < TUNE.shoveRange &&
+      Math.abs(opponent.y - p.y) < 45 && (opponent.x - p.x) * p.facing > 0) command.shove = true;
+    return command;
+  }
+
+  function updatePlayer(p, index, dt, command) {
     p.prevX = p.x;
     p.prevY = p.y;
     p.jumped = false;
     const keys = controls[index];
-    const axis = Number(held(keys.right)) - Number(held(keys.left));
+    const axis = command ? command.axis : Number(held(keys.right)) - Number(held(keys.left));
     p.turnMemoryTime = Math.max(0, (p.turnMemoryTime || 0) - dt);
     if (!p.grounded || p.standingOn !== -1 || p.reactionTime > 0) {
       p.lastMoveDirection = 0;
@@ -489,7 +544,7 @@
     const changeRate = axis && !stunned ? arena().acceleration : arena().brake;
     p.moveVx = approach(p.moveVx, targetVx, changeRate * dt);
     p.vx = p.moveVx + p.knockback;
-    if (!stunned && (p.grounded || p.standingOn !== -1) && justPressed(keys.jump)) {
+    if (!stunned && (p.grounded || p.standingOn !== -1) && (command ? command.jump : justPressed(keys.jump))) {
       const carrierVy = p.standingOn !== -1 ? Math.min(players[p.standingOn].vy, 0) : 0;
       p.vy = -TUNE.jumpForce + carrierVy * TUNE.stackedJumpCarry;
       p.grounded = false;
@@ -730,21 +785,22 @@
       messageTime = Math.max(0, messageTime - dt);
       if (messageTime === 0) message = "";
     }
-    players.forEach((p, i) => updatePlayer(p, i, dt));
+    const commands = players.map((_, i) => cpuChoices[i] ? cpuInput(i, dt) : null);
+    players.forEach((p, i) => updatePlayer(p, i, dt, commands[i]));
     collidePlayers();
     pickupLockout = Math.max(0, pickupLockout - dt);
     travelPickupLockout.forEach((time, i) => { travelPickupLockout[i] = Math.max(0, time - dt); });
     positionHeldBall();
-    if (allowActions) players.forEach((p, i) => { if (scorePhase === "live" && p.reactionTime <= 0 && p.cooldown <= 0 && justPressed(controls[i].shove)) shove(p, players[1 - i]); });
+    if (allowActions) players.forEach((p, i) => { if (scorePhase === "live" && p.reactionTime <= 0 && p.cooldown <= 0 && (commands[i] ? commands[i].shove : justPressed(controls[i].shove))) shove(p, players[1 - i]); });
     if (allowActions) players.forEach((p, i) => {
-      if (scorePhase === "live" && p.reactionTime <= 0 && justPressed(controls[i].ball)) {
+      if (scorePhase === "live" && p.reactionTime <= 0 && (commands[i] ? commands[i].ballPress : justPressed(controls[i].ball))) {
         if (carrier === i) startShot(i);
         else pickUpBall(i);
       }
     });
     if (allowActions && scorePhase === "live" && charging !== -1) {
       chargeTime = Math.min(TUNE.shotChargeSeconds, chargeTime + dt);
-      if (controls[charging].ball.some(code => released.has(code))) throwChargedBall(charging);
+      if (commands[charging] ? commands[charging].ballRelease : controls[charging].ball.some(code => released.has(code))) throwChargedBall(charging);
     }
     if (carrier !== -1 && scorePhase === "live") {
       carryTime += dt;
@@ -1039,7 +1095,7 @@
       });
       ctx.fillStyle = "#aec1c8";
       ctx.font = "bold 10px system-ui";
-      ctx.fillText(`PLAYER ${i + 1}`, panelX + 87, y + 47);
+      ctx.fillText(`PLAYER ${i + 1}${cpuChoices[i] ? " · CPU" : ""}`, panelX + 87, y + 47);
       ctx.fillStyle = "#f8f2da";
       ctx.font = "bold 18px system-ui";
       ctx.fillText(team.name.toUpperCase(), panelX + 87, y + 69, 164);
@@ -1246,6 +1302,15 @@
             ctx.fillRect(319, y + 6 + stripe * 42 / choice.colors.length, 8, 42 / choice.colors.length);
           });
           drawGuestPreview(888, y + 27, choice);
+          ctx.fillStyle = cpuChoices[i] ? "#bd7149" : "#497c75";
+          ctx.fillRect(458, y + 10, 108, 34);
+          ctx.strokeStyle = active ? "#f8f2da" : "#8da9aa";
+          ctx.lineWidth = 1;
+          ctx.strokeRect(458, y + 10, 108, 34);
+          ctx.textAlign = "center";
+          ctx.fillStyle = "#ffffff";
+          ctx.font = "bold 16px system-ui";
+          ctx.fillText(cpuChoices[i] ? "CPU" : "HUMAN", 512, y + 33);
         }
         ctx.textAlign = "left";
         ctx.fillStyle = active ? "#e8c77e" : "#aec1c8";
@@ -1268,7 +1333,7 @@
       ctx.font = "15px system-ui";
       ctx.fillText(selectedOption === 2 ? arena().detail : selectedOption === 3 ?
         (ballChoice === 3 ? "Light and bouncy" : ballChoice === 4 ? "Heavy with a low bounce" : "Standard basketball physics") :
-        "Both players can change any option", W / 2, 510);
+        "F / . / SPACE or click the badge: HUMAN / CPU (one CPU max)", W / 2, 510);
       ctx.fillStyle = "#f8f2da";
       ctx.font = "bold 17px system-ui";
       ctx.fillText("WASD OR ARROWS: MOVE CURSOR + CHANGE VALUE", W / 2, 546);
@@ -1292,5 +1357,5 @@
   requestAnimationFrame(frame);
 
   // Read-only state for browser smoke checks; gameplay does not depend on it.
-  window.trashBasketballState = () => ({ screen, teams: teamChoices.map(i => playerChoices[i].name), arena: arena().name, ballType: ballType().name, selectedOption, players: players.map(p => ({ x: p.x, y: p.y, vx: p.vx, character: p.character, celebration: p.celebration, flattenTime: p.flattenTime })), ball: { x: ball.x, y: ball.y, vx: ball.vx, vy: ball.vy }, score: [...score], winner, message, scorePhase, carrier, carryTime, travelPickupLockout: [...travelPickupLockout], charging, charge: clamp(chargeTime / TUNE.shotChargeSeconds, 0, 1), shotOwner, shakeTime });
+  window.trashBasketballState = () => ({ screen, teams: teamChoices.map(i => playerChoices[i].name), cpuChoices: [...cpuChoices], arena: arena().name, ballType: ballType().name, selectedOption, players: players.map(p => ({ x: p.x, y: p.y, vx: p.vx, character: p.character, celebration: p.celebration, flattenTime: p.flattenTime })), ball: { x: ball.x, y: ball.y, vx: ball.vx, vy: ball.vy }, score: [...score], winner, message, scorePhase, carrier, carryTime, travelPickupLockout: [...travelPickupLockout], charging, charge: clamp(chargeTime / TUNE.shotChargeSeconds, 0, 1), shotOwner, shakeTime });
 })();
