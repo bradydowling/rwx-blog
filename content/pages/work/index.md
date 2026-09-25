@@ -18,6 +18,6 @@ Neurture is not therapy, detox, diagnosis, crisis support, or a replacement for 
 
 ## SlimeBA Jam
 
-A goofy basketball game for one player against the CPU or two friends on one keyboard. Pick a court and ball, then race to five points. This is a playable prototype, best on a desktop or laptop.
+A goofy basketball game for one player against the CPU or two friends on one keyboard. Pick a court and ball, then race to five points. The playable prototype also has phone touch controls and can be installed for offline play.
 
 - [Play SlimeBA Jam](/projects/slimeba-jam/)

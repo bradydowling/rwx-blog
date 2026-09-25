@@ -119,6 +119,11 @@
   const teamChoices = [0, 1];
   const cpuChoices = [false, false]; // At most one CPU; either side can be automated.
   const cpuTimers = [0, 0];
+  const touchMode = typeof window.matchMedia === "function" && window.matchMedia("(pointer: coarse)").matches;
+  if (touchMode) {
+    cpuChoices[1] = true; // A phone has one set of touch controls, so start with a CPU opponent.
+    document.body.classList.add("touch-mode");
+  }
   let arenaChoice = 0;
   let ballChoice = 0, selectedOption = 0;
   const usedKeys = new Set(["KeyA", "KeyD", "KeyW", "KeyS", "Space", "KeyF", "ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Period", "KeyR", "Enter"]);
@@ -285,6 +290,13 @@
     cpuChoices[index] = !cpuChoices[index];
     if (cpuChoices[index]) cpuChoices[1 - index] = false;
   }
+  function syncTouchUI() {
+    if (!touchMode) return;
+    document.body.classList.toggle("in-game", screen === "play");
+    document.body.classList.toggle("match-won", winner > 0);
+    const matchButton = document.getElementById("match-button");
+    if (matchButton) matchButton.textContent = winner ? "NEW MATCH" : "TIP OFF";
+  }
 
   function startMatch() {
     score[0] = 0;
@@ -298,6 +310,7 @@
     resetPositions();
     down.clear(); pressed.clear(); released.clear();
     screen = "play";
+    syncTouchUI();
   }
 
   function restart() {
@@ -313,6 +326,7 @@
     selectedOption = 0;
     down.clear(); pressed.clear(); released.clear();
     screen = "select";
+    syncTouchUI();
   }
 
   window.addEventListener("keydown", event => {
@@ -339,15 +353,43 @@
     const rect = canvas.getBoundingClientRect();
     const x = (event.clientX - rect.left) * W / rect.width;
     const y = (event.clientY - rect.top) * H / rect.height;
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 4; i++) {
       const rowY = 219 + i * 66;
-      if (x >= 450 && x <= 570 && y >= rowY && y <= rowY + 54) {
+      if (y >= rowY && y <= rowY + 54 && x >= 313 && x <= 967) {
         selectedOption = i;
-        toggleCpu(i);
+        if (i < 2 && x >= 450 && x <= 570) toggleCpu(i);
+        else if (x >= 570 && x <= 615) changeSelectedOption(-1);
+        else if (x >= 905 && x <= 958) changeSelectedOption(1);
         return;
       }
     }
   });
+  window.slimebaInput = {
+    control(action, isDown) {
+      const human = cpuChoices[0] ? 1 : 0;
+      const code = controls[human][action]?.[0];
+      if (!code) return;
+      if (isDown) {
+        if (screen !== "play" || winner) return;
+        if (!down.has(code)) pressed.add(code);
+        down.add(code);
+      } else {
+        down.delete(code);
+        released.add(code);
+      }
+    },
+    start() { if (screen === "select") startMatch(); else if (winner) restart(); },
+    menuChange(index, direction) {
+      if (screen !== "select" || index < 0 || index > 3) return;
+      selectedOption = index;
+      changeSelectedOption(direction);
+    },
+    menuCpu(index) {
+      if (screen !== "select" || index < 0 || index > 1) return;
+      selectedOption = index;
+      toggleCpu(index);
+    },
+  };
   window.addEventListener("keyup", event => {
     if (!usedKeys.has(event.code)) return;
     event.preventDefault();
@@ -734,6 +776,7 @@
     if (score[playerNumber - 1] >= 5) {
       winner = playerNumber;
       message = `PLAYER ${playerNumber} WINS  ·  PRESS R TO RESTART`;
+      syncTouchUI();
     } else {
       message = goaltended ? `GOALTENDING! PLAYER ${playerNumber} SCORES!` : `PLAYER ${playerNumber} SCORES!`;
     }
@@ -1336,9 +1379,9 @@
         "F / . / SPACE or click the badge: HUMAN / CPU (one CPU max)", W / 2, 510);
       ctx.fillStyle = "#f8f2da";
       ctx.font = "bold 17px system-ui";
-      ctx.fillText("WASD OR ARROWS: MOVE CURSOR + CHANGE VALUE", W / 2, 546);
+      ctx.fillText(touchMode ? "TAP ROW + ARROWS TO CHANGE OPTIONS" : "WASD OR ARROWS: MOVE CURSOR + CHANGE VALUE", W / 2, 546);
       ctx.font = "bold 18px system-ui";
-      ctx.fillText("ENTER: TIP OFF", W / 2, 571);
+      ctx.fillText(touchMode ? "TAP TIP OFF TO START" : "ENTER: TIP OFF", W / 2, 571);
     }
     ctx.restore();
   }
