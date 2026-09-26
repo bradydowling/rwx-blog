@@ -55,6 +55,7 @@
     scoreSlowmoUpdates: 10,
     scoreSlowmoStride: 6,
     scorePauseSeconds: 0.45,
+    scoreLullSeconds: 45, // Bring in quiet crickets after this much live play without a basket.
     shoeTurnWindow: 0.35, // A quick left/right reversal squeaks; starting from rest stays quiet.
     ballBounceMinSpeed: 110,
     rimHitMinSpeed: 140,
@@ -136,22 +137,39 @@
   const playerBody = [[-20, 29], [-24, 24], [-20, -10], [-18, -18], [-14, -25], [-8, -29], [0, -30], [8, -29], [14, -25], [18, -18], [20, -10], [24, 24], [20, 29]];
   const players = starts.map((start, i) => ({ x: start.x, y: start.y, prevX: start.x, prevY: start.y, vx: 0, vy: 0, moveVx: 0, knockback: 0, facing: i === 0 ? 1 : -1, grounded: true, standingOn: -1, jumped: false, flattenTime: 0, stompBurstTime: 0, cooldown: 0, flash: 0, face: "neutral", faceTime: 0, reaction: "none", reactionTime: 0, reactionDuration: 0, reactionDirection: 1, immunityTime: 0, blinkClock: 0, celebration: -1, lastCelebration: -1, celebrationTime: 0, celebrationDuration: 0, color: playerChoices[i].color, colors: playerChoices[i].colors, character: null }));
   const ball = { x: 640, y: TUNE.tipoffSpawnY, vx: 0, vy: -TUNE.tipoffLaunchSpeed, angle: 0, spin: 0, radius: 16 };
-  const duckSound = typeof Audio !== "undefined" ? new Audio("assets/duck_quack.wav") : null;
-  if (duckSound) { duckSound.preload = "auto"; duckSound.volume = 0.55; }
   const sfx = {};
-  for (const [name, file] of Object.entries({ bounce: "ball_bounce.wav", rim: "rim_hit.wav", shoe1: "shoe_squeak_1.wav", shoe2: "shoe_squeak_2.wav", swish1: "swish_1.wav", swish2: "swish_2.wav", swish3: "swish_3.wav", board1: "backboard_1.wav", board2: "backboard_2.wav", board3: "backboard_3.wav", grunt1: "throw_grunt_1.wav", grunt2: "throw_grunt_2.wav", grunt3: "throw_grunt_3.wav", bonk1: "bonk_voice_1.wav", bonk2: "bonk_voice_2.wav", bonk3: "bonk_voice_3.wav", bonk4: "bonk_voice_4.wav" })) {
+  for (const [name, file] of Object.entries({ bounce: "ball_bounce.wav", rim: "rim_hit.wav", shoe1: "shoe_squeak_1.wav", shoe2: "shoe_squeak_2.wav", swish1: "swish_1.wav", swish2: "swish_2.wav", swish3: "swish_3.wav", swish4: "swish_4.wav", swish5: "swish_5.wav", crowd1: "crowd_cheer_1.wav", crowd2: "crowd_cheer_2.wav", crowd3: "crowd_cheer_3.wav", stomp: "dk_stomp.wav", yeet: "yeet.wav", jump: "mario_jump.wav", board1: "backboard_1.wav", board2: "backboard_2.wav", board3: "backboard_3.wav", grunt1: "throw_grunt_1.wav", grunt2: "throw_grunt_2.wav", grunt3: "throw_grunt_3.wav", bonk1: "bonk_voice_1.wav", bonk2: "bonk_voice_2.wav", bonk3: "bonk_voice_3.wav", bonk4: "bonk_voice_4.wav" })) {
     if (typeof Audio !== "undefined") {
       sfx[name] = new Audio(`assets/sfx/${file}`);
       sfx[name].preload = "auto";
     }
   }
+  const menuTheme = typeof Audio !== "undefined" ? new Audio("assets/sfx/nba_jam_te_theme.mp3") : null;
+  const crowdBed = typeof Audio !== "undefined" ? new Audio("assets/sfx/crowd_ambience_loop.wav") : null;
+  const cricketsBed = typeof Audio !== "undefined" ? new Audio("assets/sfx/crickets_ambience_loop.wav") : null;
+  for (const sound of [menuTheme, crowdBed, cricketsBed]) {
+    if (sound) { sound.loop = true; sound.preload = "auto"; }
+  }
+  if (menuTheme) menuTheme.volume = 0.3;
+  if (crowdBed) crowdBed.volume = 0.18;
+  if (cricketsBed) cricketsBed.volume = 0;
+  function playBackground(sound) {
+    if (!sound || !sound.paused) return;
+    const started = sound.play();
+    if (started && started.catch) started.catch(() => {});
+  }
+  function stopBackground(sound) {
+    if (!sound) return;
+    sound.pause();
+    sound.currentTime = 0;
+  }
   let sfxClock = 0, shoeVariant = 0;
-  const lastSfx = { bounce: -1, rim: -1, shoe: -1, swish: -1, board: -1, grunt: -1, bonk: -1 };
-  const lastVariant = { swish: -1, board: -1, grunt: -1, bonk: -1 };
-  const variantCounts = { swish: 3, board: 3, grunt: 3, bonk: 4 };
+  const lastSfx = { bounce: -1, rim: -1, shoe: -1, swish: -1, crowd: -1, stomp: -1, yeet: -1, jump: -1, board: -1, grunt: -1, bonk: -1 };
+  const lastVariant = { swish: -1, crowd: -1, board: -1, grunt: -1, bonk: -1 };
+  const variantCounts = { swish: 5, crowd: 3, board: 3, grunt: 3, bonk: 4 };
   function playSfx(kind, strength = 1) {
     const gate = kind.replace(/\d$/, "");
-    const interval = gate === "shoe" ? 0.11 : gate === "swish" ? 0.25 : gate === "grunt" ? 0.18 : gate === "bonk" ? 0.28 : gate === "rim" || gate === "board" ? 0.12 : 0.08;
+    const interval = gate === "shoe" ? 0.11 : gate === "swish" ? 0.25 : gate === "crowd" ? 0.4 : gate === "grunt" ? 0.18 : gate === "bonk" ? 0.28 : gate === "rim" || gate === "board" ? 0.12 : 0.08;
     if (sfxClock - lastSfx[gate] < interval) return;
     lastSfx[gate] = sfxClock;
     const sound = sfx[kind];
@@ -172,6 +190,7 @@
   }
   const score = [0, 0];
   let screen = "select", winner = 0, scorePhase = "live", scoreSlowmoFrames = 0, scorePauseFrames = 0;
+  let secondsSinceScore = 0, cricketLevel = 0;
   let message = "", messageTime = 0, carrier = -1, carryTime = 0, pickupLockout = 0, charging = -1, chargeTime = 0, shotOwner = -1;
   let shakeTime = 0, shakeDuration = 0, shakeElapsed = 0, shakeStrength = 0;
   let spaceTime = 0;
@@ -206,12 +225,6 @@
     shakeDuration = Math.max(shakeTime, seconds);
     shakeTime = shakeDuration;
     shakeElapsed = 0;
-  }
-  function playDuckQuack() {
-    if (!duckSound) return;
-    duckSound.currentTime = 0;
-    const started = duckSound.play();
-    if (started && started.catch) started.catch(() => {});
   }
   function currentFace(p) { return p.faceTime > 0 ? p.face : "neutral"; }
   function startReaction(p, kind, direction) {
@@ -299,6 +312,12 @@
   }
 
   function startMatch() {
+    stopBackground(menuTheme);
+    secondsSinceScore = 0;
+    cricketLevel = 0;
+    if (cricketsBed) cricketsBed.volume = 0;
+    playBackground(crowdBed);
+    playBackground(cricketsBed);
     score[0] = 0;
     score[1] = 0;
     winner = 0;
@@ -314,6 +333,9 @@
   }
 
   function restart() {
+    stopBackground(crowdBed);
+    stopBackground(cricketsBed);
+    playBackground(menuTheme);
     score[0] = 0;
     score[1] = 0;
     winner = 0;
@@ -330,6 +352,7 @@
   }
 
   window.addEventListener("keydown", event => {
+    if (screen === "select") playBackground(menuTheme);
     if (!usedKeys.has(event.code)) return;
     event.preventDefault();
     if (screen === "select") {
@@ -348,14 +371,16 @@
     down.add(event.code);
     if (event.code === "KeyR" && winner) restart();
   });
+  window.addEventListener("pointerdown", () => { if (screen === "select") playBackground(menuTheme); });
+  playBackground(menuTheme);
   canvas.addEventListener("pointerdown", event => {
     if (screen !== "select") return;
     const rect = canvas.getBoundingClientRect();
     const x = (event.clientX - rect.left) * W / rect.width;
     const y = (event.clientY - rect.top) * H / rect.height;
     for (let i = 0; i < 4; i++) {
-      const rowY = 219 + i * 66;
-      if (y >= rowY && y <= rowY + 54 && x >= 313 && x <= 967) {
+      const rowY = 186 + i * 60;
+      if (y >= rowY && y <= rowY + 50 && x >= 313 && x <= 967) {
         selectedOption = i;
         if (i < 2 && x >= 450 && x <= 570) toggleCpu(i);
         else if (x >= 570 && x <= 615) changeSelectedOption(-1);
@@ -497,7 +522,8 @@
     const speedY = (hoop.y - ball.y - TUNE.gravity * arena().gravity * ballType().gravity * TUNE.shotFlightTime ** 2 / 2) / TUNE.shotFlightTime;
     releaseBall(p, p.facing * speedX, speedY);
     shotOwner = index;
-    playRandomSfx("grunt", 0.23);
+    if (index === 0 ? p.x < W / 2 : p.x > W / 2) playSfx("yeet", 0.55);
+    else playRandomSfx("grunt", 0.23);
   }
 
   function isGoaltend(defenderIndex) {
@@ -592,6 +618,7 @@
       p.grounded = false;
       p.standingOn = -1;
       p.jumped = true;
+      if (scorePhase === "live") playSfx("jump", 0.42);
     }
     p.vy += TUNE.gravity * arena().gravity * dt;
     p.x = clamp(p.x + p.vx * dt, LEFT + 24, RIGHT - 24);
@@ -603,21 +630,27 @@
 
   function collidePlayers() {
     const a = players[0], b = players[1];
+    const dropHeldBall = () => {
+      if (carrier === -1 || scorePhase !== "live") return;
+      const holder = players[carrier], opponent = players[1 - carrier];
+      const away = Math.sign(holder.x - opponent.x) || holder.facing;
+      releaseBall(holder, away * 470, -330);
+    };
     const keepStack = (upper, lower, lowerIndex) => {
       if (upper.standingOn !== lowerIndex || upper.jumped) return false;
-      upper.x = clamp(upper.x + lower.x - lower.prevX, LEFT + 24, RIGHT - 24);
       if (Math.abs(upper.x - lower.x) > 32) { upper.standingOn = -1; return false; }
       upper.y = lower.y - 59 * playerPose(lower).scaleY;
       upper.vy = lower.vy;
       upper.grounded = true;
       return true;
     };
-    if (keepStack(a, b, 1) || keepStack(b, a, 0)) return;
+    if (keepStack(a, b, 1) || keepStack(b, a, 0)) { dropHeldBall(); return; }
     const overlapX = 48 - Math.abs(a.x - b.x), overlapY = 58 - Math.abs(a.y - b.y);
     if (overlapX <= 0 || overlapY <= 0) return;
     const upper = a.y < b.y ? a : b;
     const lower = upper === a ? b : a;
     if (upper.jumped && lower.y - upper.y > 25) return;
+    dropHeldBall();
     if (Math.abs(upper.x - lower.x) < 32 && lower.y - upper.y > 25 && upper.vy >= lower.vy - 20 && !upper.jumped) {
       const landingSpeed = upper.vy - lower.vy;
       if (upper.vy > 0 && landingSpeed > 120) {
@@ -625,7 +658,7 @@
         lower.stompBurstTime = 0.34;
         setFace(lower, "squashed", TUNE.landingSquashSeconds);
         startShake(TUNE.stompShakePixels, 0.2);
-        playDuckQuack();
+        playSfx("stomp", 0.55);
       }
       upper.y = lower.y - 59 * playerPose(lower).scaleY;
       upper.vy = lower.vy;
@@ -766,7 +799,9 @@
 
   function scoreBasket(playerNumber, goaltended = false) {
     if (scorePhase !== "live") return;
+    secondsSinceScore = 0;
     if (!goaltended) playRandomSfx("swish", 0.48);
+    playRandomSfx("crowd", 0.42);
     shotOwner = -1;
     messageTime = 0;
     score[playerNumber - 1]++;
@@ -788,6 +823,10 @@
   function update(dt) {
     sfxClock += dt;
     if (screen === "select") { pressed.clear(); released.clear(); return; }
+    if (scorePhase === "live") secondsSinceScore += dt;
+    const cricketTarget = secondsSinceScore >= TUNE.scoreLullSeconds && scorePhase === "live" ? 0.25 : 0;
+    cricketLevel += (cricketTarget - cricketLevel) * Math.min(1, dt * 0.8);
+    if (cricketsBed) cricketsBed.volume = cricketLevel;
     if (scorePhase === "slowmo") {
       // Deliberately hold five frames, then advance one ordinary physics step.
       // Drawing still runs every frame, so the scene visibly stutters forward.
@@ -1272,19 +1311,12 @@
       drawCelebrationFront(p);
       ctx.restore();
       drawStompBurst(p);
-      ctx.fillStyle = "#f8f2da";
-      ctx.font = "bold 20px system-ui";
-      ctx.textAlign = "center";
-      ctx.fillText(String(i + 1), p.x, p.y - (p.character ? 64 : 43));
       if (p.flash) {
         ctx.strokeStyle = "#f8f2da";
         ctx.lineWidth = 5;
         ctx.beginPath(); ctx.moveTo(p.x + p.facing * 20, p.y); ctx.lineTo(p.x + p.facing * TUNE.shoveRange, p.y); ctx.stroke();
       }
       if (carrier === i) {
-        ctx.font = "bold 16px system-ui";
-        ctx.fillStyle = "#f8f2da";
-        ctx.fillText(charging === i ? "RELEASE TO THROW" : (i === 0 ? "HOLD S: THROW" : "HOLD ↓: THROW"), p.x, p.y - 83);
         if (charging === i) {
           const width = 90, left = p.x - width / 2, top = p.y - 72;
           const charge = clamp(chargeTime / TUNE.shotChargeSeconds, 0, 1);
@@ -1321,67 +1353,67 @@
     }
     if (screen === "select") {
       ctx.fillStyle = "rgba(12, 24, 35, 0.94)";
-      ctx.fillRect(290, 145, 700, 440);
+      ctx.fillRect(290, 120, 700, 410);
       ctx.strokeStyle = "#f8f2da";
       ctx.lineWidth = 3;
-      ctx.strokeRect(290, 145, 700, 440);
+      ctx.strokeRect(290, 120, 700, 410);
       ctx.fillStyle = "#f8f2da";
       ctx.font = "bold 32px system-ui";
-      ctx.fillText("MATCH OPTIONS", W / 2, 196);
+      ctx.fillText("MATCH OPTIONS", W / 2, 168);
       const labels = ["PLAYER 1", "PLAYER 2", "COURT", "BALL"];
       const values = [playerChoices[teamChoices[0]].name, playerChoices[teamChoices[1]].name, arena().name, ballType().name];
       for (let i = 0; i < 4; i++) {
-        const y = 219 + i * 66;
+        const y = 186 + i * 60;
         const active = selectedOption === i;
         ctx.fillStyle = active ? "#344650" : "#21313c";
-        ctx.fillRect(313, y, 654, 54);
+        ctx.fillRect(313, y, 654, 50);
         ctx.strokeStyle = active ? "#e8c77e" : "#61747c";
         ctx.lineWidth = active ? 3 : 1;
-        ctx.strokeRect(313, y, 654, 54);
+        ctx.strokeRect(313, y, 654, 50);
         if (i < 2) {
           const choice = playerChoices[teamChoices[i]];
           choice.colors.forEach((color, stripe) => {
             ctx.fillStyle = color;
             ctx.fillRect(319, y + 6 + stripe * 42 / choice.colors.length, 8, 42 / choice.colors.length);
           });
-          drawGuestPreview(888, y + 27, choice);
+          drawGuestPreview(888, y + 25, choice);
           ctx.fillStyle = cpuChoices[i] ? "#bd7149" : "#497c75";
-          ctx.fillRect(458, y + 10, 108, 34);
+          ctx.fillRect(458, y + 8, 108, 34);
           ctx.strokeStyle = active ? "#f8f2da" : "#8da9aa";
           ctx.lineWidth = 1;
-          ctx.strokeRect(458, y + 10, 108, 34);
+          ctx.strokeRect(458, y + 8, 108, 34);
           ctx.textAlign = "center";
           ctx.fillStyle = "#ffffff";
           ctx.font = "bold 16px system-ui";
-          ctx.fillText(cpuChoices[i] ? "CPU" : "HUMAN", 512, y + 33);
+          ctx.fillText(cpuChoices[i] ? "CPU" : "HUMAN", 512, y + 32);
         }
         ctx.textAlign = "left";
         ctx.fillStyle = active ? "#e8c77e" : "#aec1c8";
         ctx.font = "bold 18px system-ui";
-        ctx.fillText(labels[i], 345, y + 34);
+        ctx.fillText(labels[i], 345, y + 32);
         ctx.textAlign = "center";
         ctx.fillStyle = "#f8f2da";
         ctx.font = "bold 22px system-ui";
-        ctx.fillText(values[i].toUpperCase(), 756, y + 35, 258);
+        ctx.fillText(values[i].toUpperCase(), 756, y + 33, 258);
         if (active) {
           ctx.fillStyle = "#e8c77e";
           ctx.font = "bold 27px system-ui";
-          ctx.fillText("◀", 587, y + 36);
-          ctx.fillText("▶", 930, y + 36);
+          ctx.fillText("◀", 587, y + 34);
+          ctx.fillText("▶", 930, y + 34);
         }
-        if (i === 3) drawBallIcon(887, y + 27, ballChoice, 0, 0.75);
+        if (i === 3) drawBallIcon(887, y + 25, ballChoice, 0, 0.75);
       }
       ctx.textAlign = "center";
       ctx.fillStyle = "#d7e4e2";
       ctx.font = "15px system-ui";
       ctx.fillText(selectedOption === 2 ? arena().detail : selectedOption === 3 ?
         (ballChoice === 3 ? "Light and bouncy" : ballChoice === 4 ? "Heavy with a low bounce" : "Standard basketball physics") :
-        "F / . / SPACE or click the badge: HUMAN / CPU (one CPU max)", W / 2, 510);
+        "F / . / SPACE or click the badge: HUMAN / CPU (one CPU max)", W / 2, 454);
       ctx.fillStyle = "#f8f2da";
       ctx.font = "bold 17px system-ui";
-      ctx.fillText(touchMode ? "TAP ROW + ARROWS TO CHANGE OPTIONS" : "WASD OR ARROWS: MOVE CURSOR + CHANGE VALUE", W / 2, 546);
+      ctx.fillText(touchMode ? "TAP ROW + ARROWS TO CHANGE OPTIONS" : "WASD OR ARROWS: MOVE CURSOR + CHANGE VALUE", W / 2, 490);
       ctx.font = "bold 18px system-ui";
-      ctx.fillText(touchMode ? "TAP TIP OFF TO START" : "ENTER: TIP OFF", W / 2, 571);
+      ctx.fillText(touchMode ? "TAP TIP OFF TO START" : "ENTER: TIP OFF", W / 2, 516);
     }
     ctx.restore();
   }

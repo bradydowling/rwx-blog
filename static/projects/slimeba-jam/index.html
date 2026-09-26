@@ -7,17 +7,19 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="SlimeBA Jam">
   <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="icon-192.png">
   <title>SlimeBA Jam</title>
   <style>
     :root { color-scheme: dark; font-family: system-ui, sans-serif; }
     * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #101923; color: #f8f2da; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #101923; color: #f8f2da; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
     main { width: min(100vw, 1280px); padding: 12px; }
     h1 { margin: 0 0 8px; font-size: clamp(20px, 3vw, 30px); text-align: center; }
     .stage { position: relative; }
     canvas { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #182a38; border: 2px solid #627586; border-radius: 8px; }
-    .touch-controls, .match-button, .mobile-tip, .mobile-settings { display: none; }
+    .touch-controls, .match-button, .mobile-tip, .mobile-settings, .fullscreen-button { display: none; }
     .help { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 10px 3px 0; font-size: 14px; }
     .help p { margin: 0; }
     kbd { font: inherit; border: 1px solid #627586; border-radius: 4px; padding: 1px 5px; background: #273847; }
@@ -25,7 +27,10 @@
     body.touch-mode main { width: 100%; padding: 0; }
     body.touch-mode h1, body.touch-mode .help { display: none; }
     body.touch-mode .stage { width: min(100vw, 177.7778dvh); margin: auto; }
+    body.touch-mode .stage:fullscreen, body.touch-mode .stage.expanded { position: fixed; inset: 0; z-index: 10; width: 100vw; height: 100dvh; display: grid; place-items: center; background: #101923; }
+    body.touch-mode .stage:fullscreen canvas, body.touch-mode .stage.expanded canvas { width: min(100vw, 177.7778dvh); }
     body.touch-mode canvas { border: 0; border-radius: 0; touch-action: none; }
+    body.touch-mode .fullscreen-button { display: block; position: absolute; top: 8px; right: max(8px, env(safe-area-inset-right)); z-index: 20; min-height: 36px; padding: 0 10px; color: #fff6db; background: rgba(25, 43, 56, 0.88); border: 1px solid #e8c77e; border-radius: 8px; font: bold 11px system-ui; touch-action: manipulation; }
     body.touch-mode:not(.in-game) .mobile-settings { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 8px max(10px, env(safe-area-inset-right)) 8px max(10px, env(safe-area-inset-left)); background: #101923; }
     .mobile-settings h2 { margin: 0 0 2px; text-align: center; color: #f8f2da; font-size: clamp(18px, 5dvh, 26px); }
     .mobile-option { display: grid; grid-template-columns: 86px 76px 42px minmax(0, 1fr) 42px; align-items: center; gap: 5px; min-height: 46px; padding: 3px 6px; background: #21313c; border: 1px solid #61747c; border-radius: 6px; }
@@ -62,6 +67,7 @@
     <h1>SlimeBA Jam</h1>
     <div class="stage">
       <canvas id="game" width="1280" height="720" aria-label="SlimeBA Jam court"></canvas>
+      <button class="fullscreen-button" id="fullscreen-button" type="button" aria-pressed="false">FULLSCREEN</button>
       <div class="mobile-settings" aria-label="Match options">
         <h2>MATCH OPTIONS</h2>
         <div class="mobile-option" data-option="0"><label>PLAYER 1</label><button class="cpu-toggle" type="button">HUMAN</button><button class="prev" type="button" aria-label="Previous Player 1 team">◀</button><output></output><button class="next" type="button" aria-label="Next Player 1 team">▶</button></div>
@@ -92,7 +98,7 @@
       <p>First to 5 · <kbd>R</kbd> choose teams again after a win</p>
     </div>
   </main>
-  <script src="web/game.js?v=mobile1" defer></script>
-  <script src="web/mobile.js?v=mobile1" defer></script>
+  <script src="web/game.js?v=audio3" defer></script>
+  <script src="web/mobile.js?v=mobile2" defer></script>
 </body>
 </html>
