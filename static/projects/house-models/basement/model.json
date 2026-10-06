@@ -1,0 +1,54 @@
+{
+  "slug": "basement",
+  "floorY": 0,
+  "exterior": false,
+  "url": "model.glb",
+  "views": {
+    "Overview": {
+      "label": "Overview",
+      "position": [
+        12.851400375366211,
+        11.219200134277344,
+        13.670299530029297
+      ],
+      "target": [
+        4.3560380935668945,
+        0.5999994277954102,
+        3.0510997772216797
+      ],
+      "kind": "ORTHO",
+      "scale": 18.768352508544922,
+      "fov": 39.59775192067671,
+      "cutaway": true
+    },
+    "Walkthrough": {
+      "label": "Walkthrough start",
+      "position": [
+        6.900000095367432,
+        1.649999976158142,
+        6.5
+      ],
+      "target": [
+        4.4773054122924805,
+        1.4703235626220703,
+        4.739809989929199
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 93.77717224757609,
+      "cutaway": false
+    }
+  },
+  "plan": {
+    "center": [
+      4.8450498203746974,
+      0,
+      3.6703002844005823
+    ],
+    "width": 10.515499953366817,
+    "height": 8.166000574082137
+  },
+  "source_sha256": "ea69bc5f3c19bb1b762c8e2cefeb18930d32b3f120d794db9dba1aa3b6ac6742",
+  "source_objects": 127,
+  "preview_meshes": 51
+}

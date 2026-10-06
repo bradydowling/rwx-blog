@@ -1,0 +1,139 @@
+{
+  "slug": "upper-floor",
+  "floorY": 2.6289,
+  "exterior": false,
+  "url": "model.glb",
+  "views": {
+    "Upstairs overview": {
+      "label": "Whole upstairs",
+      "position": [
+        13.0,
+        15.0,
+        16.0
+      ],
+      "target": [
+        4.038067817687988,
+        3.2288999557495117,
+        4.05075740814209
+      ],
+      "kind": "ORTHO",
+      "scale": 12.800000190734863,
+      "fov": 39.59775192067671,
+      "cutaway": true
+    },
+    "Upstairs primary": {
+      "label": "Primary bedroom",
+      "position": [
+        5.4086127281188965,
+        4.168900012969971,
+        3.403899908065796
+      ],
+      "target": [
+        5.671334743499756,
+        3.6029398441314697,
+        6.338293552398682
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 83.97442327907126,
+      "cutaway": false
+    },
+    "Upstairs closet": {
+      "label": "Primary closet",
+      "position": [
+        5.760000228881836,
+        4.19890022277832,
+        6.300000190734863
+      ],
+      "target": [
+        6.530463218688965,
+        3.571115732192993,
+        3.4694037437438965
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 78.57881289138214,
+      "cutaway": false
+    },
+    "Upstairs children": {
+      "label": "Kids\u2019 room",
+      "position": [
+        3.7200000286102295,
+        4.098899841308594,
+        4.75
+      ],
+      "target": [
+        1.7917935848236084,
+        3.525947093963623,
+        6.975701332092285
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 83.97442327907126,
+      "cutaway": false
+    },
+    "Upstairs guest": {
+      "label": "Office / guest",
+      "position": [
+        2.700000047683716,
+        4.228899955749512,
+        3.9497623443603516
+      ],
+      "target": [
+        1.3441448211669922,
+        3.663071632385254,
+        1.334136962890625
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 86.90368650841462,
+      "cutaway": false
+    },
+    "Upstairs bathroom": {
+      "label": "Bathroom",
+      "position": [
+        5.530300140380859,
+        4.208899974822998,
+        0.9599999785423279
+      ],
+      "target": [
+        8.348926544189453,
+        3.251450300216675,
+        1.3323415517807007
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 93.27315892834251,
+      "cutaway": false
+    },
+    "Upstairs landing": {
+      "label": "Landing",
+      "position": [
+        4.059999942779541,
+        4.058899879455566,
+        0.8600000143051147
+      ],
+      "target": [
+        6.939036846160889,
+        3.2440786361694336,
+        1.0772862434387207
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 90.00000250447816,
+      "cutaway": false
+    }
+  },
+  "plan": {
+    "center": [
+      4.0989000499248505,
+      2.6289,
+      4.016524663195014
+    ],
+    "width": 8.402200090885163,
+    "height": 8.893049306422473
+  },
+  "source_sha256": "0726e9ec0d6e4ff12e7508a7dbac83bbe001756c6c363d3aa64c3346d5a2ac50",
+  "source_objects": 1353,
+  "preview_meshes": 41
+}

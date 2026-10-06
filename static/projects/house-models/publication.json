@@ -1,0 +1,41 @@
+{
+  "url": "https://readwriteexercise.com/projects/house-models/",
+  "models": [
+    {
+      "slug": "upstairs-two-baths",
+      "title": "Upstairs: two bathrooms",
+      "source": "models/renovations/upstairs-two-baths/upstairs-two-baths.blend",
+      "sha256": "74e4e9aaf008e9246eeeaf5ff2f558f6e680aad3ea4f83da5fc9fc8b84ac56f1"
+    },
+    {
+      "slug": "kitchen-renovation",
+      "title": "Kitchen & dining renovation",
+      "source": "models/renovations/open-kitch-dining/second-floor.blend",
+      "sha256": "6b78215a88ffe14402249f42bc68671989b072ac75a950ab7b29c96a6322d849"
+    },
+    {
+      "slug": "exterior",
+      "title": "Exterior & site",
+      "source": "models/exterior/house-exterior.blend",
+      "sha256": "e66902a6dd43df68ba078ef28d63e2484408626bcc7e00f3a4be714dfc02d339"
+    },
+    {
+      "slug": "upper-floor",
+      "title": "Upstairs: existing layout",
+      "source": "models/upper-floor/upper-floor.blend",
+      "sha256": "0726e9ec0d6e4ff12e7508a7dbac83bbe001756c6c363d3aa64c3346d5a2ac50"
+    },
+    {
+      "slug": "main-floor",
+      "title": "Main floor",
+      "source": "models/second-floor/second-floor.blend",
+      "sha256": "43431ba4d41400f8ee107e718ea2c8ac77806f9c92fcf51a7bfe3ad543f01e87"
+    },
+    {
+      "slug": "basement",
+      "title": "Basement",
+      "source": "models/basement/basement.blend",
+      "sha256": "ea69bc5f3c19bb1b762c8e2cefeb18930d32b3f120d794db9dba1aa3b6ac6742"
+    }
+  ]
+}

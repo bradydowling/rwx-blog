@@ -1,0 +1,122 @@
+{
+  "slug": "kitchen-renovation",
+  "floorY": 0,
+  "exterior": false,
+  "url": "model.glb",
+  "views": {
+    "Overview": {
+      "label": "Whole floor",
+      "position": [
+        14.41349983215332,
+        10.457200050354004,
+        14.658024787902832
+      ],
+      "target": [
+        6.527738094329834,
+        0.5999994277954102,
+        4.800824165344238
+      ],
+      "kind": "ORTHO",
+      "scale": 25.171049118041992,
+      "fov": 39.59775192067671,
+      "cutaway": true
+    },
+    "Renovation dining to kitchen": {
+      "label": "Dining to kitchen",
+      "position": [
+        6.769999980926514,
+        1.5499999523162842,
+        7.178249835968018
+      ],
+      "target": [
+        5.832272052764893,
+        1.2873440980911255,
+        4.340702056884766
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 76.09408569397988,
+      "cutaway": false
+    },
+    "Renovation kitchen to dining": {
+      "label": "Kitchen to dining",
+      "position": [
+        6.320000171661377,
+        1.5700000524520874,
+        2.054800033569336
+      ],
+      "target": [
+        5.9822893142700195,
+        1.2276065349578857,
+        5.016002655029297
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 81.20258907990751,
+      "cutaway": false
+    },
+    "Renovation bar seating": {
+      "label": "Bar seating",
+      "position": [
+        6.511075019836426,
+        1.4700000286102295,
+        5.645299911499023
+      ],
+      "target": [
+        4.578135013580322,
+        0.8837814331054688,
+        3.4271721839904785
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 69.39030966512573,
+      "cutaway": false
+    },
+    "Renovation fridge surround": {
+      "label": "Fridge & storage",
+      "position": [
+        5.784649848937988,
+        1.5,
+        2.699924945831299
+      ],
+      "target": [
+        8.037273406982422,
+        1.1257548332214355,
+        4.645594120025635
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 86.90368650841462,
+      "cutaway": false
+    },
+    "Renovation farmhouse sink": {
+      "label": "Farmhouse sink",
+      "position": [
+        6.96999979019165,
+        1.659999966621399,
+        2.60479998588562
+      ],
+      "target": [
+        5.314146518707275,
+        1.0038727521896362,
+        0.19074797630310059
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 69.39030966512573,
+      "cutaway": false
+    }
+  },
+  "plan": {
+    "center": [
+      6.550025299191475,
+      0,
+      4.658024609088898
+    ],
+    "width": 13.353950637578965,
+    "height": 12.750699210166932
+  },
+  "source_sha256": "6b78215a88ffe14402249f42bc68671989b072ac75a950ab7b29c96a6322d849",
+  "source_objects": 2956,
+  "preview_meshes": 95
+}

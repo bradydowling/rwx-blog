@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="880" viewBox="0 0 1100 880" role="img" aria-labelledby="title desc">
+<title id="title">Office / guest room — October 1 measurements</title>
+<desc id="desc">Measured room shape, seven-inch desk-wall projection, closet extending behind the desk, paired windows and doorway. Exterior registration remains provisional.</desc>
+<rect width="1100" height="880" fill="#f5f2eb"/>
+<style>text{font-family:Arial,sans-serif;fill:#283f35}.wall{fill:#e5ddd0;stroke:#334c3e;stroke-width:7;stroke-linejoin:round}.dim{stroke:#376fa0;stroke-width:1.4;fill:none}.small{font-size:15px}.label{font-size:20px;font-weight:bold}.note{font-size:17px}</style>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse"><path d="M7,0 L0,3.5 L7,7" fill="none" stroke="#376fa0"/></marker></defs>
+<text x="45.00" y="48.00" font-size="30" text-anchor="start">Office / guest room</text>
+<text x="45.00" y="80.00" font-size="18" text-anchor="start">October 1, 2026 · owner measurements · front windows at top</text>
+<polygon class="wall" points="100.00,160.00 730.00,160.00 730.00,363.12 695.00,363.12 695.00,630.00 100.00,630.00"/>
+<polygon class="wall" points="747.50,160.00 915.32,160.00 915.32,430.00 717.64,430.00 717.64,385.76 747.50,385.76"/>
+<text x="380.00" y="440.00" font-size="24" text-anchor="middle">OFFICE / GUEST</text>
+<text x="380.00" y="468.00" font-size="18" text-anchor="middle">Desk side steps in 7″</text>
+<text x="835.00" y="205.00" font-size="20" text-anchor="middle">CLOSET</text>
+<text x="835.00" y="235.00" font-size="15" text-anchor="middle">Extends behind desk</text>
+<line x1="546.25" y1="160.00" x2="692.50" y2="160.00" stroke="#f8fbfc" stroke-width="12"/>
+<line x1="558.75" y1="160.00" x2="680.00" y2="160.00" stroke="#78a9c7" stroke-width="8"/>
+<text x="619.38" y="187.00" font-size="14" text-anchor="middle">24¼″ glass</text>
+<line x1="355.00" y1="160.00" x2="501.25" y2="160.00" stroke="#f8fbfc" stroke-width="12"/>
+<line x1="367.50" y1="160.00" x2="488.75" y2="160.00" stroke="#78a9c7" stroke-width="8"/>
+<text x="428.12" y="187.00" font-size="14" text-anchor="middle">24¼″ glass</text>
+<line x1="519.94" y1="630.00" x2="667.44" y2="630.00" stroke="#f5f2eb" stroke-width="12"/>
+<line x1="519.94" y1="630.00" x2="667.44" y2="630.00" stroke="#9c7955" stroke-width="2"/>
+<text x="593.69" y="660.00" font-size="17" text-anchor="middle">29½″ entry</text>
+<line x1="730.00" y1="203.12" x2="730.00" y2="338.12" stroke="#f5f2eb" stroke-width="12"/>
+<line x1="730.00" y1="203.12" x2="730.00" y2="338.12" stroke="#9c7955" stroke-width="2"/>
+<text x="698.00" y="270.62" font-size="17" text-anchor="middle">27″</text>
+<rect x="592.64" y="392.65" width="94.49" height="207.82" rx="4" fill="#fff" stroke="#b1a490"/>
+<text x="639.88" y="496.56" font-size="17" text-anchor="middle">DESK</text>
+<path class="dim" d="M 100.00,115.00 L 730.00,115.00" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="415.00" y="106.00" font-size="17" text-anchor="middle">10′6″ to closet face</text>
+<path class="dim" d="M 60.00,160.00 L 60.00,630.00" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="47.00" y="410.00" font-size="17" text-anchor="middle">7′10″</text>
+<path class="dim" d="M 100.00,675.00 L 695.00,675.00" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="397.50" y="666.00" font-size="17" text-anchor="middle">9′11″ to desk wall</text>
+<path class="dim" d="M 742.19,262.36 L 915.32,262.36" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="828.76" y="253.36" font-size="17" text-anchor="middle">34⅝″</text>
+<text x="828.76" y="282.36" font-size="13" text-anchor="middle">from back of door</text>
+<path class="dim" d="M 950.32,160.00 L 950.32,430.00" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="980.32" y="305.00" font-size="17" text-anchor="middle">54″</text>
+<path class="dim" d="M 100.00,218.00 L 330.00,218.00" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<text x="215.00" y="209.00" font-size="17" text-anchor="middle">46″ to casing</text>
+<text x="45.00" y="734.00" font-size="17" text-anchor="start">Window assembly: ~5″ outer trim · 2½″ sash sides · 24¼″ glass each · ~9″ central wood</text>
+<text x="45.00" y="768.00" font-size="16" text-anchor="start">Window chain totals 125¼″ against the ~126″ room width; the drawn right gap is 2½″ (stated ~1¾″).</text>
+<text x="45.00" y="800.00" font-size="16" text-anchor="start">Closet over lower stairs confirmed; concealed wall / door-leaf thicknesses and floor level remain inferred.</text>
+<text x="45.00" y="832.00" font-size="16" text-anchor="start">See measurement notes for the front-door alignment discrepancy and landing / bathroom dimensions.</text>
+</svg>

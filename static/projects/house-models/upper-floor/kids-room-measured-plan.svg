@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="900" viewBox="0 0 1100 900" role="img" aria-labelledby="title desc">
+<title id="title">Kids' room — October 1 measurements</title>
+<desc id="desc">The room is 11 feet 5 inches from the primary-bedroom wall to the front-window wall and 11 feet 4 and a half inches from the entry wall to the far wall. The closet section projects 20 and five eighths inches and is 51 inches wide.</desc>
+<rect width="1100" height="900" fill="#f5f2eb"/>
+<style>text{font-family:Arial,sans-serif;fill:#283f35}.dim{stroke:#376fa0;stroke-width:1.4;fill:none;marker-start:url(#arrow);marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse"><path d="M7,0 L0,3.5 L7,7" fill="none" stroke="#376fa0"/></marker></defs>
+<text x="45" y="48" font-size="30">Kids' room</text><text x="45" y="80" font-size="18">October 1, 2026 · owner measurements · front windows at top</text>
+<polygon points="130.00,160.00 593.50,160.00 593.50,364.00 676.00,364.00 676.00,708.00 130.00,708.00" fill="#e0e6d9" stroke="#334c3e" stroke-width="7" stroke-linejoin="round"/>
+<polygon points="593.50,160.00 676.00,160.00 676.00,364.00 593.50,364.00" fill="#e5ddd0" stroke="#334c3e" stroke-width="7" stroke-linejoin="round"/>
+<text x="365" y="445" text-anchor="middle" font-size="25">KIDS' ROOM</text>
+<text x="365" y="475" text-anchor="middle" font-size="18">Bunk bedroom</text>
+<path class="dim" d="M85,160 L85,708.00"/><text x="65" y="440" text-anchor="middle" font-size="18">11′5″</text>
+<path class="dim" d="M130,765.00 L676.00,765.00"/><text x="403.00" y="755.00" text-anchor="middle" font-size="18">11′4½″ entry wall to far wall</text>
+<text x="403.00" y="691.00" text-anchor="middle" font-size="17">PRIMARY-BEDROOM SHARED WALL</text>
+<path class="dim" d="M751.00,364.00 L751.00,708.00"/>
+<text x="768.00" y="524.00" font-size="18">7′2″</text><text x="768.00" y="549.00" font-size="15">primary wall</text><text x="768.00" y="570.00" font-size="15">to closet area</text>
+<path class="dim" d="M701.00,160 L701.00,364.00"/><text x="721.00" y="262.00" font-size="17">4′3″ derived</text>
+<path class="dim" d="M593.50,125 L676.00,125"/><text x="634.75" y="113" text-anchor="middle" font-size="17">1′8⅝″</text>
+<text x="634.75" y="195" text-anchor="middle" font-size="14">CLOSET</text>
+<line x1="460.43" y1="160" x2="573.81" y2="160" stroke="#78a9c7" stroke-width="9"/>
+<line x1="299.80" y1="160" x2="413.19" y2="160" stroke="#78a9c7" stroke-width="9"/>
+<line x1="676.00" y1="575.72" x2="676.00" y2="685.95" stroke="#f5f2eb" stroke-width="12"/><line x1="676.00" y1="575.72" x2="676.00" y2="685.95" stroke="#9c7955" stroke-width="2"/>
+<line x1="593.50" y1="200.98" x2="593.50" y2="304.91" stroke="#f5f2eb" stroke-width="12"/><line x1="593.50" y1="200.98" x2="593.50" y2="304.91" stroke="#9c7955" stroke-width="2"/>
+<text x="45" y="800" font-size="17">Closet section: 11′5″ − 7′2″ = 4′3″. The projection uses the corrected 1′8⅝″ measurement.</text>
+<text x="45" y="833" font-size="16">Door sizes / positions and window placement remain inferred. Closet wall thickness is not measured.</text>
+<text x="45" y="866" font-size="16">Both measured front rooms fit the existing outer footprint with inferred upstairs side-wall allowances.</text></svg>

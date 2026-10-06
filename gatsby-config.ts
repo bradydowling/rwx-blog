@@ -197,7 +197,7 @@ export default {
     'gatsby-plugin-image',
     {
       resolve: 'gatsby-plugin-catch-links',
-      options: { excludePattern: /^\/projects\/slimeba-jam\// },
+      options: { excludePattern: /^\/projects\/(?:slimeba-jam|house-models)(?:\/|$)/ },
     },
     'gatsby-plugin-optimize-svgs',
     'gatsby-plugin-sass',

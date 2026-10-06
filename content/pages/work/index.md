@@ -21,3 +21,10 @@ Neurture is not therapy, detox, diagnosis, crisis support, or a replacement for 
 A goofy basketball game for one player against the CPU or two friends on one keyboard. Pick a court and ball, then race to five points. The playable prototype also has phone touch controls and can be installed for offline play.
 
 - [Play SlimeBA Jam](/projects/slimeba-jam/)
+
+## House models & renovation studies
+
+Interactive models, rendered room views, and floor plans for the house exterior, basement, main floor, and upstairs. The renovation studies explore opening the kitchen toward dining and adding a second upstairs bathroom, including an instant existing/proposed comparison.
+
+- [Explore the house models](/projects/house-models/)
+- [Compare the upstairs renovation](/projects/house-models/upstairs-two-baths/#overhead)

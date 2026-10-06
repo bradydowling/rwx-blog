@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1320" height="900" viewBox="0 0 1320 900" role="img" aria-labelledby="title desc">
+<title id="title">Hallway, landing and primary bedroom measurements</title>
+<desc id="desc">Rear of house at top, driveway side at left. The upstairs chimney projects 18 inches from the bedroom entry wall and has a 25-inch face parallel to the door. A queen bed sits between nightstands, about 40.5 inches from the chimney and 11 inches from the far wall, with roughly 3-inch gaps beside the headboard.</desc>
+<rect width="1320" height="900" fill="#f5f2eb"/><style>text{font-family:Arial,sans-serif;fill:#283f35}.wall{stroke:#344c60;stroke-width:6;stroke-linejoin:round}</style>
+<text x="45.00" y="48.00" font-size="30" text-anchor="start">Hallway, landing and primary bedroom</text>
+<text x="45.00" y="80.00" font-size="18" text-anchor="start">Updated October 5, 2026 · partial floor plan · rear at top · driveway side at left</text>
+<polygon class="wall" points="80.00,679.52 821.50,679.52 821.50,140.00 80.00,140.00" fill="#eee8db"/>
+<polygon class="wall" points="821.50,679.52 488.66,679.52 488.66,481.99 821.50,481.99" fill="#e0e6d9"/>
+<polygon class="wall" points="477.62,679.52 187.45,679.52 187.45,586.84 477.62,586.84" fill="#e5ddd0"/>
+<polygon class="wall" points="418.55,470.95 347.07,470.95 347.07,409.99 418.55,409.99" fill="#cdd0cd"/>
+<polygon class="wall" points="821.50,470.95 821.50,140.00 479.51,140.00 479.51,293.31 374.66,293.31 374.66,409.99 418.55,409.99 418.55,470.95" fill="#e5ecdF"/>
+<rect x="579.00" y="252.45" width="153.98" height="204.67" fill="#c4b297" stroke="#8b735b" stroke-width="1.5"/>
+<rect x="582.84" y="257.25" width="146.30" height="195.07" fill="#f9f7ef" stroke="#8b735b" stroke-width="1.5"/>
+<rect x="576.12" y="458.57" width="159.74" height="6.72" fill="#8b735b" stroke="#8b735b" stroke-width="1.5"/>
+<rect x="517.30" y="411.43" width="51.36" height="46.08" fill="#c4b297" stroke="#8b735b" stroke-width="1.5"/>
+<rect x="743.31" y="411.43" width="51.36" height="46.08" fill="#c4b297" stroke="#8b735b" stroke-width="1.5"/>
+<text x="655.99" y="354.79" font-size="16" text-anchor="middle">QUEEN</text>
+<text x="655.99" y="377.79" font-size="14" text-anchor="middle">60″ × 80″</text>
+<polygon class="wall" points="468.47,282.27 308.67,282.27 308.67,140.00 468.47,140.00" fill="#ded8ce"/>
+<polygon class="wall" points="274.46,358.85 222.71,358.85 222.71,293.31 274.46,293.31" fill="#ded8ce"/>
+<polygon class="wall" points="80.00,367.39 80.00,140.00 297.63,140.00 297.63,282.04 211.67,282.04 211.67,367.39" fill="#dce6ec"/>
+<path d="M336.03,484.42 L336.03,411.27" stroke="#8b633d" stroke-width="10"/>
+<path d="M374.66,293.31 L274.46,293.31" stroke="#344c60" stroke-width="6"/>
+<path d="M363.62,411.27 L363.62,293.31" stroke="#344c60" stroke-width="6"/>
+<path d="M274.46,350.21 L274.46,303.88" stroke="#f5f2eb" stroke-width="11"/>
+<path d="M363.62,389.73 L363.62,314.85" stroke="#f5f2eb" stroke-width="11"/>
+<path d="M374.66,389.73 L374.66,314.85" stroke="#f5f2eb" stroke-width="11"/>
+<path d="M479.51,245.92 L479.51,187.40" stroke="#f5f2eb" stroke-width="11"/>
+<path d="M468.47,245.92 L468.47,187.40" stroke="#f5f2eb" stroke-width="11"/>
+<path d="M190.44,367.39 L120.36,367.39" stroke="#f5f2eb" stroke-width="11"/>
+<polygon class="wall" points="174.63,674.56 94.42,674.56 94.42,487.23 174.63,487.23" fill="#cdd5d8"/>
+<path d="M178.30,575.80 L178.30,471.71" stroke="#937955" stroke-width="8"/>
+<path d="M80.00,565.42 L80.00,494.38" stroke="#78a9c7" stroke-width="9"/>
+<path d="M80.00,473.26 L80.00,402.22" stroke="#78a9c7" stroke-width="9"/>
+<path d="M821.50,373.53 L821.50,293.50" stroke="#78a9c7" stroke-width="9"/>
+<path d="M575.16,140.00 L495.24,140.00" stroke="#78a9c7" stroke-width="9"/>
+<path d="M670.43,140.00 L590.52,140.00" stroke="#78a9c7" stroke-width="9"/>
+<text x="165.96" y="242.72" font-size="15" text-anchor="middle">BATH</text>
+<text x="242.76" y="328.16" font-size="15" text-anchor="middle">LINEN</text>
+<text x="385.80" y="209.12" font-size="15" text-anchor="middle">PRIMARY CLOSET</text>
+<text x="679.56" y="218.72" font-size="15" text-anchor="middle">PRIMARY BEDROOM</text>
+<text x="237.96" y="441.44" font-size="15" text-anchor="middle">LANDING</text>
+<text x="650.76" y="583.52" font-size="15" text-anchor="middle">KIDS ROOM</text>
+<text x="329.16" y="636.32" font-size="15" text-anchor="middle">OFFICE / GUEST</text>
+<text x="321.48" y="324.32" font-size="16" text-anchor="middle">36⁹⁄₁₆″</text>
+<text x="492.95" y="216.80" font-size="15" text-anchor="start">24″ arch</text>
+<text x="353.31" y="448.16" font-size="15" text-anchor="start">30″ mirror wall</text>
+<text x="129.48" y="572.00" font-size="13" text-anchor="middle">STAIRS</text>
+<text x="920.00" y="145.00" font-size="22" text-anchor="start">Hall and railing</text>
+<text x="920.00" y="181.00" font-size="17" text-anchor="start">Mirror wall to driveway: 105″</text>
+<text x="920.00" y="208.00" font-size="17" text-anchor="start">Mirror projection: 11⁵⁄₁₆″ resolved</text>
+<text x="920.00" y="235.00" font-size="17" text-anchor="start">Reported projection: ~11½″</text>
+<text x="920.00" y="262.00" font-size="17" text-anchor="start">Guest wall to post end: 42¹¹⁄₁₆″</text>
+<text x="920.00" y="289.00" font-size="17" text-anchor="start">Guard edge to driveway: 40⁵⁄₁₆″</text>
+<text x="920.00" y="316.00" font-size="17" text-anchor="start">Post extends ~5″ past top step</text>
+<text x="920.00" y="343.00" font-size="17" text-anchor="start">Stair vertical face: ~40½″ from</text>
+<text x="920.00" y="370.00" font-size="17" text-anchor="start">the guest doorway wall</text>
+<text x="920.00" y="427.00" font-size="22" text-anchor="start">Primary bedroom and storage</text>
+<text x="920.00" y="463.00" font-size="17" text-anchor="start">Chimney: 18″ projection × 25″ face</text>
+<text x="920.00" y="490.00" font-size="17" text-anchor="start">Entry wall: 48⅜″</text>
+<text x="920.00" y="517.00" font-size="17" text-anchor="start">Closet front: 62⅞″</text>
+<text x="920.00" y="544.00" font-size="17" text-anchor="start">Arch: nominal 24″ × 82″</text>
+<text x="920.00" y="571.00" font-size="17" text-anchor="start">Closet projects ~43″ into room</text>
+<text x="920.00" y="598.00" font-size="17" text-anchor="start">Closet inside depth: ~65½″</text>
+<text x="920.00" y="625.00" font-size="17" text-anchor="start">Linen opening: 19″</text>
+<text x="920.00" y="652.00" font-size="17" text-anchor="start">Linen shelf depth: ~16¾″</text>
+<text x="45.00" y="750.00" font-size="19" text-anchor="start">Corrected upstairs chimney: 18″ × 25″. Remaining span ~165¼″; only ~0.81″ above the earlier report.</text>
+<text x="45.00" y="785.00" font-size="17" text-anchor="start">Furniture: chimney → ~40½″ → nightstand → ~3″ → queen headboard → ~3″ → nightstand → ~11″ → wall.</text>
+<text x="45.00" y="820.00" font-size="17" text-anchor="start">Primary entry-to-side-wall depth resolves to ~183¼″ (stated ~182″); closet-front span is ~140¼″ (stated ~140″).</text>
+<text x="45.00" y="855.00" font-size="16" text-anchor="start">Chimney enclosures can differ by floor; concealed flue alignment is unconfirmed. Furniture dimensions and spacing are approximate.</text>
+</svg>

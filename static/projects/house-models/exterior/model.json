@@ -1,0 +1,139 @@
+{
+  "slug": "exterior",
+  "floorY": 0,
+  "exterior": true,
+  "url": "model.glb",
+  "views": {
+    "Exterior front office corner": {
+      "label": "Front corner",
+      "position": [
+        -12.0,
+        4.800000190734863,
+        13.0
+      ],
+      "target": [
+        3.525149345397949,
+        2.4922070503234863,
+        4.188429832458496
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 45.42882443399458,
+      "cutaway": false
+    },
+    "Exterior front": {
+      "label": "Front elevation",
+      "position": [
+        -21.72694969177246,
+        2.549999952316284,
+        4.5
+      ],
+      "target": [
+        -3.7306652069091797,
+        2.8772053718566895,
+        4.663604736328125
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 36.869897309578676,
+      "cutaway": false
+    },
+    "Exterior office side": {
+      "label": "Office side",
+      "position": [
+        3.9000000953674316,
+        4.0,
+        18.399999618530273
+      ],
+      "target": [
+        4.07194709777832,
+        1.5067670345306396,
+        0.5743370056152344
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 69.39030966512573,
+      "cutaway": false
+    },
+    "Exterior rear": {
+      "label": "Rear patio",
+      "position": [
+        21.0,
+        3.0999999046325684,
+        4.599999904632568
+      ],
+      "target": [
+        3.060749053955078,
+        1.8083748817443848,
+        3.882427215576172
+      ],
+      "kind": "PERSP",
+      "scale": 6.0,
+      "fov": 69.39030966512573,
+      "cutaway": false
+    },
+    "Exterior driveway approach": {
+      "label": "Driveway",
+      "position": [
+        -15.0,
+        8.199999809265137,
+        -12.0
+      ],
+      "target": [
+        9.066671371459961,
+        0.5999999046325684,
+        7.253337860107422
+      ],
+      "kind": "ORTHO",
+      "scale": 21.399999618530273,
+      "fov": 39.59775192067671,
+      "cutaway": false
+    },
+    "Exterior site overview": {
+      "label": "House & yard",
+      "position": [
+        -24.0,
+        35.0,
+        36.0
+      ],
+      "target": [
+        7.451438903808594,
+        0.6000022888183594,
+        3.5657081604003906
+      ],
+      "kind": "ORTHO",
+      "scale": 55.0,
+      "fov": 39.59775192067671,
+      "cutaway": false
+    },
+    "Neighborhood aerial": {
+      "label": "Neighborhood",
+      "position": [
+        -33.0,
+        64.0,
+        44.0
+      ],
+      "target": [
+        11.578136444091797,
+        0.5999984741210938,
+        -0.5781288146972656
+      ],
+      "kind": "ORTHO",
+      "scale": 100.0,
+      "fov": 39.59775192067671,
+      "cutaway": false
+    }
+  },
+  "plan": {
+    "center": [
+      14,
+      0,
+      1
+    ],
+    "width": 92,
+    "height": 92
+  },
+  "source_sha256": "e66902a6dd43df68ba078ef28d63e2484408626bcc7e00f3a4be714dfc02d339",
+  "source_objects": 5626,
+  "preview_meshes": 31
+}

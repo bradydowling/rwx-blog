@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1020" viewBox="0 0 1200 1020" role="img" aria-labelledby="title desc">
+<title id="title">Bathroom — October 1 measurements</title>
+<desc id="desc">Bathroom viewed from above with the doorway at the bottom, driveway wall on the left, rear window at the top and recessed tub on the right. The doorway-to-rear depth is 88 and a half inches; the tiled run begins two inches farther in.</desc>
+<rect width="1200" height="1020" fill="#f5f2eb"/>
+<style>text{font-family:Arial,sans-serif;fill:#283f35}.dim{stroke:#376fa0;stroke-width:1.4;fill:none;marker-start:url(#arrow);marker-end:url(#arrow)}</style>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse"><path d="M7,0 L0,3.5 L7,7" fill="none" stroke="#376fa0"/></marker></defs>
+<text x="45.00" y="48.00" font-size="30" text-anchor="start">Bathroom</text>
+<text x="45.00" y="80.00" font-size="18" text-anchor="start">October 1, 2026 · doorway at bottom · driveway side on the left</text>
+<polygon points="140.00,691.00 140.00,202.00 198.50,202.00 198.50,160.00 675.50,160.00 675.50,502.00 464.00,502.00 464.00,691.00" fill="#edf0e8" stroke="#344c60" stroke-width="7" stroke-linejoin="round"/>
+<rect x="140.00" y="160.00" width="58.50" height="42.00" fill="#cbd3d8" stroke="#8a9691" stroke-width="2"/>
+<text x="153.00" y="187.00" font-size="13" text-anchor="start">PIPES</text>
+<rect x="501.50" y="160.00" width="174.00" height="342.00" fill="#ffffff" stroke="#8a9691" stroke-width="2"/>
+<text x="588.50" y="310.00" font-size="23" text-anchor="middle">TUB</text>
+<text x="588.50" y="339.00" font-size="18" text-anchor="middle">57″ × 29″</text>
+<text x="588.50" y="482.00" font-size="12" text-anchor="middle">SHOWER HEAD</text>
+<rect x="144.72" y="340.00" width="129.92" height="186.00" fill="#d9c7a6" stroke="#8a9691" stroke-width="2"/>
+<text x="209.69" y="433.00" font-size="17" text-anchor="middle">VANITY</text>
+<text x="209.69" y="459.00" font-size="16" text-anchor="middle">31″ wide</text>
+<ellipse cx="226.22" cy="271.00" rx="57" ry="48" fill="#fff" stroke="#8a9691" stroke-width="2"/>
+<text x="226.22" y="276.00" font-size="14" text-anchor="middle">TOILET</text>
+<line x1="390.89" y1="160.00" x2="230.39" y2="160.00" stroke="#78a9c7" stroke-width="10"/>
+<path class="dim" d="M230.39,120.00 L390.89,120.00"/>
+<text x="310.64" y="110.00" font-size="18" text-anchor="middle">26¾″ inside wood frame</text>
+<line x1="411.76" y1="691.00" x2="239.32" y2="691.00" stroke="#f5f2eb" stroke-width="12"/>
+<line x1="411.76" y1="691.00" x2="239.32" y2="691.00" stroke="#9c7955" stroke-width="3"/>
+<text x="325.54" y="718.00" font-size="18" text-anchor="middle">ENTRY</text>
+<line x1="411.76" y1="679.00" x2="239.32" y2="679.00" stroke="#9c7955" stroke-width="2" stroke-dasharray="7 5"/>
+<path class="dim" d="M80.00,160.00 L80.00,691.00"/>
+<text x="45.00" y="435.00" font-size="18" text-anchor="middle">88½″</text>
+<path class="dim" d="M140.00,760.00 L464.00,760.00"/>
+<text x="302.00" y="750.00" font-size="18" text-anchor="middle">54″ to short wall</text>
+<path class="dim" d="M464.00,720.00 L675.50,720.00"/>
+<text x="569.75" y="710.00" font-size="18" text-anchor="middle">35¼″ derived</text>
+<text x="140.00" y="797.00" font-size="16" text-anchor="start">Driveway wall</text>
+<text x="740.00" y="175.00" font-size="20" text-anchor="start">Depths use different starting points</text>
+<text x="740.00" y="211.00" font-size="17" text-anchor="start">88½″ doorway wall to full rear wall</text>
+<text x="740.00" y="242.00" font-size="17" text-anchor="start">86½″ tile edge to full rear wall</text>
+<text x="740.00" y="273.00" font-size="17" text-anchor="start">81½″ doorway wall to pipe-box face</text>
+<text x="740.00" y="304.00" font-size="17" text-anchor="start">Pipe enclosure: 7″ × 9¾″</text>
+<text x="740.00" y="370.00" font-size="20" text-anchor="start">Across the tub opening</text>
+<text x="740.00" y="406.00" font-size="17" text-anchor="start">54″ to the short return</text>
+<text x="740.00" y="437.00" font-size="17" text-anchor="start">Then 6¼″ rightward to the tub front</text>
+<text x="740.00" y="468.00" font-size="17" text-anchor="start">Then 29″ across the bathtub</text>
+<text x="740.00" y="499.00" font-size="17" text-anchor="start">6¼″ + 29″ = 35¼″; stated total ~35″</text>
+<text x="740.00" y="565.00" font-size="20" text-anchor="start">Fixtures and finishes</text>
+<text x="740.00" y="601.00" font-size="17" text-anchor="start">Vanity starts 26″ beyond doorframe</text>
+<text x="740.00" y="632.00" font-size="17" text-anchor="start">Frame allowance: 1½″ inferred</text>
+<text x="740.00" y="663.00" font-size="17" text-anchor="start">Mirror: 20″ wide × 28″ high</text>
+<text x="740.00" y="694.00" font-size="17" text-anchor="start">Wall tile: 46″ above the floor</text>
+<text x="740.00" y="725.00" font-size="17" text-anchor="start">Entire bathroom ceiling tiled</text>
+<text x="45.00" y="865.00" font-size="17" text-anchor="start">The owner confirmed both depth starting points and the rightward direction of the 6¼″ measurement.</text>
+<text x="45.00" y="903.00" font-size="17" text-anchor="start">Window offset, door position, fixture depths, ceiling height and hidden wall thicknesses remain inferred.</text>
+<text x="45.00" y="941.00" font-size="17" text-anchor="start">Linen cupboard faces the primary doorway; the corrected layout gives ~16¾″ depth, within the stated range.</text>
+<text x="45.00" y="979.00" font-size="16" text-anchor="start">Dimensions describe the approximate finished faces. This is a model review diagram.</text>
+</svg>
