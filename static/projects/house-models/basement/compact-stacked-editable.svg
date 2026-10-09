@@ -1,0 +1,640 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="830pt" height="815pt" viewBox="410 420 830 815" data-option2-plan="1" data-points-per-inch="1.5" data-drawing-method="hand-authored" data-concept="Compact — stacked laundry" data-preset="compact" role="img" aria-labelledby="plan-title plan-description">
+  <title id="plan-title">Basement · compact stacked-laundry concept</title>
+  <desc id="plan-description">Revised 2D concept: stacked laundry, toilet, then the original sink beneath the window, from left to right. The original entry wall under the beam and original door swing are retained. Source dimensions are static, not field-reconciled.</desc>
+  <metadata id="plan-provenance">{"name": "Compact — stacked laundry", "basis": "Original Option 2 PDF shell; not the later field-measured shell.", "drawing_method": "Authored SVG primitives and live text; revised from our fully redrawn Option 2 baseline.", "pdf_graphics_imported": false, "raster_tracing_used": false, "embedded_images": false, "embedded_fonts": false, "units": "inches; 1.5 SVG points per inch", "wall_shift_in": 0, "living_gain_sq_ft": 0, "gain_note": "The original bathroom boundary remains under the beam. Reorganizing fixtures opens bathroom floor space without reallocating living-area footprint.", "north_wall_order": ["Stacked washer/dryer", "Toilet", "Original sink beneath the window"], "fixed": ["Foundation", "Windows", "Kitchen and bulkhead stairs", "Chimney and enclosure", "Tub", "Closet and utility footprint", "Meters", "Beam and posts", "Original bathroom entry wall under beam", "Original bathroom door and swing", "Original sink and vanity location"], "changed": ["Stacked compact laundry at the left end of the original laundry wall", "Toilet between laundry and original sink", "Previous pocket-door and shifted-wall concept superseded"], "removed_storage": ["21-inch three-drawer base", "36-inch tall cabinet", "Two laundry wall cabinets"], "coordination": ["Toilet and laundry drain/supply relocation", "Final appliance clearances and access", "The inward door swing passes through the laundry approach zone; appliance fronts clear the door arc", "Field shell is smaller than source PDF; this is a source-plan concept, not a construction fit"], "toilet": {"center_svg": [900, 597.75], "depth_in": 29, "right_center_to_vanity_edge_in": 24.666666666666668, "left_center_to_laundry_edge_in": 24.666666666666668, "front_clearance_in": 30}, "laundry": {"example": "LG WKHC152HWA, dimensional reference only", "width_in": 24, "depth_in": 26, "height_in": 65.25, "reserved_width_in": 28, "reserved_depth_in": 30, "side_allowance_in": 2, "rear_allowance_in": 4, "front_clear_floor_in": 30, "note": "Requires new compatible compact stacked laundry; the existing 27-inch pair is not assumed stackable. Final appliance installation and service space must be checked."}}</metadata>
+  <defs>
+    <pattern id="foundation-hatch" patternUnits="userSpaceOnUse" width="9" height="9">
+      <rect x="0" y="0" width="9" height="9" fill="white" stroke="none" stroke-width="0" />
+      <path d="M0 0L9 9 M0 9L9 0" fill="none" stroke="#d5d5d5" stroke-width="0.3" />
+    </pattern>
+    <pattern id="chimney-brick" patternUnits="userSpaceOnUse" width="9" height="20">
+      <rect x="0" y="0" width="9" height="20" fill="white" stroke="none" stroke-width="0" />
+      <path d="M0 0V20 M4.5 0V20 M9 0V20 M0 0H4.5 M0 10H4.5 M4.5 5H9 M4.5 15H9" fill="none" stroke="#d9baba" stroke-width="0.3" />
+    </pattern>
+  </defs>
+  <rect id="paper" x="410" y="420" width="830" height="815" fill="white" />
+  <g id="layer-foundation" data-plan-layer="Foundation" inkscape:groupmode="layer" inkscape:label="Foundation">
+    <g id="foundation" data-item="true" data-name="Foundation and concrete hatching" data-layer="Foundation" data-locked="true" data-drawing-method="hand-authored">
+      <title>Foundation and concrete hatching</title>
+      <rect x="570" y="555" width="54.75" height="12" fill="url(#foundation-hatch)" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="678.75" y="555" width="249.75" height="12" fill="url(#foundation-hatch)" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="982.5" y="555" width="79.5" height="12" fill="url(#foundation-hatch)" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="570" y="567" width="12" height="237" fill="url(#foundation-hatch)" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="570" y="858" width="12" height="142.5" fill="url(#foundation-hatch)" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="570" y="1000.5" width="360" height="12" fill="url(#foundation-hatch)" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="984" y="1000.5" width="78" height="12" fill="url(#foundation-hatch)" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="1050" y="567" width="12" height="240" fill="url(#foundation-hatch)" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="1050" y="855" width="12" height="145.5" fill="url(#foundation-hatch)" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="1062" y="795" width="114" height="12" fill="url(#foundation-hatch)" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="1164" y="807" width="12" height="48" fill="url(#foundation-hatch)" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="1062" y="855" width="114" height="12" fill="url(#foundation-hatch)" stroke="#2d2d2d" stroke-width="1" />
+    </g>
+  </g>
+  <g id="layer-fixed-structure" data-plan-layer="Fixed structure" inkscape:groupmode="layer" inkscape:label="Fixed structure">
+    <g id="soffit" data-item="true" data-name="Soffit perimeter and stair-side returns" data-layer="Fixed structure" data-locked="true" data-drawing-method="hand-authored">
+      <title>Soffit perimeter and stair-side returns</title>
+      <path d="M564 1018.5V548H1068V789H1182V873H1068V1018.5Z" fill="none" stroke="#2d2d2d" stroke-width="1.2" stroke-dasharray="11 5" />
+      <path d="M588 579H624 M679 579H815" fill="none" stroke="#868686" stroke-width="1" />
+      <path d="M588 571H624 M679 571H815" fill="none" stroke="#8581c5" stroke-width="0.6" />
+      <path d="M589 571V597L615 579H627V574H599Z" fill="#d4d4d4" stroke="#868686" stroke-width="0.65" />
+    </g>
+    <g id="beam-posts" data-item="true" data-name="Beam line" data-layer="Fixed structure" data-locked="true" data-drawing-method="hand-authored">
+      <title>Beam line</title>
+      <rect x="808.5" y="573" width="15" height="420.5" fill="#dedede" stroke="none" stroke-width="0" />
+      <line x1="808.5" y1="573" x2="808.5" y2="993.5" stroke="#868686" stroke-width="0.55" stroke-dasharray="16 12" />
+      <line x1="823.5" y1="573" x2="823.5" y2="993.5" stroke="#868686" stroke-width="0.55" stroke-dasharray="16 12" />
+    </g>
+    <g id="chimney" data-item="true" data-name="Chimney masonry and label" data-layer="Fixed structure" data-locked="true" data-drawing-method="hand-authored">
+      <title>Chimney masonry and label</title>
+      <rect x="799" y="702" width="59" height="93" fill="url(#chimney-brick)" stroke="#868686" stroke-width="0.6" />
+      <text x="828.5" y="749" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6.5" fill="#004080" text-anchor="middle">
+        <tspan x="828.5" dy="0">CHIMNEY</tspan>
+      </text>
+    </g>
+    <g id="stairs-kitchen" data-item="true" data-name="Kitchen stairs as shown in Option 2" data-layer="Fixed structure" data-locked="true" data-drawing-method="hand-authored">
+      <title>Kitchen stairs as shown in Option 2</title>
+      <rect x="645" y="579" width="163.5" height="47" fill="white" stroke="#2d2d2d" stroke-width="0.8" />
+      <line x1="661.35" y1="579" x2="661.35" y2="626" stroke="#2d2d2d" stroke-width="0.7" />
+      <line x1="677.7" y1="579" x2="677.7" y2="626" stroke="#2d2d2d" stroke-width="0.7" />
+      <line x1="694.05" y1="579" x2="694.05" y2="626" stroke="#2d2d2d" stroke-width="0.7" />
+      <line x1="710.4" y1="579" x2="710.4" y2="626" stroke="#2d2d2d" stroke-width="0.7" />
+      <line x1="726.75" y1="579" x2="726.75" y2="626" stroke="#2d2d2d" stroke-width="0.7" />
+      <line x1="743.1" y1="579" x2="743.1" y2="626" stroke="#2d2d2d" stroke-width="0.7" />
+      <line x1="759.45" y1="579" x2="759.45" y2="626" stroke="#2d2d2d" stroke-width="0.7" />
+      <line x1="775.8" y1="579" x2="775.8" y2="626" stroke="#2d2d2d" stroke-width="0.7" />
+      <line x1="792.15" y1="579" x2="792.15" y2="626" stroke="#2d2d2d" stroke-width="0.7" />
+      <rect x="643.5" y="626" width="166.5" height="2" fill="white" stroke="#2d2d2d" stroke-width="0.65" />
+      <line x1="677.7" y1="602.5" x2="792.15" y2="602.5" stroke="#19177f" stroke-width="0.55" />
+      <path d="M792.15 602.5l-10 -3v6Z" fill="white" stroke="#19177f" stroke-width="0.5" />
+      <text x="661" y="608.14" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle">
+        <tspan x="661" dy="0">UP</tspan>
+      </text>
+    </g>
+    <g id="stairs-bulkhead" data-item="true" data-name="Bulkhead stairs as shown in Option 2" data-layer="Fixed structure" data-locked="true" data-drawing-method="hand-authored">
+      <title>Bulkhead stairs as shown in Option 2</title>
+      <rect x="1063" y="807" width="96" height="48" fill="white" stroke="#2d2d2d" stroke-width="0.8" />
+      <line x1="1079.0" y1="807" x2="1079.0" y2="855" stroke="#2d2d2d" stroke-width="0.7" />
+      <line x1="1095.0" y1="807" x2="1095.0" y2="855" stroke="#2d2d2d" stroke-width="0.7" />
+      <line x1="1111.0" y1="807" x2="1111.0" y2="855" stroke="#2d2d2d" stroke-width="0.7" />
+      <line x1="1127.0" y1="807" x2="1127.0" y2="855" stroke="#2d2d2d" stroke-width="0.7" />
+      <line x1="1143.0" y1="807" x2="1143.0" y2="855" stroke="#2d2d2d" stroke-width="0.7" />
+      <rect x="1061.5" y="855" width="99" height="2" fill="white" stroke="#2d2d2d" stroke-width="0.65" />
+      <line x1="1082.2" y1="831.0" x2="1149.4" y2="831.0" stroke="#19177f" stroke-width="0.55" />
+      <path d="M1149.4 831.0l-10 -3v6Z" fill="white" stroke="#19177f" stroke-width="0.5" />
+      <text x="1079" y="836.76" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle">
+        <tspan x="1079" dy="0">UP</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="layer-walls" data-plan-layer="Walls" inkscape:groupmode="layer" inkscape:label="Walls">
+    <g id="wall-perimeter-west" data-item="true" data-name="Finish wall · left side" data-layer="Walls" data-locked="false" data-drawing-method="hand-authored">
+      <title>Finish wall · left side</title>
+      <rect x="582" y="567" width="7" height="135" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="582" y="797" width="7" height="7" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="582" y="858" width="7" height="142.5" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+    </g>
+    <g id="wall-service" data-item="true" data-name="Meter closet returns" data-layer="Walls" data-locked="false" data-drawing-method="hand-authored">
+      <title>Meter closet returns</title>
+      <rect x="582" y="702" width="39" height="7" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="614" y="709" width="7" height="4" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="582" y="790" width="39" height="7" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="614" y="786" width="7" height="4" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+    </g>
+    <g id="wall-perimeter-south" data-item="true" data-name="Finish wall · bottom" data-layer="Walls" data-locked="false" data-drawing-method="hand-authored">
+      <title>Finish wall · bottom</title>
+      <rect x="589" y="993.5" width="341" height="7" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="984" y="993.5" width="66" height="7" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+    </g>
+    <g id="wall-perimeter-east" data-item="true" data-name="Finish wall · right side" data-layer="Walls" data-locked="false" data-drawing-method="hand-authored">
+      <title>Finish wall · right side</title>
+      <rect x="1043" y="612" width="7" height="195" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="1043" y="855" width="7" height="138.5" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+    </g>
+    <g id="wall-bath-west" data-item="true" data-name="Wall · bathroom entry under beam" data-layer="Walls" data-locked="true" data-drawing-method="hand-authored">
+      <title>Wall · bathroom entry under beam</title>
+      <rect x="812" y="567" width="6" height="69" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="812" y="683" width="6" height="7" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+    </g>
+    <g id="wall-bath-north" data-item="true" data-name="Wall · laundry and vanity" data-layer="Walls" data-locked="false" data-drawing-method="hand-authored">
+      <title>Wall · laundry and vanity</title>
+      <rect x="818" y="567" width="110.5" height="7" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="982.5" y="567" width="15.5" height="7" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+    </g>
+    <g id="wall-recess" data-item="true" data-name="Wall · upper-right recess" data-layer="Walls" data-locked="false" data-drawing-method="hand-authored">
+      <title>Wall · upper-right recess</title>
+      <rect x="991" y="574" width="7" height="38" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="998" y="605" width="45" height="7" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+    </g>
+    <g id="wall-tub-end" data-item="true" data-name="Wall · tub end" data-layer="Walls" data-locked="false" data-drawing-method="hand-authored">
+      <title>Wall · tub end</title>
+      <rect x="991" y="700" width="52" height="7" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+    </g>
+    <g id="wall-utility-return" data-item="true" data-name="Wall · utility return" data-layer="Walls" data-locked="false" data-drawing-method="hand-authored">
+      <title>Wall · utility return</title>
+      <rect x="991" y="707" width="7" height="30" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+    </g>
+    <g id="wall-bath-south" data-item="true" data-name="Wall · bathroom and closets" data-layer="Walls" data-locked="false" data-drawing-method="hand-authored">
+      <title>Wall · bathroom and closets</title>
+      <rect x="870" y="737" width="128" height="6" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+    </g>
+    <g id="wall-closet-divider" data-item="true" data-name="Wall · closet and utility" data-layer="Walls" data-locked="false" data-drawing-method="hand-authored">
+      <title>Wall · closet and utility</title>
+      <rect x="943" y="743" width="6" height="61" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+    </g>
+    <g id="wall-closet-front" data-item="true" data-name="Wall · closet front" data-layer="Walls" data-locked="false" data-drawing-method="hand-authored">
+      <title>Wall · closet front</title>
+      <rect x="870" y="798" width="22" height="6" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+      <rect x="937" y="798" width="12" height="6" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+    </g>
+    <g id="wall-utility-front" data-item="true" data-name="Wall · utility front" data-layer="Walls" data-locked="false" data-drawing-method="hand-authored">
+      <title>Wall · utility front</title>
+      <rect x="996" y="798" width="47" height="6" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" />
+    </g>
+    <g id="chimney-enclosure" data-item="true" data-name="Chimney enclosure" data-layer="Walls" data-locked="true" data-drawing-method="hand-authored">
+      <title>Chimney enclosure</title>
+      <path d="M788 690H870V810H788Z M794 696V804H864V696Z" fill="#e7d86d" stroke="#2d2d2d" stroke-width="1" fill-rule="evenodd" />
+    </g>
+  </g>
+  <g id="layer-fixtures" data-plan-layer="Fixtures" inkscape:groupmode="layer" inkscape:label="Fixtures">
+    <g id="vanity" data-item="true" data-name="Sink base · SB3621 · 36″ W × 21″ D" data-layer="Fixtures" data-locked="false" data-drawing-method="hand-authored">
+      <title>Sink base · SB3621 · 36″ W × 21″ D</title>
+      <rect x="937" y="576" width="54" height="37" fill="#f1ece7" stroke="#a87777" stroke-width="0.65" />
+      <line x1="938" y1="611" x2="990" y2="611" stroke="#a87777" stroke-width="0.6" />
+      <rect x="950" y="581" width="27" height="19" fill="white" stroke="#a87777" stroke-width="0.7" rx="2" />
+      <path d="M963.5 578V586 M962 579H965 M962 585Q963.5 587 965 585" fill="none" stroke="#a87777" stroke-width="0.65" />
+      <text x="964" y="609" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6" fill="#004080" text-anchor="middle">
+        <tspan x="964" dy="0">SB3621</tspan>
+      </text>
+    </g>
+    <g id="tub" data-item="true" data-name="Tub and fittings" data-layer="Fixtures" data-locked="false" data-drawing-method="hand-authored">
+      <title>Tub and fittings</title>
+      <rect x="998" y="610" width="45" height="90" fill="white" stroke="#a87777" stroke-width="0.8" rx="6" />
+      <rect x="1000" y="612" width="41" height="86" fill="none" stroke="#a87777" stroke-width="0.5" rx="5" />
+      <rect x="1009" y="621" width="24" height="72" fill="none" stroke="#a87777" stroke-width="0.8" rx="4" />
+      <ellipse cx="1021" cy="690" rx="2.6" ry="2.6" fill="none" stroke="#a87777" stroke-width="0.65" />
+      <path d="M1019 696V692Q1021 689 1023 692V696 M1017 696H1025" fill="none" stroke="#a87777" stroke-width="0.7" />
+      <ellipse cx="1015" cy="696" rx="1.6" ry="1.6" fill="white" stroke="#a87777" stroke-width="0.5" />
+      <ellipse cx="1027" cy="696" rx="1.6" ry="1.6" fill="white" stroke="#a87777" stroke-width="0.5" />
+    </g>
+    <g id="compact-toilet" data-item="true" data-name="Toilet · between stacked laundry and sink · 29″ depth" data-layer="Fixtures" data-locked="false" data-drawing-method="hand-authored">
+      <title>Toilet · between stacked laundry and sink · 29″ depth</title>
+      <rect x="886.5" y="576" width="27" height="10.5" fill="#fff" stroke="#a87777" stroke-width="0.8" rx="2" />
+      <ellipse cx="900" cy="601.5" rx="12.5" ry="18" fill="#fff" stroke="#a87777" stroke-width="0.8" />
+      <ellipse cx="900" cy="601" rx="8.5" ry="13" fill="#fff" stroke="#a87777" stroke-width="0.55" />
+    </g>
+    <g id="compact-laundry" data-item="true" data-name="Stacked laundry · 24″ W × 26″ D · 65¼″ H example" data-layer="Fixtures" data-locked="false" data-drawing-method="hand-authored">
+      <title>Stacked laundry · 24″ W × 26″ D · 65¼″ H example</title>
+      <rect x="824" y="576" width="42" height="45" fill="#f3f7fa" stroke="#78929a" stroke-width="0.8" stroke-dasharray="2 2" />
+      <rect x="827" y="582" width="36" height="39" fill="#e8f0f5" stroke="#315c6b" stroke-width="0.8" rx="1" />
+      <rect x="828" y="616" width="34" height="4" fill="#d4e2eb" stroke="#315c6b" stroke-width="0.4" />
+      <text x="845" y="593" font-size="5" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" fill="#1b4f65" text-anchor="middle">
+        <tspan x="845" dy="0">STACKED</tspan>
+        <tspan x="845" dy="6.5">W / D</tspan>
+        <tspan x="845" dy="6.5">24″ × 26″</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="layer-cabinetry" data-plan-layer="Cabinetry" inkscape:groupmode="layer" inkscape:label="Cabinetry">
+    </g>
+  <g id="layer-windows" data-plan-layer="Windows" inkscape:groupmode="layer" inkscape:label="Windows">
+    <g id="window-north-left" data-item="true" data-name="Window · stair side" data-layer="Windows" data-locked="true" data-drawing-method="hand-authored">
+      <title>Window · stair side</title>
+      <line x1="624.75" y1="560" x2="678.75" y2="560" stroke="#868686" stroke-width="0.65" />
+      <line x1="624.75" y1="562" x2="678.75" y2="562" stroke="#868686" stroke-width="0.65" />
+      <rect x="623.75" y="554" width="2" height="14" fill="white" stroke="#868686" stroke-width="0.7" />
+      <rect x="677.75" y="554" width="2" height="14" fill="white" stroke="#868686" stroke-width="0.7" />
+      <rect x="650.75" y="558.5" width="2" height="5" fill="white" stroke="#868686" stroke-width="0.5" />
+    </g>
+    <g id="window-north-right" data-item="true" data-name="Window · bathroom" data-layer="Windows" data-locked="true" data-drawing-method="hand-authored">
+      <title>Window · bathroom</title>
+      <line x1="928.5" y1="560" x2="982.5" y2="560" stroke="#868686" stroke-width="0.65" />
+      <line x1="928.5" y1="562" x2="982.5" y2="562" stroke="#868686" stroke-width="0.65" />
+      <rect x="927.5" y="554" width="2" height="14" fill="white" stroke="#868686" stroke-width="0.7" />
+      <rect x="981.5" y="554" width="2" height="14" fill="white" stroke="#868686" stroke-width="0.7" />
+      <rect x="954.5" y="558.5" width="2" height="5" fill="white" stroke="#868686" stroke-width="0.5" />
+    </g>
+    <g id="window-south" data-item="true" data-name="Window · opposite stairs" data-layer="Windows" data-locked="true" data-drawing-method="hand-authored">
+      <title>Window · opposite stairs</title>
+      <line x1="930" y1="1005.5" x2="984" y2="1005.5" stroke="#868686" stroke-width="0.65" />
+      <line x1="930" y1="1007.5" x2="984" y2="1007.5" stroke="#868686" stroke-width="0.65" />
+      <rect x="929" y="999.5" width="2" height="14" fill="white" stroke="#868686" stroke-width="0.7" />
+      <rect x="983" y="999.5" width="2" height="14" fill="white" stroke="#868686" stroke-width="0.7" />
+      <rect x="956.0" y="1004.0" width="2" height="5" fill="white" stroke="#868686" stroke-width="0.5" />
+    </g>
+    <g id="window-west" data-item="true" data-name="Window · left wall" data-layer="Windows" data-locked="true" data-drawing-method="hand-authored">
+      <title>Window · left wall</title>
+      <line x1="575" y1="804" x2="575" y2="858" stroke="#868686" stroke-width="0.65" />
+      <line x1="577" y1="804" x2="577" y2="858" stroke="#868686" stroke-width="0.65" />
+      <rect x="569" y="803" width="14" height="2" fill="white" stroke="#868686" stroke-width="0.7" />
+      <rect x="569" y="857" width="14" height="2" fill="white" stroke="#868686" stroke-width="0.7" />
+      <rect x="574" y="830.0" width="5" height="2" fill="white" stroke="#868686" stroke-width="0.5" />
+    </g>
+  </g>
+  <g id="layer-doors" data-plan-layer="Doors" inkscape:groupmode="layer" inkscape:label="Doors">
+    <g id="door-bath" data-item="true" data-name="Bathroom door and swing" data-layer="Doors" data-locked="false" data-drawing-method="hand-authored">
+      <title>Bathroom door and swing</title>
+      <rect x="819" y="679.5" width="45" height="2" fill="white" stroke="#868686" stroke-width="0.75" />
+      <path d="M819 636.5A45 45 0 0 1 864 681.5" fill="none" stroke="#868686" stroke-width="0.75" />
+      <line x1="817" y1="636" x2="821" y2="636" stroke="#868686" stroke-width="0.7" />
+      <line x1="817" y1="683" x2="821" y2="683" stroke="#868686" stroke-width="0.7" />
+      <text x="815" y="660" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6.5" fill="#004080" text-anchor="middle" transform="rotate(-90 815 660)">
+        <tspan x="815" dy="0">2666</tspan>
+      </text>
+    </g>
+    <g id="door-closet" data-item="true" data-name="Closet door and swing" data-layer="Doors" data-locked="false" data-drawing-method="hand-authored">
+      <title>Closet door and swing</title>
+      <rect x="891" y="804" width="2" height="45" fill="white" stroke="#868686" stroke-width="0.7" />
+      <path d="M937 804A45 45 0 0 1 892 849" fill="none" stroke="#868686" stroke-width="0.75" />
+      <text x="914.5" y="801" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6" fill="#004080" text-anchor="middle">
+        <tspan x="914.5" dy="0">2666</tspan>
+      </text>
+    </g>
+    <g id="door-utility" data-item="true" data-name="Closet door and swing" data-layer="Doors" data-locked="false" data-drawing-method="hand-authored">
+      <title>Closet door and swing</title>
+      <rect x="995" y="804" width="2" height="45" fill="white" stroke="#868686" stroke-width="0.7" />
+      <path d="M951 804A45 45 0 0 0 996 849" fill="none" stroke="#868686" stroke-width="0.75" />
+      <text x="973.5" y="801" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6" fill="#004080" text-anchor="middle">
+        <tspan x="973.5" dy="0">2666</tspan>
+      </text>
+    </g>
+    <g id="door-bulkhead" data-item="true" data-name="Bulkhead door and swing" data-layer="Doors" data-locked="false" data-drawing-method="hand-authored">
+      <title>Bulkhead door and swing</title>
+      <rect x="996" y="808" width="48" height="2" fill="white" stroke="#868686" stroke-width="0.7" />
+      <path d="M996 809A48 48 0 0 0 1044 857" fill="none" stroke="#868686" stroke-width="0.8" />
+    </g>
+    <g id="door-service" data-item="true" data-name="Meter closet bifold door" data-layer="Doors" data-locked="false" data-drawing-method="hand-authored">
+      <title>Meter closet bifold door</title>
+      <path d="M620 711L634 725L621 738 M622 710L636 724L623 738 M621 761L634 774L620 788 M623 761L636 774L622 789" fill="none" stroke="#868686" stroke-width="0.8" />
+      <text x="625" y="751" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6.5" fill="#004080" text-anchor="middle" transform="rotate(-90 625 751)">
+        <tspan x="625" dy="0">4066</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="layer-furniture" data-plan-layer="Furniture" inkscape:groupmode="layer" inkscape:label="Furniture">
+    <g id="sofa" data-item="true" data-name="Sofa" data-layer="Furniture" data-locked="false" data-drawing-method="hand-authored">
+      <title>Sofa</title>
+      <rect x="736" y="864" width="69" height="123" fill="none" stroke="#8581c5" stroke-width="0.8" />
+      <rect x="737" y="865" width="68" height="9" fill="none" stroke="#8581c5" stroke-width="0.6" />
+      <rect x="737" y="977" width="68" height="9" fill="none" stroke="#8581c5" stroke-width="0.6" />
+      <rect x="794" y="875" width="9" height="100" fill="none" stroke="#8581c5" stroke-width="0.6" rx="2" />
+      <rect x="783" y="875" width="10" height="49" fill="none" stroke="#8581c5" stroke-width="0.6" rx="3" />
+      <rect x="746" y="875" width="36" height="49" fill="none" stroke="#8581c5" stroke-width="0.35" rx="2" />
+      <rect x="783" y="925" width="10" height="49" fill="none" stroke="#8581c5" stroke-width="0.6" rx="3" />
+      <rect x="746" y="925" width="36" height="49" fill="none" stroke="#8581c5" stroke-width="0.35" rx="2" />
+    </g>
+    <g id="tv" data-item="true" data-name="TV" data-layer="Furniture" data-locked="false" data-drawing-method="hand-authored">
+      <title>TV</title>
+      <path d="M591 889L595 887V952L591 950Z M593 889V950" fill="none" stroke="#8581c5" stroke-width="0.7" />
+    </g>
+  </g>
+  <g id="layer-utilities" data-plan-layer="Utilities" inkscape:groupmode="layer" inkscape:label="Utilities">
+    <g id="gas-meter" data-item="true" data-name="Gas meter and pipe" data-layer="Utilities" data-locked="true" data-drawing-method="hand-authored">
+      <title>Gas meter and pipe</title>
+      <path d="M578 721H599V742H609V720H603 M579 713V722H603V747H608V753" fill="none" stroke="#24959a" stroke-width="0.75" />
+      <rect x="594" y="721" width="7" height="14" fill="white" stroke="#24959a" stroke-width="0.65" />
+      <rect x="603" y="720" width="5" height="8" fill="white" stroke="#24959a" stroke-width="0.65" />
+      <ellipse cx="606" cy="751" rx="1.6" ry="2" fill="none" stroke="#24959a" stroke-width="0.65" />
+    </g>
+    <g id="water-meter" data-item="true" data-name="Water meter and pipe" data-layer="Utilities" data-locked="true" data-drawing-method="hand-authored">
+      <title>Water meter and pipe</title>
+      <path d="M597 758H601V766 M601 774V789" fill="none" stroke="#24959a" stroke-width="0.8" />
+      <ellipse cx="601" cy="771" rx="4.5" ry="4.5" fill="white" stroke="#24959a" stroke-width="0.8" />
+      <ellipse cx="601" cy="771" rx="2.7" ry="2.7" fill="none" stroke="#24959a" stroke-width="0.55" />
+      <rect x="598" y="762" width="6" height="3" fill="white" stroke="#24959a" stroke-width="0.6" />
+      <rect x="599" y="782" width="4" height="3" fill="white" stroke="#24959a" stroke-width="0.5" />
+    </g>
+    <g id="panel" data-item="true" data-name="Electrical panel" data-layer="Utilities" data-locked="false" data-drawing-method="hand-authored">
+      <title>Electrical panel</title>
+      <rect x="587.5" y="608" width="2" height="14" fill="white" stroke="#868686" stroke-width="0.5" />
+      <text x="592" y="611" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="5.5" fill="#004080" text-anchor="start">
+        <tspan x="592" dy="0">EP</tspan>
+      </text>
+    </g>
+    <g id="tankless" data-item="true" data-name="Tankless water heater" data-layer="Utilities" data-locked="false" data-drawing-method="hand-authored">
+      <title>Tankless water heater</title>
+      <rect x="956" y="746" width="24" height="10" fill="white" stroke="#a87777" stroke-width="0.65" />
+      <path d="M962 746V751H973V748 M966 749L970 752 M970 749L966 752" fill="none" stroke="#a87777" stroke-width="0.65" />
+    </g>
+    <g id="sewage-pump" data-item="true" data-name="Sewage pump and basin" data-layer="Utilities" data-locked="false" data-drawing-method="hand-authored">
+      <title>Sewage pump and basin</title>
+      <ellipse cx="1009" cy="768" rx="14" ry="17" fill="white" stroke="#a87777" stroke-width="0.75" />
+      <ellipse cx="1009" cy="768" rx="11" ry="14" fill="none" stroke="#a87777" stroke-width="0.6" />
+      <ellipse cx="1022" cy="757" rx="6" ry="6" fill="white" stroke="#a87777" stroke-width="0.7" />
+      <ellipse cx="1022" cy="757" rx="1.7" ry="1.7" fill="none" stroke="#a87777" stroke-width="0.7" />
+      <path d="M1006 772V760H1013V768H1024V778 M1008 772V762H1011V770H1022V778" fill="none" stroke="#a87777" stroke-width="0.7" />
+    </g>
+    <g id="post-686" data-item="true" data-name="Support post" data-layer="Utilities" data-locked="true" data-drawing-method="hand-authored">
+      <title>Support post</title>
+      <ellipse cx="816" cy="686" rx="2.4" ry="2.4" fill="#fff8f4" stroke="#a87777" stroke-width="0.65" />
+    </g>
+    <g id="post-807" data-item="true" data-name="Support post" data-layer="Utilities" data-locked="true" data-drawing-method="hand-authored">
+      <title>Support post</title>
+      <ellipse cx="816" cy="807" rx="2.4" ry="2.4" fill="#fff8f4" stroke="#a87777" stroke-width="0.65" />
+    </g>
+    <g id="post-907" data-item="true" data-name="Support post" data-layer="Utilities" data-locked="true" data-drawing-method="hand-authored">
+      <title>Support post</title>
+      <ellipse cx="816" cy="907" rx="2.4" ry="2.4" fill="#fff8f4" stroke="#a87777" stroke-width="0.65" />
+    </g>
+  </g>
+  <g id="layer-dimensions" data-plan-layer="Dimensions" inkscape:groupmode="layer" inkscape:label="Dimensions">
+    <g id="dimensions-top" data-item="true" data-name="Dimensions · top and stairs" data-layer="Dimensions" data-locked="true" data-drawing-method="hand-authored">
+      <title>Dimensions · top and stairs</title>
+      <line x1="582" y1="442" x2="1050" y2="442" stroke="#19177f" stroke-width="0.55" />
+      <line x1="582" y1="436" x2="582" y2="550" stroke="#19177f" stroke-width="0.45" />
+      <line x1="577" y1="447" x2="587" y2="437" stroke="#19177f" stroke-width="0.55" />
+      <line x1="1050" y1="436" x2="1050" y2="550" stroke="#19177f" stroke-width="0.45" />
+      <line x1="1045" y1="447" x2="1055" y2="437" stroke="#19177f" stroke-width="0.55" />
+      <text x="816.0" y="438" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle">
+        <tspan x="816.0" dy="0">26′</tspan>
+        <tspan x="816.0" dy="14.399999999999999">312″</tspan>
+      </text>
+      <line x1="582" y1="478" x2="624.75" y2="478" stroke="#19177f" stroke-width="0.55" />
+      <line x1="582" y1="472" x2="582" y2="543" stroke="#19177f" stroke-width="0.45" />
+      <line x1="577" y1="483" x2="587" y2="473" stroke="#19177f" stroke-width="0.55" />
+      <line x1="624.75" y1="472" x2="624.75" y2="543" stroke="#19177f" stroke-width="0.45" />
+      <line x1="619.75" y1="483" x2="629.75" y2="473" stroke="#19177f" stroke-width="0.55" />
+      <text x="603.375" y="474" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle">
+        <tspan x="603.375" dy="0">2′-4 1/2″</tspan>
+        <tspan x="603.375" dy="14.399999999999999">28 1/2″</tspan>
+      </text>
+      <line x1="624.75" y1="478" x2="678.75" y2="478" stroke="#19177f" stroke-width="0.55" />
+      <line x1="624.75" y1="472" x2="624.75" y2="543" stroke="#19177f" stroke-width="0.45" />
+      <line x1="619.75" y1="483" x2="629.75" y2="473" stroke="#19177f" stroke-width="0.55" />
+      <line x1="678.75" y1="472" x2="678.75" y2="543" stroke="#19177f" stroke-width="0.45" />
+      <line x1="673.75" y1="483" x2="683.75" y2="473" stroke="#19177f" stroke-width="0.55" />
+      <text x="651.75" y="474" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle">
+        <tspan x="651.75" dy="0">3′</tspan>
+        <tspan x="651.75" dy="14.399999999999999">36″</tspan>
+      </text>
+      <line x1="678.75" y1="478" x2="928.5" y2="478" stroke="#19177f" stroke-width="0.55" />
+      <line x1="678.75" y1="472" x2="678.75" y2="543" stroke="#19177f" stroke-width="0.45" />
+      <line x1="673.75" y1="483" x2="683.75" y2="473" stroke="#19177f" stroke-width="0.55" />
+      <line x1="928.5" y1="472" x2="928.5" y2="543" stroke="#19177f" stroke-width="0.45" />
+      <line x1="923.5" y1="483" x2="933.5" y2="473" stroke="#19177f" stroke-width="0.55" />
+      <text x="803.625" y="474" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle">
+        <tspan x="803.625" dy="0">13′-10 1/2″</tspan>
+        <tspan x="803.625" dy="14.399999999999999">166 1/2″</tspan>
+      </text>
+      <line x1="928.5" y1="478" x2="982.5" y2="478" stroke="#19177f" stroke-width="0.55" />
+      <line x1="928.5" y1="472" x2="928.5" y2="543" stroke="#19177f" stroke-width="0.45" />
+      <line x1="923.5" y1="483" x2="933.5" y2="473" stroke="#19177f" stroke-width="0.55" />
+      <line x1="982.5" y1="472" x2="982.5" y2="543" stroke="#19177f" stroke-width="0.45" />
+      <line x1="977.5" y1="483" x2="987.5" y2="473" stroke="#19177f" stroke-width="0.55" />
+      <text x="955.5" y="474" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle">
+        <tspan x="955.5" dy="0">3′</tspan>
+        <tspan x="955.5" dy="14.399999999999999">36″</tspan>
+      </text>
+      <line x1="982.5" y1="478" x2="1050" y2="478" stroke="#19177f" stroke-width="0.55" />
+      <line x1="982.5" y1="472" x2="982.5" y2="543" stroke="#19177f" stroke-width="0.45" />
+      <line x1="977.5" y1="483" x2="987.5" y2="473" stroke="#19177f" stroke-width="0.55" />
+      <line x1="1050" y1="472" x2="1050" y2="543" stroke="#19177f" stroke-width="0.45" />
+      <line x1="1045" y1="483" x2="1055" y2="473" stroke="#19177f" stroke-width="0.55" />
+      <text x="1016.25" y="474" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle">
+        <tspan x="1016.25" dy="0">3′-9″</tspan>
+        <tspan x="1016.25" dy="14.399999999999999">45″</tspan>
+      </text>
+      <line x1="582" y1="522" x2="645" y2="522" stroke="#19177f" stroke-width="0.55" />
+      <line x1="582" y1="516" x2="582" y2="544" stroke="#19177f" stroke-width="0.45" />
+      <line x1="577" y1="527" x2="587" y2="517" stroke="#19177f" stroke-width="0.55" />
+      <line x1="645" y1="516" x2="645" y2="544" stroke="#19177f" stroke-width="0.45" />
+      <line x1="640" y1="527" x2="650" y2="517" stroke="#19177f" stroke-width="0.55" />
+      <text x="613.5" y="518" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle">
+        <tspan x="613.5" dy="0">3′-6″</tspan>
+        <tspan x="613.5" dy="14.399999999999999">42″</tspan>
+      </text>
+      <line x1="645" y1="522" x2="808.5" y2="522" stroke="#19177f" stroke-width="0.55" />
+      <line x1="645" y1="516" x2="645" y2="578" stroke="#19177f" stroke-width="0.45" />
+      <line x1="640" y1="527" x2="650" y2="517" stroke="#19177f" stroke-width="0.55" />
+      <line x1="808.5" y1="516" x2="808.5" y2="578" stroke="#19177f" stroke-width="0.45" />
+      <line x1="803.5" y1="527" x2="813.5" y2="517" stroke="#19177f" stroke-width="0.55" />
+      <text x="726.75" y="518" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle">
+        <tspan x="726.75" dy="0">9′-1″</tspan>
+        <tspan x="726.75" dy="14.399999999999999">109″</tspan>
+      </text>
+    </g>
+    <g id="dimensions-left" data-item="true" data-name="Dimension · 24′1″" data-layer="Dimensions" data-locked="true" data-drawing-method="hand-authored">
+      <title>Dimension · 24′1″</title>
+      <line x1="449" y1="567" x2="449" y2="1000.5" stroke="#19177f" stroke-width="0.55" />
+      <line x1="578" y1="567" x2="455" y2="567" stroke="#19177f" stroke-width="0.45" />
+      <line x1="444" y1="562" x2="454" y2="572" stroke="#19177f" stroke-width="0.55" />
+      <line x1="578" y1="1000.5" x2="455" y2="1000.5" stroke="#19177f" stroke-width="0.45" />
+      <line x1="444" y1="995.5" x2="454" y2="1005.5" stroke="#19177f" stroke-width="0.55" />
+      <text x="445" y="783.75" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle" transform="rotate(-90 445 783.75)">
+        <tspan x="445" dy="0">24′-1″</tspan>
+        <tspan x="445" dy="14.399999999999999">289″</tspan>
+      </text>
+    </g>
+    <g id="dimensions-bottom" data-item="true" data-name="Dimensions · bottom" data-layer="Dimensions" data-locked="true" data-drawing-method="hand-authored">
+      <title>Dimensions · bottom</title>
+      <line x1="582" y1="1054" x2="930" y2="1054" stroke="#19177f" stroke-width="0.55" />
+      <line x1="582" y1="1048" x2="582" y2="1025" stroke="#19177f" stroke-width="0.45" />
+      <line x1="577" y1="1059" x2="587" y2="1049" stroke="#19177f" stroke-width="0.55" />
+      <line x1="930" y1="1048" x2="930" y2="1025" stroke="#19177f" stroke-width="0.45" />
+      <line x1="925" y1="1059" x2="935" y2="1049" stroke="#19177f" stroke-width="0.55" />
+      <text x="756.0" y="1050" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle">
+        <tspan x="756.0" dy="0">19′-4″</tspan>
+        <tspan x="756.0" dy="14.399999999999999">232″</tspan>
+      </text>
+      <line x1="930" y1="1054" x2="984" y2="1054" stroke="#19177f" stroke-width="0.55" />
+      <line x1="930" y1="1048" x2="930" y2="1025" stroke="#19177f" stroke-width="0.45" />
+      <line x1="925" y1="1059" x2="935" y2="1049" stroke="#19177f" stroke-width="0.55" />
+      <line x1="984" y1="1048" x2="984" y2="1025" stroke="#19177f" stroke-width="0.45" />
+      <line x1="979" y1="1059" x2="989" y2="1049" stroke="#19177f" stroke-width="0.55" />
+      <text x="957.0" y="1050" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle">
+        <tspan x="957.0" dy="0">3′</tspan>
+        <tspan x="957.0" dy="14.399999999999999">36″</tspan>
+      </text>
+      <line x1="984" y1="1054" x2="1050" y2="1054" stroke="#19177f" stroke-width="0.55" />
+      <line x1="984" y1="1048" x2="984" y2="1025" stroke="#19177f" stroke-width="0.45" />
+      <line x1="979" y1="1059" x2="989" y2="1049" stroke="#19177f" stroke-width="0.55" />
+      <line x1="1050" y1="1048" x2="1050" y2="1025" stroke="#19177f" stroke-width="0.45" />
+      <line x1="1045" y1="1059" x2="1055" y2="1049" stroke="#19177f" stroke-width="0.55" />
+      <text x="1017.0" y="1050" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle">
+        <tspan x="1017.0" dy="0">3′-8″</tspan>
+        <tspan x="1017.0" dy="14.399999999999999">44″</tspan>
+      </text>
+    </g>
+    <g id="dimensions-right" data-item="true" data-name="Dimensions · bulkhead side" data-layer="Dimensions" data-locked="true" data-drawing-method="hand-authored">
+      <title>Dimensions · bulkhead side</title>
+      <line x1="1210" y1="567" x2="1210" y2="807" stroke="#19177f" stroke-width="0.55" />
+      <line x1="1065" y1="567" x2="1216" y2="567" stroke="#19177f" stroke-width="0.45" />
+      <line x1="1205" y1="562" x2="1215" y2="572" stroke="#19177f" stroke-width="0.55" />
+      <line x1="1065" y1="807" x2="1216" y2="807" stroke="#19177f" stroke-width="0.45" />
+      <line x1="1205" y1="802" x2="1215" y2="812" stroke="#19177f" stroke-width="0.55" />
+      <text x="1206" y="687.0" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle" transform="rotate(-90 1206 687.0)">
+        <tspan x="1206" dy="0">13′-4″</tspan>
+        <tspan x="1206" dy="14.399999999999999">160″</tspan>
+      </text>
+      <line x1="1210" y1="807" x2="1210" y2="855" stroke="#19177f" stroke-width="0.55" />
+      <line x1="1167" y1="807" x2="1216" y2="807" stroke="#19177f" stroke-width="0.45" />
+      <line x1="1205" y1="802" x2="1215" y2="812" stroke="#19177f" stroke-width="0.55" />
+      <line x1="1167" y1="855" x2="1216" y2="855" stroke="#19177f" stroke-width="0.45" />
+      <line x1="1205" y1="850" x2="1215" y2="860" stroke="#19177f" stroke-width="0.55" />
+      <text x="1206" y="831.0" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle" transform="rotate(-90 1206 831.0)">
+        <tspan x="1206" dy="0">2′-8″</tspan>
+        <tspan x="1206" dy="14.399999999999999">32″</tspan>
+      </text>
+      <line x1="1210" y1="855" x2="1210" y2="1000.5" stroke="#19177f" stroke-width="0.55" />
+      <line x1="1065" y1="855" x2="1216" y2="855" stroke="#19177f" stroke-width="0.45" />
+      <line x1="1205" y1="850" x2="1215" y2="860" stroke="#19177f" stroke-width="0.55" />
+      <line x1="1065" y1="1000.5" x2="1216" y2="1000.5" stroke="#19177f" stroke-width="0.45" />
+      <line x1="1205" y1="995.5" x2="1215" y2="1005.5" stroke="#19177f" stroke-width="0.55" />
+      <text x="1206" y="927.75" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#19177f" text-anchor="middle" transform="rotate(-90 1206 927.75)">
+        <tspan x="1206" dy="0">8′-1″</tspan>
+        <tspan x="1206" dy="14.399999999999999">97″</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="layer-annotations" data-plan-layer="Annotations" inkscape:groupmode="layer" inkscape:label="Annotations">
+    <g id="notes" data-item="true" data-name="Drawing notes and leaders" data-layer="Annotations" data-locked="true" data-drawing-method="hand-authored">
+      <title>Drawing notes and leaders</title>
+      <text x="472" y="517" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6.5" fill="#004080" text-anchor="start">
+        <tspan x="472" dy="0">3″ EXTRUDED</tspan>
+        <tspan x="472" dy="7.8">POLYSTYRENE OR</tspan>
+        <tspan x="472" dy="7.8">CLOSED CELL SPRAY</tspan>
+        <tspan x="472" dy="7.8">FOAM</tspan>
+      </text>
+      <path d="M548 525 L558 525 L610 566" fill="none" stroke="#004080" stroke-width="0.35" />
+      <path d="M610 566L607.5399933253699 562.6595857800603L606.177853349608 564.3871779444414Z" fill="#004080" stroke="#004080" stroke-width="0.25" />
+      <text x="472" y="552" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6.5" fill="#004080" text-anchor="start">
+        <tspan x="472" dy="0">SOFFIT</tspan>
+      </text>
+      <path d="M503 550 L559 550 L597 577" fill="none" stroke="#004080" stroke-width="0.35" />
+      <path d="M597 577L594.376406212343 573.7864730221503L593.1021505215267 575.5798699203361Z" fill="#004080" stroke="#004080" stroke-width="0.25" />
+      <text x="472" y="596" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6.5" fill="#004080" text-anchor="start">
+        <tspan x="472" dy="0">RELOCATE ELECTRICAL</tspan>
+        <tspan x="472" dy="7.8">PANEL</tspan>
+      </text>
+      <path d="M548 598 L560 598 L589 614" fill="none" stroke="#004080" stroke-width="0.35" />
+      <path d="M589 614L586.0290743410952 611.1045551759252L584.9663041866903 613.0308260807841Z" fill="#004080" stroke="#004080" stroke-width="0.25" />
+      <text x="669" y="650" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6.5" fill="#004080" text-anchor="start">
+        <tspan x="669" dy="0">UNDER-STAIR STORAGE</tspan>
+      </text>
+      <path d="M749 648 L756 648 L764 632" fill="none" stroke="#004080" stroke-width="0.35" />
+      <path d="M764 632L761.2272757079003 635.0857738089497L763.1950155281 636.0696437190496Z" fill="#004080" stroke="#004080" stroke-width="0.25" />
+      <text x="472" y="697" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6.5" fill="#004080" text-anchor="start">
+        <tspan x="472" dy="0">GAS METER</tspan>
+      </text>
+      <path d="M518 696 L546 696 L592 733" fill="none" stroke="#004080" stroke-width="0.35" />
+      <path d="M592 733L589.5725807080485 729.6358306253903L588.1937116894521 731.3501002160776Z" fill="#004080" stroke="#004080" stroke-width="0.25" />
+      <text x="472" y="746" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6.5" fill="#004080" text-anchor="start">
+        <tspan x="472" dy="0">WATER METER</tspan>
+      </text>
+      <path d="M532 744 L546 744 L597 781" fill="none" stroke="#004080" stroke-width="0.35" />
+      <path d="M597 781L594.408262984856 777.7607255064856L593.1163622314407 779.541453572004Z" fill="#004080" stroke="#004080" stroke-width="0.25" />
+      <text x="668" y="742" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6.5" fill="#004080" text-anchor="start">
+        <tspan x="668" dy="0">2″ MIN CLEARANCE FROM</tspan>
+        <tspan x="668" dy="7.8">COMBUSTIBLE MATERIALS</tspan>
+      </text>
+      <path d="M759 744 L776 744 L796 722" fill="none" stroke="#004080" stroke-width="0.35" />
+      <path d="M796 722L792.4953747432793 724.2198202201879L794.1232429047503 725.6997003669798Z" fill="#004080" stroke="#004080" stroke-width="0.25" />
+      <text x="1166" y="682" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6.5" fill="#004080" text-anchor="middle">
+        <tspan x="1166" dy="0">TANKLESS WATER</tspan>
+        <tspan x="1166" dy="7.8">HEATER</tspan>
+      </text>
+      <path d="M1119 683 L1080 683 L971 751" fill="none" stroke="#004080" stroke-width="0.35" />
+      <path d="M971 751L974.9759702326759 749.8160824737862L973.8115122318765 747.9495247960343Z" fill="#004080" stroke="#004080" stroke-width="0.25" />
+      <text x="1166" y="721" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="6.5" fill="#004080" text-anchor="middle">
+        <tspan x="1166" dy="0">1/2 HP SEWAGE</tspan>
+        <tspan x="1166" dy="7.8">PUMP AND BASIN</tspan>
+      </text>
+      <path d="M1119 722 L1080 722 L1009 765" fill="none" stroke="#004080" stroke-width="0.35" />
+      <path d="M1009 765L1012.9912765908144 763.8687568008528L1011.8516002687769 761.9869656644652Z" fill="#004080" stroke="#004080" stroke-width="0.25" />
+    </g>
+    <g id="dp-labels" data-item="true" data-name="Overhead D/P labels" data-layer="Annotations" data-locked="true" data-drawing-method="hand-authored">
+      <title>Overhead D/P labels</title>
+      <text x="642" y="579" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle" stroke="white" stroke-width="3" paint-order="stroke fill">
+        <tspan x="642" dy="0">D / P</tspan>
+      </text>
+      <text x="747" y="579" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle" stroke="white" stroke-width="3" paint-order="stroke fill">
+        <tspan x="747" dy="0">D / P</tspan>
+      </text>
+      <text x="850" y="579" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle" stroke="white" stroke-width="3" paint-order="stroke fill">
+        <tspan x="850" dy="0">D / P</tspan>
+      </text>
+      <text x="957" y="579" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#111" text-anchor="middle" stroke="white" stroke-width="3" paint-order="stroke fill">
+        <tspan x="957" dy="0">D / P</tspan>
+      </text>
+    </g>
+    <g id="sheet-caption" data-item="true" data-name="Drawing caption and scale" data-layer="Annotations" data-locked="true" data-drawing-method="hand-authored">
+      <title>Drawing caption and scale</title>
+      <ellipse cx="435" cy="1202" rx="13" ry="13" fill="white" stroke="#497ba0" stroke-width="0.35" />
+      <text x="435" y="1206" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="11" fill="#497ba0" text-anchor="middle">
+        <tspan x="435" dy="0">1</tspan>
+      </text>
+      <line x1="450" y1="1203" x2="1220" y2="1203" stroke="#497ba0" stroke-width="0.35" />
+      <text x="451" y="1200" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="12" fill="#004080" text-anchor="start">
+        <tspan x="451" dy="0">BASEMENT, PROPOSED</tspan>
+        <tspan x="451" dy="14.399999999999999">1/4″ = 1 FT</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="layer-labels" data-plan-layer="Labels" inkscape:groupmode="layer" inkscape:label="Labels">
+    <g id="closet-label" data-item="true" data-name="Closet label" data-layer="Labels" data-locked="false" data-drawing-method="hand-authored" data-original-text="CLOSET&#10;4′-1″ × 3′-1″">
+      <title>Closet label</title>
+      <text x="907" y="774" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="13" fill="#004080" text-anchor="middle">
+        <tspan x="907" dy="0">CLOSET</tspan>
+      </text>
+      <text x="907" y="788.3" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="10.4" fill="#004080" text-anchor="middle">
+        <tspan x="907" dy="0">4′-1″ × 3′-1″</tspan>
+      </text>
+    </g>
+    <g id="utility-label" data-item="true" data-name="Utility label" data-layer="Labels" data-locked="false" data-drawing-method="hand-authored" data-original-text="UTILITY&#10;5′-3″ × 3′-1″">
+      <title>Utility label</title>
+      <text x="974" y="776" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="10" fill="#004080" text-anchor="middle">
+        <tspan x="974" dy="0">UTILITY</tspan>
+      </text>
+      <text x="996" y="794" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" font-size="10" fill="#004080" text-anchor="middle">
+        <tspan x="996" dy="0">5′-3″ × 3′-1″</tspan>
+      </text>
+    </g>
+    <g id="compact-bath-label" data-item="true" data-name="Bath · compact concept" data-layer="Labels" data-locked="false" data-drawing-method="hand-authored" data-original-text="BATH">
+      <title>Bath · compact concept</title>
+      <text x="942" y="674" font-size="10" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" fill="#1b4f65" text-anchor="middle">
+        <tspan x="942" dy="0">BATH</tspan>
+      </text>
+    </g>
+    <g id="compact-living-label" data-item="true" data-name="Living area label" data-layer="Labels" data-locked="false" data-drawing-method="hand-authored" data-original-text="LIVING">
+      <title>Living area label</title>
+      <text x="675" y="826" font-size="14" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" fill="#1b4f65" text-anchor="middle">
+        <tspan x="675" dy="0">LIVING</tspan>
+      </text>
+    </g>
+    <g id="compact-notes" data-item="true" data-name="Concept notes and assumptions" data-layer="Labels" data-locked="true" data-drawing-method="hand-authored">
+      <title>Concept notes and assumptions</title>
+      <text x="590" y="1100" font-size="12" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" fill="#1b4f65" text-anchor="start">
+        <tspan x="590" dy="0">REVISED CONCEPT  /  STACKED LAUNDRY</tspan>
+      </text>
+      <text x="590" y="1117" font-size="7.5" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" fill="#1b4f65" text-anchor="start">
+        <tspan x="590" dy="0">Window wall, left to right: stacked washer/dryer · toilet · original 36″ sink base.</tspan>
+        <tspan x="590" dy="9.75">Entry wall restored to the original beam line. Original door swing retained.</tspan>
+        <tspan x="590" dy="9.75">Drawer base + tall cabinet + laundry uppers omitted. Bathroom footprint retained.</tspan>
+        <tspan x="590" dy="9.75">Original PDF shell and static dimensions. Field-measured fit remains a separate step.</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="layer-planning-clearances" data-plan-layer="Planning clearances" inkscape:groupmode="layer" inkscape:label="Planning clearances" style="display:none">
+    <g id="toilet-clearance" data-item="true" data-name="Toilet planning space · 18″ side / 30″ front" data-layer="Planning clearances" data-locked="true" data-drawing-method="hand-authored">
+      <title>Toilet planning space · 18″ side / 30″ front</title>
+      <rect x="873" y="576" width="54" height="88.5" fill="#e6bc64" stroke="#ad7d25" stroke-width="0.8" fill-opacity="0.15" stroke-dasharray="3 2" />
+      <path d="M900 574V623 M873 626H927" fill="none" stroke="#ad7d25" stroke-width="0.75" stroke-dasharray="2 2" />
+      <text x="900" y="648" font-size="5" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" fill="#88601b" text-anchor="middle">
+        <tspan x="900" dy="0">30″ FRONT</tspan>
+      </text>
+    </g>
+    <g id="vanity-clearance" data-item="true" data-name="Vanity planning space · 30″ front" data-layer="Planning clearances" data-locked="true" data-drawing-method="hand-authored">
+      <title>Vanity planning space · 30″ front</title>
+      <rect x="937" y="613" width="54" height="45" fill="#88c4d2" stroke="#4a9aad" stroke-width="0.8" fill-opacity="0.14" stroke-dasharray="3 2" />
+      <text x="964" y="633" font-size="5" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" fill="#357686" text-anchor="middle">
+        <tspan x="964" dy="0">30″ FRONT</tspan>
+      </text>
+    </g>
+    <g id="laundry-clearance" data-item="true" data-name="Laundry planning space · 30″ front" data-layer="Planning clearances" data-locked="true" data-drawing-method="hand-authored">
+      <title>Laundry planning space · 30″ front</title>
+      <rect x="824" y="621" width="42" height="45" fill="#88c4d2" stroke="#4a9aad" stroke-width="0.8" fill-opacity="0.14" stroke-dasharray="3 2" />
+      <text x="845" y="639" font-size="5" font-family="&quot;Arial Narrow&quot;, Arial, sans-serif" fill="#357686" text-anchor="middle">
+        <tspan x="845" dy="0">30″ FRONT</tspan>
+      </text>
+    </g>
+  </g>
+</svg>

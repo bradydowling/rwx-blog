@@ -1,4 +1,59 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Basement renovation: Option 2 · House models</title><meta name="description" content="Option 2 fitted to the measured basement, with living space, bathroom, laundry and utility closets."><link rel="canonical" href="https://readwriteexercise.com/projects/house-models/basement/"><link rel="stylesheet" href="../assets/site.css"></head><body><main><nav class="model-nav" aria-label="House models"><a href="../">All models</a><a href="../exterior/">Exterior</a><a href="../basement-existing/">Unfinished basement</a><a href="../basement/" aria-current="page">Basement renovation</a><a href="../main-floor/">Main floor</a><a href="../kitchen-renovation/">Kitchen renovation</a><a href="../upper-floor/">Upstairs</a><a href="../upstairs-two-baths/">Upstairs renovation</a></nav><header class="compact-header"><h1>Basement renovation: Option 2</h1></header>
 <section id="viewer" aria-label="Interactive Basement renovation: Option 2 model"><div class="viewer-controls"><button disabled data-view="Overview" aria-pressed="false">Overview</button><button disabled data-view="Walkthrough" aria-pressed="false">Walkthrough start</button><button disabled data-view="Renovation kitchen stairs" aria-pressed="false">Kitchen stairs</button><button disabled data-view="Renovation service closet" aria-pressed="false">Service closet</button><button disabled data-view="Renovation bulkhead" aria-pressed="false">Bulkhead</button><button disabled data-view="Renovation laundry" aria-pressed="false">Laundry counter</button><button disabled data-view="Renovation shower" aria-pressed="false">Shower</button><button disabled data-view="plan" aria-pressed="false">Straight down</button></div><div id="model-canvas" tabindex="0" aria-label="Interactive model viewport"><span id="model-status">3D loads when you choose to explore</span><button id="load-model">Load 3D model · 0.9 MB</button></div><div class="viewer-controls"><label><input disabled type="checkbox" id="cutaway">Cutaway</label><label><input disabled type="checkbox" id="walk">Walk</label><div class="move"><button disabled data-move="a" aria-label="Step left">←</button><button disabled data-move="w" aria-label="Move forward">↑</button><button disabled data-move="s" aria-label="Move backward">↓</button><button disabled data-move="d" aria-label="Step right">→</button></div><span class="spacer"></span><button disabled id="save-view">Save view</button><button disabled id="fullscreen">Full screen</button></div><p id="model-hint">Drag to orbit · scroll or pinch to zoom · right-drag to pan</p></section>
+<!-- basement-plan-review:start -->
+<style>
+#floor-plan{scroll-margin-top:20px}
+#floor-plan .plan-options{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:15px 0}
+#floor-plan select{font:inherit;color:inherit;background:white;border:1px solid #bdc9bb;border-radius:6px;padding:7px 10px;max-width:100%}
+#floor-plan select:focus-visible{outline:3px solid #b47e44;outline-offset:3px}
+</style>
+<details id="floor-plan" class="model-notes">
+<summary>2D floor plans</summary>
+<div class="plan-options"><label for="floor-plan-layout">Layout</label><select id="floor-plan-layout"><option value="current">Current plan · Option 2</option><option value="stacked">Alternate · stacked laundry</option></select><a id="floor-plan-share" href="?plan=current#floor-plan">Link to this plan</a></div>
+<figure>
+<a id="floor-plan-image-link" href="option-2-editable.svg" aria-label="Open the selected basement floor plan"><img id="floor-plan-image" src="option-2-editable.svg" width="830" height="815" loading="lazy" alt="Current Option 2 basement plan with side-by-side laundry, sink beneath the window, and toilet beside the chimney storage cabinet."></a>
+<figcaption><span id="floor-plan-caption">Current plan · Option 2</span><br><a id="floor-plan-download" href="option-2-editable.svg">Open full plan</a></figcaption>
+</figure>
+<p>These 2D concepts use the original PDF dimensions. The 3D renovation uses the measured basement.</p>
+</details>
+<script>
+(()=>{
+ const panel=document.getElementById('floor-plan');
+ const selector=document.getElementById('floor-plan-layout');
+ const plans={
+  current:{file:'option-2-editable.svg',label:'Current plan · Option 2',alt:'Current Option 2 basement plan with side-by-side laundry, sink beneath the window, and toilet beside the chimney storage cabinet.'},
+  stacked:{file:'compact-stacked-editable.svg',label:'Alternate · stacked laundry',alt:'Full alternate basement plan with stacked laundry, toilet and sink arranged left to right on the window wall, and the entry wall under the beam.'}
+ };
+ function showPlan(){
+  const plan=plans[selector.value]||plans.current;
+  const image=document.getElementById('floor-plan-image');
+  image.src=plan.file;image.alt=plan.alt;
+  document.getElementById('floor-plan-image-link').href=plan.file;
+  document.getElementById('floor-plan-download').href=plan.file;
+  document.getElementById('floor-plan-caption').textContent=plan.label;
+  const shareURL=new URL(window.location.href);
+  shareURL.searchParams.set('plan',selector.value);
+  shareURL.hash='floor-plan';
+  document.getElementById('floor-plan-share').href=shareURL.href;
+ }
+ const requestedPlan=new URLSearchParams(window.location.search).get('plan');
+ const hasSharedPlan=requestedPlan==='current'||requestedPlan==='stacked';
+ if(hasSharedPlan){
+  selector.value=requestedPlan;
+  panel.open=true;
+ }
+ selector.addEventListener('change',showPlan);
+ showPlan();
+ if(hasSharedPlan){
+  const revealPlan=()=>panel.scrollIntoView({block:'start'});
+  if(document.readyState==='loading'){
+   document.addEventListener('DOMContentLoaded',revealPlan,{once:true});
+  }else{
+   revealPlan();
+  }
+ }
+})();
+</script>
+<!-- basement-plan-review:end -->
 <details class="model-notes"><summary>Model notes & downloads</summary><p>Option 2 fitted to the measured basement, with living space, bathroom, laundry and utility closets.</p><p>Updated from the October 8 survey: 24′1″ × 22′1″ inside shell, 6′11½″ bare-joist ceiling limit, 6′4¼″ beam underside, ten kitchen treads, wider bulkhead stairs and existing posts. Gas and water meters remain in place inside an extended service closet. Flooring/ceiling thicknesses, meter access and service routes remain undecided. The bathroom door under the beam is provisionally 74″ high. The butcher-block counter assumes proposed 24″ front-loading appliances; the existing 27″ pair needs a cabinet change. The incoming pipe remains beneath the kitchen stairs; the west-window horizontal offset still needs measurement.</p><nav><a href="#rendered-views">Rendered views & plans</a><a href="basement.blend" download>Blender model</a><a href="model.glb" download>Portable 3D model</a></nav><p>Related: <a href="../basement-existing/">Basement: existing unfinished</a></p></details>
 <h2 id="rendered-views">Rendered views & plans</h2><div class="grid"><figure class=""><a href="basement-overview.png"><img src="basement-overview.webp" alt="Basement renovation: Option 2" loading=lazy></a><figcaption><strong>Basement renovation: Option 2</strong><a href="basement-overview.png" download>Download PNG</a></figcaption></figure><figure class=""><a href="basement-plan.png"><img src="basement-plan.webp" alt="Basement floor plan" loading=lazy></a><figcaption><strong>Basement floor plan</strong><a href="basement-plan.png" download>Download PNG</a></figcaption></figure><figure class=""><a href="basement-walkthrough.png"><img src="basement-walkthrough.webp" alt="At eye level" loading=lazy></a><figcaption><strong>At eye level</strong><a href="basement-walkthrough.png" download>Download PNG</a></figcaption></figure><figure class=""><a href="basement-renovation-laundry.png"><img src="basement-renovation-laundry.webp" alt="Butcher-block laundry counter" loading=lazy></a><figcaption><strong>Butcher-block laundry counter</strong><a href="basement-renovation-laundry.png" download>Download PNG</a></figcaption></figure><figure class=""><a href="basement-renovation-shower.png"><img src="basement-renovation-shower.webp" alt="Shower head and controls" loading=lazy></a><figcaption><strong>Shower head and controls</strong><a href="basement-renovation-shower.png" download>Download PNG</a></figcaption></figure></div><footer>House models · published October 6, 2026. Geometry and furnishings combine recorded measurements with estimates. <a href="../credits.html">Model and software credits</a>.</footer></main><script id="model-config" type="application/json">{"slug": "basement", "floorY": 0, "exterior": false, "url": "model.glb", "views": {"Overview": {"label": "Overview", "position": [11.975099563598633, 11.060449600219727, 13.670299530029297], "target": [3.606739044189453, 0.6000003814697266, 3.209850311279297], "kind": "ORTHO", "scale": 16.879135131835938, "fov": 39.59775192067671, "cutaway": true}, "Walkthrough": {"label": "Walkthrough start", "position": [6.900000095367432, 1.649999976158142, 6.5], "target": [4.4773054122924805, 1.4703235626220703, 4.739809989929199], "kind": "PERSP", "scale": 6.0, "fov": 93.77717224757609, "cutaway": false}, "Renovation kitchen stairs": {"label": "Kitchen stairs", "position": [2.4130001068115234, 1.600000023841858, 3.251199960708618], "target": [2.9001524448394775, 1.3743624687194824, 0.29962897300720215], "kind": "PERSP", "scale": 6.0, "fov": 83.97442327907126, "cutaway": false}, "Renovation service closet": {"label": "Service closet", "position": [2.0320000648498535, 1.6002000570297241, 3.149600028991699], "target": [-0.8047504425048828, 0.6250674724578857, 3.1939239501953125], "kind": "PERSP", "scale": 6.0, "fov": 73.73979461915735, "cutaway": false}, "Renovation bulkhead": {"label": "Bulkhead", "position": [6.985000133514404, 1.600000023841858, 4.470399856567383], "target": [9.981086730957031, 1.7531903982162476, 4.470400810241699], "kind": "PERSP", "scale": 6.0, "fov": 90.00000250447816, "cutaway": false}, "Renovation laundry": {"label": "Laundry counter", "position": [5.199999809265137, 1.5499999523162842, 2.2300000190734863], "target": [4.671411037445068, 0.6161587238311768, -0.5715236663818359], "kind": "PERSP", "scale": 6.0, "fov": 69.39030966512573, "cutaway": false}, "Renovation shower": {"label": "Shower", "position": [5.880000114440918, 1.5800000429153442, 2.2799999713897705], "target": [8.17182731628418, 1.3700623512268066, 0.3555643558502197], "kind": "PERSP", "scale": 6.0, "fov": 76.09408569397988, "cutaway": false}}, "plan": {"center": [4.692650280427188, 0, 3.6703002844005823], "width": 10.210700873471797, "height": 8.166000574082137}, "source_sha256": "3dbf1aff021f687f448038c2621cc6501b9b6682475c3af54aa10be5e326bd07", "source_objects": 312, "preview_meshes": 60}</script><script defer src="../assets/model-viewer.78804aa8c0fe.js"></script></body></html>
