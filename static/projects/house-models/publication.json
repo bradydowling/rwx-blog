@@ -29,19 +29,19 @@
       "slug": "main-floor",
       "title": "Main floor",
       "source": "models/second-floor/second-floor.blend",
-      "sha256": "b5e256c0c90f92114fcef1059475522d83b139cb23425b5b4825b62b3c7081be"
+      "sha256": "0c6ca448f10faf22cf0127c23855fd5bbdcf4ff8893197c5f21917b4d348f069"
     },
     {
       "slug": "basement-existing",
       "title": "Basement: existing unfinished",
       "source": "models/basement-existing/basement-existing.blend",
-      "sha256": "da7817973c7b878b4ab2f9ff2491948809fb4f92f179366a4eb1182b27952780"
+      "sha256": "a9d2f36d09c4238771624abc63f4f3fd14b3bf34085578612ac3ec764829191d"
     },
     {
       "slug": "basement",
       "title": "Basement renovation: Option 2",
       "source": "models/basement/basement.blend",
-      "sha256": "3dbf1aff021f687f448038c2621cc6501b9b6682475c3af54aa10be5e326bd07"
+      "sha256": "e7ec0e93fe89cf7c49400bb35bd683dd287a550d85a6097b9213d1b82f22b4f8"
     }
   ]
 }
