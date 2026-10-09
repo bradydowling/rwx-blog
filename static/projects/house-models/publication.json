@@ -17,7 +17,7 @@
       "slug": "exterior",
       "title": "Exterior & site",
       "source": "models/exterior/house-exterior.blend",
-      "sha256": "e66902a6dd43df68ba078ef28d63e2484408626bcc7e00f3a4be714dfc02d339"
+      "sha256": "507b457cddd1d471103fed4aea229887d2237b51d05377f09682b309cc220823"
     },
     {
       "slug": "upper-floor",
@@ -29,13 +29,19 @@
       "slug": "main-floor",
       "title": "Main floor",
       "source": "models/second-floor/second-floor.blend",
-      "sha256": "43431ba4d41400f8ee107e718ea2c8ac77806f9c92fcf51a7bfe3ad543f01e87"
+      "sha256": "b5e256c0c90f92114fcef1059475522d83b139cb23425b5b4825b62b3c7081be"
+    },
+    {
+      "slug": "basement-existing",
+      "title": "Basement: existing unfinished",
+      "source": "models/basement-existing/basement-existing.blend",
+      "sha256": "da7817973c7b878b4ab2f9ff2491948809fb4f92f179366a4eb1182b27952780"
     },
     {
       "slug": "basement",
-      "title": "Basement",
+      "title": "Basement renovation: Option 2",
       "source": "models/basement/basement.blend",
-      "sha256": "ea69bc5f3c19bb1b762c8e2cefeb18930d32b3f120d794db9dba1aa3b6ac6742"
+      "sha256": "3dbf1aff021f687f448038c2621cc6501b9b6682475c3af54aa10be5e326bd07"
     }
   ]
 }
